@@ -1,0 +1,35 @@
+PODS:
+  - DocumentScanner (1.0.0)
+  - Nimble (7.0.3)
+  - Quick (1.2.0)
+  - SwiftLint (0.25.0)
+  - TOCropViewController (2.3.6)
+
+DEPENDENCIES:
+  - DocumentScanner (from `../`)
+  - Nimble
+  - Quick
+  - SwiftLint
+  - TOCropViewController
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Nimble
+    - Quick
+    - SwiftLint
+    - TOCropViewController
+
+EXTERNAL SOURCES:
+  DocumentScanner:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DocumentScanner: 55bd0dcea4555ee05253f322f0347263f08f2f17
+  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
+  TOCropViewController: 6d972f2c609372312648f96758e13a7f689efbc0
+
+PODFILE CHECKSUM: b3701a20918fa1069f068768d1358de30f9fcb23
+
+COCOAPODS: 1.5.0

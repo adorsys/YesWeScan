@@ -1,0 +1,15 @@
+platform :ios, '11.0'
+use_frameworks!
+
+target 'DocumentScannerApp' do
+  pod 'DocumentScanner', :path => '../'
+  pod 'TOCropViewController'
+  pod 'SwiftLint'
+
+  target 'DocumentScannerAppTests' do
+    inherit! :search_paths
+
+    pod 'Quick'
+    pod 'Nimble'
+  end
+end
