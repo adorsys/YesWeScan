@@ -22,11 +22,9 @@ This pod contains a ready to use view controller for document scanning.
                        DESC
 
   s.homepage         = 'https://github.com/adorsys/document-scanner-ios'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'Apache License 2.0', :file => 'LICENSE' }
   s.author           = { 'xaverlohmueller' => 'xlo@adorsys.de', 'steffen blümm' => 'sbl@adorsys.de' }
   s.source           = { :git => 'https://github.com/adorsys/document-scanner-ios', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
