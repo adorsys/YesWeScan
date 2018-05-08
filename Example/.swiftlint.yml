@@ -1,0 +1,76 @@
+disabled_rules:
+    - line_length
+    - force_unwrapping
+    - identifier_name
+    - function_body_length
+    - type_body_length
+# Enable more optional rules
+opt_in_rules:
+  - implicit_return
+  - let_var_whitespace
+  - unneeded_parentheses_in_closure_argument
+  - closure_spacing
+  - explicit_init
+  - overridden_super_call
+  - closure_end_indentation
+  - empty_count
+  - fatal_error_message
+  - force_try
+  - force_cast
+  - switch_case_on_newline
+  - redundant_nil_coalescing
+  - prohibited_super_call
+  - operator_usage_whitespace
+  - number_separator
+  - nimble_operator
+  - implicitly_unwrapped_optional
+  - attributes
+  - first_where
+  - multiline_parameters
+  - multiline_arguments
+  - discouraged_optional_collection
+  - discouraged_optional_boolean
+  - trailing_closure
+  - vertical_parameter_alignment_on_call
+
+# Exclude tests, pods and vendor sources
+excluded:
+  - DocumentScannerAppTests
+  - Pods
+
+# Configure warning/error levels
+# file_length:
+#   - 450
+#   - 500
+# function_body_length:
+#   - 100
+#   - 150
+# function_parameter_count:
+#   - 9
+#   - 10
+# line_length:
+#   - 200
+#   - 250
+# identifier_name:
+#   max_length:
+#     warning: 45
+#     error: 60
+#   min_length:
+#     warning: 1
+type_name:
+  max_length:
+    warning: 40
+    error: 70
+  min_length:
+    warning: 3
+# Configure rules violation to be traited as an error
+explicit_init:
+  severity: error
+prohibited_super_call:
+  severity: error
+overridden_super_call:
+  severity: error
+force_unwrapping:
+  severity: error
+weak_delegate:
+  severity: error
