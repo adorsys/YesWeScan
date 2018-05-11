@@ -12,8 +12,7 @@ import DocumentScanner
 import TOCropViewController
 
 class ViewController: UIViewController {
-    
-    //private var scanner: ScannerViewController?
+    // MARK: private fields
     private var scannedImage: UIImage? {
         willSet {
             set(isVisible: newValue != nil)
@@ -22,13 +21,27 @@ class ViewController: UIViewController {
         }
     }
     
+    //private var previewingController: UIViewControllerPreviewing
+    private lazy var tapRecogniser = UITapGestureRecognizer(target: self, action: #selector(editImage))
+    
+    // MARK: IBOutlets
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var editButton: UIButton!
+    
+    // MARK: Init
+    required init?(coder aDecoder: NSCoder) {
+        
+        super.init(coder: aDecoder)
+    }
 
+    // MARK: Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         set(isVisible: false)
+        
+        self.tapRecogniser.delegate = self
+        self.view.addGestureRecognizer(tapRecogniser)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +59,16 @@ class ViewController: UIViewController {
     private func set(isVisible: Bool) {
         imageView.isHidden = !isVisible
         editButton.isHidden = !isVisible
+    }
+}
+
+extension ViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        guard scannedImage != nil else {
+            return false
+        }
+        
+        return imageView.frame.contains(tapRecogniser.location(in: self.view))
     }
 }
 
