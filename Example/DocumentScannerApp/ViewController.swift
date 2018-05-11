@@ -20,17 +20,17 @@ class ViewController: UIViewController {
             imageView.image = scannedImage
         }
     }
-    
+
     //private var previewingController: UIViewControllerPreviewing
     private lazy var tapRecogniser = UITapGestureRecognizer(target: self, action: #selector(editImage))
-    
+
     // MARK: IBOutlets
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var editButton: UIButton!
-    
+
     // MARK: Init
     required init?(coder aDecoder: NSCoder) {
-        
+
         super.init(coder: aDecoder)
     }
 
@@ -39,22 +39,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         set(isVisible: false)
-        
+
         self.tapRecogniser.delegate = self
         self.view.addGestureRecognizer(tapRecogniser)
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
 
+        self.imageView.image = nil
+        self.scannedImage = nil
+    }
 
     private func set(isVisible: Bool) {
         imageView.isHidden = !isVisible
@@ -67,17 +69,17 @@ extension ViewController: UIGestureRecognizerDelegate {
         guard scannedImage != nil else {
             return false
         }
-        
+
         return imageView.frame.contains(tapRecogniser.location(in: self.view))
     }
 }
 
 extension ViewController: ScannerViewControllerDelegate {
-    func scanner(_ scanner: ScannerViewController, didCaptureImage image: UIImage) {
-        
+    func scanner(_ scanner: ScannerViewController,
+                 didCaptureImage image: UIImage) {
+
         self.scannedImage = image
-        //enableOrDisableButtons(true)
-        
+
         navigationController?.popViewController(animated: true)
     }
 }
@@ -85,8 +87,9 @@ extension ViewController: ScannerViewControllerDelegate {
 extension ViewController: TOCropViewControllerDelegate {
     func cropViewController(_ cropViewController: TOCropViewController,
                             didCropToImage image: UIImage,
-                            rect cropRect: CGRect, angle: Int) {
-        
+                            rect cropRect: CGRect,
+                            angle: Int) {
+
         self.scannedImage = image
         cropViewController.dismiss(animated: true, completion: nil)
     }
@@ -99,17 +102,16 @@ extension ViewController {
         navigationController?.pushViewController(scanner, animated: true)
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
-    
+
     @IBAction func editImage(_ sender: UIButton) {
-        guard let image = self.scannedImage else{
+        guard let image = self.scannedImage else {
             return
-            
+
         }
-        
+
         let cropViewController = TOCropViewController(image: image)
         cropViewController.delegate = self
-        
+
         present(cropViewController, animated: true)
     }
 }
-
