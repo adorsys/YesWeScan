@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0364C6E40EDBA72290740381 /* Pods_DocumentScannerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B03E16ABFDB90EC8982398 /* Pods_DocumentScannerAppTests.framework */; };
-		202195AAF324C79A1DD6982D /* Pods_DocumentScannerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBCBAD498206C93132D1559 /* Pods_DocumentScannerApp.framework */; };
+		A3D534E756D17C59603E71CC /* Pods_DocumentScannerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7AB44AFDCDC6FAECADE10F /* Pods_DocumentScannerAppTests.framework */; };
 		B23598F32097134700813B39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23598F22097134700813B39 /* AppDelegate.swift */; };
 		B23598F52097134700813B39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23598F42097134700813B39 /* ViewController.swift */; };
 		B23598F82097134700813B39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B23598F62097134700813B39 /* Main.storyboard */; };
@@ -19,6 +18,7 @@
 		B2B6067920972343005A43D4 /* ScanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B6067820972343005A43D4 /* ScanButton.swift */; };
 		B2B6067B20978DB8005A43D4 /* EditButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B6067A20978DB8005A43D4 /* EditButton.swift */; };
 		B2B6067D20985A3C005A43D4 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B6067C20985A3C005A43D4 /* IconButton.swift */; };
+		C584DDBD81B6A70B9CDA60E0 /* Pods_DocumentScannerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5603B8B2D3724D5A6B2F17CE /* Pods_DocumentScannerApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,8 +34,8 @@
 /* Begin PBXFileReference section */
 		051A466FCEA0595AB7387809 /* Pods-DocumentScannerAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentScannerAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentScannerAppTests/Pods-DocumentScannerAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		0535FB8FDBA0EF87ADC74B50 /* Pods-DocumentScannerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentScannerApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentScannerApp/Pods-DocumentScannerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		5603B8B2D3724D5A6B2F17CE /* Pods_DocumentScannerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentScannerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA39DBC699FA54880710F8F /* Pods-DocumentScannerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentScannerApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentScannerApp/Pods-DocumentScannerApp.release.xcconfig"; sourceTree = "<group>"; };
-		93B03E16ABFDB90EC8982398 /* Pods_DocumentScannerAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentScannerAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23598EF2097134700813B39 /* DocumentScannerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentScannerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23598F22097134700813B39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B23598F42097134700813B39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,8 +50,8 @@
 		B2B6067820972343005A43D4 /* ScanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanButton.swift; sourceTree = "<group>"; };
 		B2B6067A20978DB8005A43D4 /* EditButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditButton.swift; sourceTree = "<group>"; };
 		B2B6067C20985A3C005A43D4 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
-		CFBCBAD498206C93132D1559 /* Pods_DocumentScannerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentScannerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9EC9A9A578142338412FCC /* Pods-DocumentScannerAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentScannerAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentScannerAppTests/Pods-DocumentScannerAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FF7AB44AFDCDC6FAECADE10F /* Pods_DocumentScannerAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentScannerAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				202195AAF324C79A1DD6982D /* Pods_DocumentScannerApp.framework in Frameworks */,
+				C584DDBD81B6A70B9CDA60E0 /* Pods_DocumentScannerApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0364C6E40EDBA72290740381 /* Pods_DocumentScannerAppTests.framework in Frameworks */,
+				A3D534E756D17C59603E71CC /* Pods_DocumentScannerAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,8 +88,8 @@
 		A8D0652F25346879B92BA74B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CFBCBAD498206C93132D1559 /* Pods_DocumentScannerApp.framework */,
-				93B03E16ABFDB90EC8982398 /* Pods_DocumentScannerAppTests.framework */,
+				5603B8B2D3724D5A6B2F17CE /* Pods_DocumentScannerApp.framework */,
+				FF7AB44AFDCDC6FAECADE10F /* Pods_DocumentScannerAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -159,7 +159,8 @@
 				B23598EB2097134700813B39 /* Sources */,
 				B23598EC2097134700813B39 /* Frameworks */,
 				B23598ED2097134700813B39 /* Resources */,
-				8698320874064E042E47CBA4 /* [CP] Embed Pods Frameworks */,
+				EB23E47014A839E48B03EE8D /* [CP] Embed Pods Frameworks */,
+				3F78FA2520A1958B005B2C85 /* swiftlint */,
 			);
 			buildRules = (
 			);
@@ -178,7 +179,6 @@
 				B23598FF2097134800813B39 /* Sources */,
 				B23599002097134800813B39 /* Frameworks */,
 				B23599012097134800813B39 /* Resources */,
-				6157E160BCF612A6CB7A3462 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -249,6 +249,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3F78FA2520A1958B005B2C85 /* swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" autocorrect\n\"${PODS_ROOT}/SwiftLint/swiftlint\" lint --config .swiftlint.yml";
+		};
 		50022359A745DE0F2FAB0EBC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -285,27 +299,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6157E160BCF612A6CB7A3462 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DocumentScannerAppTests/Pods-DocumentScannerAppTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DocumentScannerAppTests/Pods-DocumentScannerAppTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8698320874064E042E47CBA4 /* [CP] Embed Pods Frameworks */ = {
+		EB23E47014A839E48B03EE8D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -430,7 +424,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -484,7 +478,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

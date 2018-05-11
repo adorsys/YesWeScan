@@ -1,5 +1,6 @@
-platform :ios, '11.0'
+platform :ios, '10.0'
 use_frameworks!
+inhibit_all_warnings!
 
 target 'DocumentScannerApp' do
   pod 'DocumentScanner', :path => '../'
@@ -8,8 +9,5 @@ target 'DocumentScannerApp' do
 
   target 'DocumentScannerAppTests' do
     inherit! :search_paths
-
-    pod 'Quick'
-    pod 'Nimble'
   end
 end
