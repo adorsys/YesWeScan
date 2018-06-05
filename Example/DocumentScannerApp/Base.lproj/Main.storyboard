@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14112" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ghs-m4-NQ0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ghs-m4-NQ0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,51 +27,63 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Document Scanner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ho-Ac-hss">
-                                <rect key="frame" x="24" y="125" width="327" height="29"/>
+                                <rect key="frame" x="24" y="125" width="327" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukx-Lm-zw4" customClass="ScanButton" customModule="DocumentScannerApp" customModuleProvider="target">
-                                <rect key="frame" x="24" y="194" width="327" height="48"/>
+                            <view contentMode="scaleToFill" verticalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="j4Y-xp-zDH">
+                                <rect key="frame" x="-0.5" y="175" width="375.5" height="416"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukx-Lm-zw4" customClass="ScanButton" customModule="DocumentScannerApp" customModuleProvider="target">
+                                        <rect key="frame" x="20.5" y="20" width="327" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="vo7-QU-K5D"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="scanDocument:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YeG-Qz-S7y"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="500" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SSm-fM-RLr">
+                                        <rect key="frame" x="93.5" y="96" width="180" height="240"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" priority="500" constant="180" id="d2U-bl-dfm"/>
+                                            <constraint firstAttribute="width" secondItem="SSm-fM-RLr" secondAttribute="height" multiplier="3:4" id="xZg-Yz-H5h"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cv9-1I-nAw" customClass="EditButton" customModule="DocumentScannerApp" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="348" width="327" height="48"/>
+                                        <connections>
+                                            <action selector="editImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nj2-NI-Ro4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="vo7-QU-K5D"/>
+                                    <constraint firstItem="cv9-1I-nAw" firstAttribute="width" secondItem="ukx-Lm-zw4" secondAttribute="width" id="0GY-ad-YTS"/>
+                                    <constraint firstItem="cv9-1I-nAw" firstAttribute="top" secondItem="SSm-fM-RLr" secondAttribute="bottom" constant="12" id="QQ7-eB-8es"/>
+                                    <constraint firstItem="SSm-fM-RLr" firstAttribute="centerX" secondItem="ukx-Lm-zw4" secondAttribute="centerX" id="UeL-0L-tRP"/>
+                                    <constraint firstItem="ukx-Lm-zw4" firstAttribute="centerX" secondItem="j4Y-xp-zDH" secondAttribute="centerX" id="Z7i-2N-ydm"/>
+                                    <constraint firstItem="SSm-fM-RLr" firstAttribute="top" secondItem="ukx-Lm-zw4" secondAttribute="bottom" constant="28" id="ZRQ-yR-5Eh"/>
+                                    <constraint firstAttribute="bottom" secondItem="cv9-1I-nAw" secondAttribute="bottom" constant="8" id="hcA-5p-CMF"/>
+                                    <constraint firstItem="cv9-1I-nAw" firstAttribute="height" secondItem="ukx-Lm-zw4" secondAttribute="height" id="lMf-CT-s1F"/>
+                                    <constraint firstItem="ukx-Lm-zw4" firstAttribute="top" secondItem="j4Y-xp-zDH" secondAttribute="top" constant="12" id="oNZ-K9-ESe"/>
+                                    <constraint firstItem="cv9-1I-nAw" firstAttribute="centerX" secondItem="ukx-Lm-zw4" secondAttribute="centerX" id="u2l-jt-OP6"/>
                                 </constraints>
-                                <connections>
-                                    <action selector="scanDocument:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YeG-Qz-S7y"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SSm-fM-RLr">
-                                <rect key="frame" x="97" y="270" width="180" height="240"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="d2U-bl-dfm"/>
-                                    <constraint firstAttribute="width" secondItem="SSm-fM-RLr" secondAttribute="height" multiplier="3:4" id="xZg-Yz-H5h"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cv9-1I-nAw" customClass="EditButton" customModule="DocumentScannerApp" customModuleProvider="target">
-                                <rect key="frame" x="23.5" y="522" width="327" height="48"/>
-                                <connections>
-                                    <action selector="editImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nj2-NI-Ro4"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.45490196078431372" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="2ho-Ac-hss" firstAttribute="width" secondItem="OQu-Y8-SbL" secondAttribute="width" id="6TJ-Or-U8a"/>
+                            <constraint firstItem="j4Y-xp-zDH" firstAttribute="top" secondItem="2ho-Ac-hss" secondAttribute="bottom" constant="20" id="787-fQ-Me4"/>
                             <constraint firstItem="2ho-Ac-hss" firstAttribute="top" secondItem="OQu-Y8-SbL" secondAttribute="bottom" constant="12" id="F99-Y5-xHi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="OQu-Y8-SbL" secondAttribute="top" constant="-40" id="Ia8-SS-K0q"/>
                             <constraint firstItem="2ho-Ac-hss" firstAttribute="centerX" secondItem="OQu-Y8-SbL" secondAttribute="centerX" id="Lym-aP-8zs"/>
-                            <constraint firstItem="ukx-Lm-zw4" firstAttribute="top" secondItem="2ho-Ac-hss" secondAttribute="bottom" constant="40" id="O2M-kH-vjS"/>
-                            <constraint firstItem="cv9-1I-nAw" firstAttribute="centerX" secondItem="ukx-Lm-zw4" secondAttribute="centerX" id="PX9-Sg-ToC"/>
-                            <constraint firstItem="cv9-1I-nAw" firstAttribute="top" secondItem="SSm-fM-RLr" secondAttribute="bottom" constant="12" id="VMc-mN-MYE"/>
-                            <constraint firstItem="SSm-fM-RLr" firstAttribute="top" secondItem="ukx-Lm-zw4" secondAttribute="bottom" constant="28" id="cmw-Pn-xFx"/>
-                            <constraint firstItem="SSm-fM-RLr" firstAttribute="centerX" secondItem="ukx-Lm-zw4" secondAttribute="centerX" id="eci-YH-XCA"/>
-                            <constraint firstItem="ukx-Lm-zw4" firstAttribute="centerX" secondItem="2ho-Ac-hss" secondAttribute="centerX" id="oUI-zS-86f"/>
-                            <constraint firstItem="ukx-Lm-zw4" firstAttribute="width" secondItem="2ho-Ac-hss" secondAttribute="width" id="tT7-Vo-pce"/>
-                            <constraint firstItem="cv9-1I-nAw" firstAttribute="height" secondItem="ukx-Lm-zw4" secondAttribute="height" id="tiv-aL-MNk"/>
-                            <constraint firstItem="cv9-1I-nAw" firstAttribute="width" secondItem="ukx-Lm-zw4" secondAttribute="width" id="v5E-oL-cAP"/>
+                            <constraint firstItem="j4Y-xp-zDH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="nI0-MP-lNy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="j4Y-xp-zDH" secondAttribute="bottom" constant="76" id="nZq-bj-iqq"/>
                             <constraint firstItem="OQu-Y8-SbL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="yLh-sm-pAj"/>
+                            <constraint firstItem="j4Y-xp-zDH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zBU-9d-EEV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OQu-Y8-SbL" secondAttribute="trailing" constant="24" id="zez-2g-gWU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

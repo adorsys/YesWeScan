@@ -70,7 +70,7 @@ extension ViewController: UIGestureRecognizerDelegate {
             return false
         }
 
-        return imageView.frame.contains(tapRecogniser.location(in: self.view))
+        return imageView.bounds.contains(self.view.convert(tapRecogniser.location(in: self.view), to: imageView))
     }
 }
 
