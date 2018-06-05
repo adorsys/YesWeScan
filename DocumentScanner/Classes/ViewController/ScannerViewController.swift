@@ -23,7 +23,7 @@ public final class ScannerViewController: UIViewController {
         }
     }
 
-    public init(sessionPreset: AVCaptureSession.Preset = .high, config: ScannerConfig = .all) {
+    public init(sessionPreset: AVCaptureSession.Preset = .photo, config: ScannerConfig = .all) {
         self.sessionPreset = sessionPreset
         super.init(nibName: nil, bundle: nil)
         setupUI(config: config)
@@ -140,6 +140,7 @@ extension ScannerViewController {
 
         scanner.captureImage(in: boundingRect) { [weak self] image in
             if let scanner = self {
+                scanner.scanner.stop()
                 self?.delegate?.scanner(scanner, didCaptureImage: image)
             }
         }

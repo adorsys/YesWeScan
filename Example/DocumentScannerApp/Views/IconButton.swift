@@ -38,6 +38,18 @@ class IconButton: UIButton {
         backgroundColor = .clear
     }
 
+    override init(frame: CGRect) {
+
+        super.init(frame: frame)
+
+        // set other operations after super.init, if required
+        backgroundColor = .clear
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+
     public override var isHighlighted: Bool {
         get {
             return super.isHighlighted
@@ -56,6 +68,10 @@ class IconButton: UIButton {
     // MARK: Custom Drawing
 
     override func draw(_: CGRect) {
+        guard self.bounds.width > 0 else {
+            return
+        }
+
         let smaller = min(self.frame.width, self.frame.height)
 
         //

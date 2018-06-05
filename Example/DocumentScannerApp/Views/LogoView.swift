@@ -23,13 +23,37 @@ class LogoView: UIView {
         return 63.0 / 397.0
     }
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
         self.backgroundColor = .clear
     }
 
+    required init() {
+
+        super.init(frame: .zero)
+
+        // set other operations after super.init, if required
+        backgroundColor = .clear
+    }
+
+    required override init(frame: CGRect) {
+
+        super.init(frame: frame)
+
+        // set other operations after super.init, if required
+        backgroundColor = .clear
+    }
+
     override func draw(_ rect: CGRect) {
+        guard self.bounds.width > 0 else {
+            return
+        }
+
         let frameWidth = self.frame.width
         let frameHeight = self.frame.height
 

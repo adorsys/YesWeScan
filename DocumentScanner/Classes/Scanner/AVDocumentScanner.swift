@@ -40,7 +40,7 @@ final class AVDocumentScanner: NSObject {
         output.setSampleBufferDelegate(self, queue: imageQueue)
     }
 
-    convenience init(sessionPreset: AVCaptureSession.Preset = .high,
+    convenience init(sessionPreset: AVCaptureSession.Preset = .photo,
                      delegate: DocumentScannerDelegate) {
         self.init(sessionPreset: sessionPreset)
         self.delegate = delegate
@@ -126,6 +126,9 @@ extension AVDocumentScanner: DocumentScanner {
         imageCapturer.captureImage(in: bounds, completion: completion)
     }
     func start() {
+        guard !captureSession.isRunning else {
+            return
+        }
         captureSession.startRunning()
         isStopped = false
     }
@@ -133,6 +136,9 @@ extension AVDocumentScanner: DocumentScanner {
         isStopped = true
     }
     func stop() {
+        guard  captureSession.isRunning else {
+            return
+        }
         captureSession.stopRunning()
     }
 }
