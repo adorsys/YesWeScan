@@ -109,8 +109,12 @@ extension AVDocumentScanner: AVCaptureVideoDataOutputSampleBufferDelegate {
         let (smoothed, newFeatures) = feature.smoothed(with: lastFeatures)
         lastFeatures = newFeatures
 
-        if newFeatures.count > 7, newFeatures.jitter < desiredJitter,
+        if newFeatures.count > 7,
+            newFeatures.jitter < desiredJitter,
+            isStopped == false,
             let delegate = delegate {
+
+            pause()
 
             captureImage(in: smoothed) { [weak delegate] image in
                 delegate?.didCapture(image: image)
