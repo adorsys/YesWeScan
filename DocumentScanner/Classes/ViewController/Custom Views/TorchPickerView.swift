@@ -138,11 +138,11 @@ final class TorchPickerView: UIView {
         }
         stackView.arrangedSubviews.last?.backgroundColor = UIColor(white: 0.7, alpha: 0.85)
     }
-    
+
     @objc override func removeFromSuperview() {
-        
+
         UIView.animate(withDuration: 0.5, animations: {
-            self.frame.origin.x +=  self.stackView.frame.width
+            self.frame.origin.x += self.stackView.frame.width
         }, completion: { completed in
             if completed {
                 super.removeFromSuperview()

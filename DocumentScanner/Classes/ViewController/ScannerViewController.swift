@@ -38,7 +38,7 @@ public final class ScannerViewController: UIViewController {
     private weak var torchButton: UIView!
 
     private lazy var scanner: DocumentScanner & TorchPickerViewDelegate = {
-        return AVDocumentScanner(sessionPreset: self.sessionPreset, delegate: self)
+        AVDocumentScanner(sessionPreset: self.sessionPreset, delegate: self)
     }()
 
     private lazy var detectionLayer: CAShapeLayer = {
@@ -186,7 +186,7 @@ extension ScannerViewController {
         superview.addSubview(picker)
         picker.frame.origin.x = self.view.frame.width
         UIView.animate(withDuration: 0.5, animations: {
-            picker.frame.origin.x = self.view.frame.width-picker.frame.width
+            picker.frame.origin.x = self.view.frame.width - picker.frame.width
         })
     }
 }

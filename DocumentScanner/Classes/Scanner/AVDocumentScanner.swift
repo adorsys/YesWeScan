@@ -54,7 +54,7 @@ final class AVDocumentScanner: NSObject {
     private let imageQueue = DispatchQueue(label: "imageQueue")
 
     private let device: AVCaptureDevice? = {
-        return AVCaptureDevice.DiscoverySession(
+        AVCaptureDevice.DiscoverySession(
             deviceTypes: [.builtInWideAngleCamera],
             mediaType: .video,
             position: .back
@@ -76,7 +76,7 @@ final class AVDocumentScanner: NSObject {
     private let detector = CIDetector(ofType: CIDetectorTypeRectangle, context: nil, options: [
         CIDetectorAccuracy: CIDetectorAccuracyHigh,
         CIDetectorMaxFeatureCount: 10
-        ])!
+    ])!
 }
 
 extension AVDocumentScanner: AVCaptureVideoDataOutputSampleBufferDelegate {
@@ -96,7 +96,7 @@ extension AVDocumentScanner: AVCaptureVideoDataOutputSampleBufferDelegate {
             .max()
             .map({ $0.normalized(source: image.extent.size,
                                  target: UIScreen.main.bounds.size) })
-            .flatMap({ smooth(feature: $0, in: image)})
+            .flatMap({ smooth(feature: $0, in: image) })
 
         DispatchQueue.main.async {
             self.delegate?.didRecognize(feature: feature, in: image)
