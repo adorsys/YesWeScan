@@ -58,8 +58,8 @@ final class AVDocumentScanner: NSObject {
             deviceTypes: [.builtInWideAngleCamera],
             mediaType: .video,
             position: .back
-            ).devices
-            .first(where: { $0.hasTorch })
+        ).devices
+        .first { $0.hasTorch }
     }()
 
     private lazy var output: AVCaptureVideoDataOutput = {
@@ -91,12 +91,14 @@ extension AVDocumentScanner: AVCaptureVideoDataOutputSampleBufferDelegate {
 
         let image = CIImage(cvImageBuffer: buffer)
         let feature = detector.features(in: image)
-            .compactMap({ $0 as? CIRectangleFeature })
+            .compactMap { $0 as? CIRectangleFeature }
             .map(RectangleFeature.init)
             .max()
-            .map({ $0.normalized(source: image.extent.size,
-                                 target: UIScreen.main.bounds.size) })
-            .flatMap({ smooth(feature: $0, in: image) })
+            .map {
+                $0.normalized(source: image.extent.size,
+                              target: UIScreen.main.bounds.size)
+            }
+            .flatMap { smooth(feature: $0, in: image) }
 
         DispatchQueue.main.async {
             self.delegate?.didRecognize(feature: feature, in: image)
@@ -136,7 +138,7 @@ extension AVDocumentScanner: DocumentScanner {
         isStopped = true
     }
     func stop() {
-        guard  captureSession.isRunning else {
+        guard captureSession.isRunning else {
             return
         }
         captureSession.stopRunning()

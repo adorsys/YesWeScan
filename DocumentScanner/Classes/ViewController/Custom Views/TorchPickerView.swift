@@ -9,6 +9,7 @@ import UIKit
 
 protocol TorchPickerViewDelegate: class {
     var lastTorchLevel: Float { get }
+
     func toggleTorch()
     func didPickTorchLevel(_ level: Float)
 }
@@ -19,6 +20,7 @@ final class TorchPickerView: UIView {
     var torchLevel: Float = 0 {
         didSet {
             let index: Int
+            // swiftlint:disable switch_case_on_newline
             switch torchLevel {
             case 0:     index = 4
             case 0.25:  index = 3
@@ -26,10 +28,11 @@ final class TorchPickerView: UIView {
             case 0.75:  index = 1
             default:    index = 0
             }
+            // swiftlint:enable switch_case_on_newline
             updateTorchLevels(index: index)
         }
     }
-    private weak var stackView: UIStackView!
+    @IBOutlet private weak var stackView: UIStackView!
 
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -67,11 +70,11 @@ final class TorchPickerView: UIView {
     }
 
     private func makeStackView() -> UIView {
-        let buttons: [UIView] = Array(AnyIterator({
+        let buttons: [UIView] = Array(AnyIterator {
             let view = UIView()
             view.backgroundColor = .clear
             return view
-        }).prefix(5))
+        }.prefix(5))
         let stackView = UIStackView(arrangedSubviews: buttons)
         stackView.axis = .vertical
         stackView.spacing = 2
@@ -82,7 +85,7 @@ final class TorchPickerView: UIView {
             .forEach { button1, button2 in
                 button1.widthAnchor.constraint(equalTo: button2.widthAnchor).isActive = true
                 button1.heightAnchor.constraint(equalTo: button2.heightAnchor).isActive = true
-        }
+            }
 
         let view = UIView()
         view.isUserInteractionEnabled = true
@@ -110,12 +113,14 @@ final class TorchPickerView: UIView {
         return view
     }
 
-    @objc private func didPan(_ sender: UIPanGestureRecognizer) {
+    @objc
+    private func didPan(_ sender: UIPanGestureRecognizer) {
         guard let view = sender.view else { return }
         let yCoord = sender.location(in: view).y
         let percentage = yCoord / view.bounds.height
 
         let index: Int
+        // swiftlint:disable switch_case_on_newline
         switch percentage {
         case ...0.2:    index = 0
         case ...0.4:    index = 1
@@ -123,6 +128,7 @@ final class TorchPickerView: UIView {
         case ...0.8:    index = 3
         default:        index = 4
         }
+        // swiftlint:enable switch_case_on_newline
         updateTorchLevels(index: index)
 
         delegate?.didPickTorchLevel(1 - Float(index) * 0.25)
@@ -139,9 +145,11 @@ final class TorchPickerView: UIView {
         stackView.arrangedSubviews.last?.backgroundColor = UIColor(white: 0.7, alpha: 0.85)
     }
 
-    @objc override func removeFromSuperview() {
+    @objc
+    override func removeFromSuperview() {
 
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.5,
+                       animations: {
             self.frame.origin.x += self.stackView.frame.width
         }, completion: { completed in
             if completed {

@@ -9,7 +9,7 @@ DEPENDENCIES:
   - TOCropViewController
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - SwiftLint
     - TOCropViewController
 
@@ -24,4 +24,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: e3e22dedac36f1cd6edd0e524210df6b12095f94
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3
