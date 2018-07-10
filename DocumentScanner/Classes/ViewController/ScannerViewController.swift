@@ -33,12 +33,12 @@ public final class ScannerViewController: UIViewController {
     }
 
     private let sessionPreset: AVCaptureSession.Preset
-    private weak var targetView: UIView!
-    private weak var targetButton: UIView!
-    private weak var torchButton: UIView!
+    @IBOutlet private weak var targetView: UIView!
+    @IBOutlet private weak var targetButton: UIView!
+    @IBOutlet private weak var torchButton: UIView!
 
     private lazy var scanner: DocumentScanner & TorchPickerViewDelegate = {
-        return AVDocumentScanner(sessionPreset: self.sessionPreset, delegate: self)
+        AVDocumentScanner(sessionPreset: self.sessionPreset, delegate: self)
     }()
 
     private lazy var detectionLayer: CAShapeLayer = {
@@ -116,7 +116,7 @@ public final class ScannerViewController: UIViewController {
         super.viewWillDisappear(animated)
 
         navigationController?.view.subviews
-            .first(where: { $0 is TorchPickerView })?
+            .first { $0 is TorchPickerView }?
             .removeFromSuperview()
 
         scanner.stop()
@@ -125,7 +125,8 @@ public final class ScannerViewController: UIViewController {
 
 // Actions
 extension ScannerViewController {
-    @objc func captureScreen() {
+    @objc
+    func captureScreen() {
         let boundingRect: RectangleFeature?
         if targetView.isHidden {
             boundingRect = nil
@@ -146,13 +147,15 @@ extension ScannerViewController {
         }
     }
 
-    @objc func toggleTargetBraces() {
+    @objc
+    func toggleTargetBraces() {
         let newColor: UIColor = targetButton.backgroundColor == .white ? .clear : .white
         targetButton.backgroundColor = newColor
         targetView.isHidden = !targetView.isHidden
     }
 
-    @objc func toggleTorch() {
+    @objc
+    func toggleTorch() {
         setTorchUIOn(lastTorchLevel == 0)
         scanner.toggleTorch()
     }
@@ -161,7 +164,8 @@ extension ScannerViewController {
         torchButton.backgroundColor = on ? .white : .clear
     }
 
-    @objc func showTorchUI(_ sender: Any) {
+    @objc
+    func showTorchUI(_ sender: Any) {
         let superview = navigationController?.view ?? self.view!
 
         guard superview.subviews
@@ -185,9 +189,9 @@ extension ScannerViewController {
         picker.delegate = self
         superview.addSubview(picker)
         picker.frame.origin.x = self.view.frame.width
-        UIView.animate(withDuration: 0.5, animations: {
-            picker.frame.origin.x = self.view.frame.width-picker.frame.width
-        })
+        UIView.animate(withDuration: 0.5) {
+            picker.frame.origin.x = self.view.frame.width - picker.frame.width
+        }
     }
 }
 

@@ -33,6 +33,10 @@ opt_in_rules:
   - trailing_closure
   - vertical_parameter_alignment_on_call
 
+# Include the development pod
+included:
+  - ../DocumentScanner/Classes
+
 # Exclude tests, pods and vendor sources
 excluded:
   - DocumentScannerAppTests
