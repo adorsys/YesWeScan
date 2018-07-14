@@ -5,6 +5,9 @@ final class AVDocumentScanner: NSObject {
     var lastTorchLevel: Float = 0
     var desiredJitter: CGFloat = 100
 
+    private let imageContext = CIContext()
+    private lazy var textRecognizer = TextRecognizer(context: imageContext)
+
     lazy var previewLayer: CALayer = {
         let layer = AVCaptureVideoPreviewLayer(session: self.captureSession)
         layer.videoGravity = .resizeAspectFill
@@ -68,12 +71,12 @@ final class AVDocumentScanner: NSObject {
         output.videoSettings = [
             kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA
         ]
-        self.captureSession.addOutput(output)
+        captureSession.addOutput(output)
         output.connection(with: .video)?.videoOrientation = .portrait
         return output
     }()
 
-    private let detector = CIDetector(ofType: CIDetectorTypeRectangle, context: nil, options: [
+    private lazy var detector = CIDetector(ofType: CIDetectorTypeRectangle, context: imageContext, options: [
         CIDetectorAccuracy: CIDetectorAccuracyHigh,
         CIDetectorMaxFeatureCount: 10
     ])!
@@ -99,6 +102,15 @@ extension AVDocumentScanner: AVCaptureVideoDataOutputSampleBufferDelegate {
                               target: UIScreen.main.bounds.size)
             }
             .flatMap { smooth(feature: $0, in: image) }
+
+        if #available(iOS 11.0, *) {
+            textRecognizer.detectText(in: image) { boxes in
+                let normalizedBoxes = boxes.map {
+                    $0.normalized(source: image.extent.size, target: UIScreen.main.bounds.size)
+                }
+                self.delegate?.didFindTextBoxes(boxes: normalizedBoxes)
+            }
+        }
 
         DispatchQueue.main.async {
             self.delegate?.didRecognize(feature: feature, in: image)

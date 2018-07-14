@@ -21,6 +21,17 @@ extension CGPoint {
     }
 }
 
+extension CGRect {
+    func scaled(by size: CGSize) -> CGRect {
+        return CGRect(
+            x: origin.x * size.width,
+            y: origin.y * size.height,
+            width: width * size.width,
+            height: height * size.height
+        )
+    }
+}
+
 func abs(_ point: CGPoint) -> CGFloat {
     return abs(point.x) + abs(point.y)
 }

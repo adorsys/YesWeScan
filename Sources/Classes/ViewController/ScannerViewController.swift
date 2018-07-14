@@ -22,6 +22,7 @@ public final class ScannerViewController: UIViewController {
             detectionLayer.strokeColor = previewColor.withAlphaComponent(0.9).cgColor
         }
     }
+    public var textBoxColor: UIColor = .blue
 
     public init(sessionPreset: AVCaptureSession.Preset = .photo, config: ScannerConfig = .all) {
         self.sessionPreset = sessionPreset
@@ -42,13 +43,22 @@ public final class ScannerViewController: UIViewController {
     }()
 
     private lazy var detectionLayer: CAShapeLayer = {
-        let layer = CAShapeLayer()
-        layer.fillColor = previewColor.withAlphaComponent(0.3).cgColor
-        layer.strokeColor = previewColor.withAlphaComponent(0.9).cgColor
-        layer.lineWidth = 2
-        layer.contentsGravity = .resizeAspectFill
-        return layer
-    }()
+        $0.fillColor = previewColor.withAlphaComponent(0.3).cgColor
+        $0.strokeColor = previewColor.withAlphaComponent(0.9).cgColor
+        $0.lineWidth = 2
+        $0.contentsGravity = .resizeAspectFill
+        $0.frame = view.frame
+        return $0
+    }(CAShapeLayer())
+
+    private lazy var textboxLayer: CAShapeLayer = {
+        $0.fillColor = UIColor.clear.cgColor
+        $0.strokeColor = textBoxColor.cgColor
+        $0.lineWidth = 1
+        $0.contentsGravity = .resizeAspectFill
+        $0.frame = view.frame
+        return $0
+    }(CAShapeLayer())
 
     private func setupCameraPreview() {
         let cameraView = UIView(frame: view.frame)
@@ -59,8 +69,20 @@ public final class ScannerViewController: UIViewController {
         view.addSubview(cameraView)
 
         previewLayer.addSublayer(detectionLayer)
-        detectionLayer.frame = view.frame
         detectionLayer.path = nil
+
+        previewLayer.addSublayer(textboxLayer)
+        textboxLayer.path = nil
+    }
+
+    private func addTextboxes(for boxes: [CGRect]) {
+        let path = boxes
+            .map { $0.bezierPath }
+            .reduce(into: UIBezierPath()) { result, path in
+                result.append(path)
+            }
+
+        textboxLayer.path = path.cgPath
     }
 
     private func setupUI(config: ScannerConfig) {
@@ -207,6 +229,10 @@ extension ScannerViewController: DocumentScannerDelegate {
         guard let feature = feature else { detectionLayer.path = nil; return }
 
         detectionLayer.path = feature.bezierPath.cgPath
+    }
+
+    func didFindTextBoxes(boxes: [CGRect]) {
+        addTextboxes(for: boxes)
     }
 }
 
