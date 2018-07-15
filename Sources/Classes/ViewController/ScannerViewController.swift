@@ -38,6 +38,8 @@ public final class ScannerViewController: UIViewController {
     @IBOutlet private weak var targetButton: UIView!
     @IBOutlet private weak var torchButton: UIView!
 
+    @IBOutlet private weak var imageView: UIImageView!
+
     private lazy var scanner: DocumentScanner & TorchPickerViewDelegate = {
         AVDocumentScanner(sessionPreset: self.sessionPreset, delegate: self)
     }()
@@ -85,6 +87,15 @@ public final class ScannerViewController: UIViewController {
         textboxLayer.path = path.cgPath
     }
 
+    private func showFirstImage(_ images: [CIImage]) {
+        guard let image = images.first else {
+            imageView.image = nil
+            return
+        }
+
+        imageView.image = UIImage(ciImage: image)
+    }
+
     private func setupUI(config: ScannerConfig) {
 
         if config.contains(.manualCapture) {
@@ -120,6 +131,18 @@ public final class ScannerViewController: UIViewController {
             view.trailingAnchor.constraint(equalTo: torch.trailingAnchor, constant: 8).isActive = true
             view.bottomAnchor.constraint(equalTo: torch.bottomAnchor, constant: 8).isActive = true
         }
+
+        // DEBUG
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(imageView)
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 64),
+            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageView.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor),
+            imageView.trailingAnchor.constraint(greaterThanOrEqualTo: view.trailingAnchor)
+        ])
+        self.imageView = imageView
     }
 
     public override func viewDidLoad() {
@@ -233,6 +256,7 @@ extension ScannerViewController: DocumentScannerDelegate {
 
     func didFindTextBoxes(boxes: [RectangleFeature], images: [CIImage]) {
         addTextboxes(for: boxes)
+        showFirstImage(images)
     }
 }
 
