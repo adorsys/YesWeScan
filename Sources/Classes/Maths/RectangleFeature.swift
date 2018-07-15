@@ -24,6 +24,12 @@ extension RectangleFeature {
         bottomLeft = rectangleFeature.bottomLeft
         bottomRight = rectangleFeature.bottomRight
     }
+    init(_ textFeature: CITextFeature) {
+        topLeft = textFeature.topLeft
+        topRight = textFeature.topRight
+        bottomLeft = textFeature.bottomLeft
+        bottomRight = textFeature.bottomRight
+    }
 
     func smoothed(with previous: [RectangleFeature]) -> (RectangleFeature, [RectangleFeature]) {
 

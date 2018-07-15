@@ -75,7 +75,7 @@ public final class ScannerViewController: UIViewController {
         textboxLayer.path = nil
     }
 
-    private func addTextboxes(for boxes: [CGRect]) {
+    private func addTextboxes(for boxes: [RectangleFeature]) {
         let path = boxes
             .map { $0.bezierPath }
             .reduce(into: UIBezierPath()) { result, path in
@@ -231,7 +231,7 @@ extension ScannerViewController: DocumentScannerDelegate {
         detectionLayer.path = feature.bezierPath.cgPath
     }
 
-    func didFindTextBoxes(boxes: [CGRect]) {
+    func didFindTextBoxes(boxes: [RectangleFeature]) {
         addTextboxes(for: boxes)
     }
 }

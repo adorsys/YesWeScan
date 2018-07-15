@@ -53,6 +53,7 @@ final class AVDocumentScanner: NSObject {
     private let captureSession: AVCaptureSession
     private let imageQueue = DispatchQueue(label: "imageQueue")
     private let imageContext = CIContext()
+    private lazy var rectRecognizer = RectRecognizer(context: imageContext)
     private lazy var textRecognizer = TextRecognizer(context: imageContext)
 
     private let device: AVCaptureDevice? = {
@@ -92,49 +93,25 @@ extension AVDocumentScanner: AVCaptureVideoDataOutputSampleBufferDelegate {
             else { return }
 
         let image = CIImage(cvImageBuffer: buffer)
-        let feature = detector.features(in: image)
-            .compactMap { $0 as? CIRectangleFeature }
-            .map(RectangleFeature.init)
-            .max()
-            .map {
-                $0.normalized(source: image.extent.size,
-                              target: UIScreen.main.bounds.size)
-            }
-            .flatMap { smooth(feature: $0, in: image) }
 
-        if #available(iOS 11.0, *) {
-            textRecognizer.detectText(in: image) { boxes in
-                let normalizedBoxes = boxes.map {
-                    $0.normalized(source: image.extent.size, target: UIScreen.main.bounds.size)
-                }
-                self.delegate?.didFindTextBoxes(boxes: normalizedBoxes)
-            }
-        }
+        let feature = rectRecognizer.detectRect(in: image)
+        let textBoxes = textRecognizer.detectText(in: image)
 
         DispatchQueue.main.async {
             self.delegate?.didRecognize(feature: feature, in: image)
+            self.delegate?.didFindTextBoxes(boxes: textBoxes)
         }
-    }
 
-    func smooth(feature: RectangleFeature?, in image: CIImage) -> RectangleFeature? {
-        guard let feature = feature else { return nil }
-
-        let (smoothed, newFeatures) = feature.smoothed(with: lastFeatures)
-        lastFeatures = newFeatures
-
-        if newFeatures.count > 7,
-            newFeatures.jitter < desiredJitter,
+        if rectRecognizer.jitter < desiredJitter,
             isStopped == false,
             let delegate = delegate {
 
             pause()
 
-            captureImage(in: smoothed) { [weak delegate] image in
+            captureImage(in: feature) { [weak delegate] image in
                 delegate?.didCapture(image: image)
             }
         }
-
-        return smoothed
     }
 }
 

@@ -12,27 +12,16 @@ extension RectangleFeature {
         let normalize = normalizer(from: source, to: target)
 
         return RectangleFeature(
-            topLeft: normalize(topLeft.yAxisInverted(source.height)),
-            topRight: normalize(topRight.yAxisInverted(source.height)),
-            bottomLeft: normalize(bottomLeft.yAxisInverted(source.height)),
-            bottomRight: normalize(bottomRight.yAxisInverted(source.height))
+            topLeft: normalize(topLeft),
+            topRight: normalize(topRight),
+            bottomLeft: normalize(bottomLeft),
+            bottomRight: normalize(bottomRight)
         )
     }
 }
 
-extension CGRect {
-    func normalized(source: CGSize, target: CGSize) -> CGRect {
-        let normalize = normalizer(from: source, to: target)
-
-        let normalizedOrigin = normalize(origin)
-        let point = normalize(CGPoint(x: size.width, y: size.height))
-        let normalizedSize = CGSize(width: point.x, height: point.y)
-
-        return CGRect(origin: normalizedOrigin, size: normalizedSize)
-    }
-}
-
-private func normalizer(from source: CGSize, to target: CGSize) -> (CGPoint) -> CGPoint {// Since the source and target sizes have different aspect ratios,
+private func normalizer(from source: CGSize, to target: CGSize) -> (CGPoint) -> CGPoint {
+    // Since the source and target sizes have different aspect ratios,
     // source must be normalized. It behaves like
     // `UIView.ContentMode.aspectFill`, truncating portions that don't fit
     let normalizedSource = CGSize(width: source.height * target.aspectRatio,
@@ -45,6 +34,7 @@ private func normalizer(from source: CGSize, to target: CGSize) -> (CGPoint) -> 
 
     return { point in
         return point
+            .yAxisInverted(source.height)
             .shifted(by: CGPoint(x: xShift, y: yShift))
             .distorted(by: distortion)
     }
