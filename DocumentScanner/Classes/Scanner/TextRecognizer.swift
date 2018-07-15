@@ -29,8 +29,8 @@ struct TextRecognizer {
                               y: $0.origin.y * distortion.height,
                               width: $0.size.width * distortion.width,
                               height: $0.size.height * distortion.height)
-                    
-            }
+
+                }
 
             DispatchQueue.main.async {
                 completion(boxes)

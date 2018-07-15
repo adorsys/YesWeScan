@@ -5,9 +5,6 @@ final class AVDocumentScanner: NSObject {
     var lastTorchLevel: Float = 0
     var desiredJitter: CGFloat = 100
 
-    private let imageContext = CIContext()
-    private lazy var textRecognizer = TextRecognizer(context: imageContext)
-
     lazy var previewLayer: CALayer = {
         let layer = AVCaptureVideoPreviewLayer(session: self.captureSession)
         layer.videoGravity = .resizeAspectFill
@@ -38,7 +35,7 @@ final class AVDocumentScanner: NSObject {
         }
 
         captureSession = session
-        imageCapturer = ImageCapturer(session: session)
+        imageCapturer = ImageCapturer(session: session, context: imageContext)
         super.init()
         output.setSampleBufferDelegate(self, queue: imageQueue)
     }
@@ -55,6 +52,8 @@ final class AVDocumentScanner: NSObject {
     private var lastFeatures: [RectangleFeature] = []
     private let captureSession: AVCaptureSession
     private let imageQueue = DispatchQueue(label: "imageQueue")
+    private let imageContext = CIContext()
+    private lazy var textRecognizer = TextRecognizer(context: imageContext)
 
     private let device: AVCaptureDevice? = {
         AVCaptureDevice.DiscoverySession(

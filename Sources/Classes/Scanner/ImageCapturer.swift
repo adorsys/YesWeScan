@@ -3,16 +3,17 @@ import UIKit
 
 final class ImageCapturer: NSObject {
     private var feature: RectangleFeature?
-    private var imageClosure: ((UIImage) -> Void)
+    private var imageClosure: ((UIImage) -> Void) = { _ in }
 
+    private let context: CIContext
     private let output: AVCapturePhotoOutput
 
-    init(session: AVCaptureSession) {
+    init(session: AVCaptureSession, context: CIContext) {
         let output = AVCapturePhotoOutput()
         output.isHighResolutionCaptureEnabled = true
         session.addOutput(output)
         self.output = output
-        self.imageClosure = { _ in }
+        self.context = context
 
         super.init()
     }
@@ -22,10 +23,6 @@ final class ImageCapturer: NSObject {
         self.feature = feature
         self.imageClosure = completion
 
-        /*
-        let settings = AVCapturePhotoSettings(format: [
-            AVVideoCodecKey as String: output.availablePhotoCodecTypes.first!
-        ]) */
         let settings = AVCapturePhotoSettings()
         settings.isAutoStillImageStabilizationEnabled = true
         settings.isHighResolutionPhotoEnabled = true
@@ -70,7 +67,7 @@ extension ImageCapturer: AVCapturePhotoCaptureDelegate {
 
         // This is necessary because most UIKit functionality expects UIImages
         // that have the cgImage property set
-        if let cgImage = CIContext().createCGImage(processed, from: processed.extent) {
+        if let cgImage = context.createCGImage(processed, from: processed.extent) {
             imageClosure(UIImage(cgImage: cgImage))
         }
     }
