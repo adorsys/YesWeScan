@@ -75,11 +75,6 @@ final class AVDocumentScanner: NSObject {
         output.connection(with: .video)?.videoOrientation = .portrait
         return output
     }()
-
-    private lazy var detector = CIDetector(ofType: CIDetectorTypeRectangle, context: imageContext, options: [
-        CIDetectorAccuracy: CIDetectorAccuracyHigh,
-        CIDetectorMaxFeatureCount: 10
-    ])!
 }
 
 extension AVDocumentScanner: AVCaptureVideoDataOutputSampleBufferDelegate {
