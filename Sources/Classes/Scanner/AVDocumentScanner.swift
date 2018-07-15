@@ -99,7 +99,7 @@ extension AVDocumentScanner: AVCaptureVideoDataOutputSampleBufferDelegate {
 
         DispatchQueue.main.async {
             self.delegate?.didRecognize(feature: feature, in: image)
-            self.delegate?.didFindTextBoxes(boxes: textBoxes)
+            self.delegate?.didFindTextBoxes(boxes: textBoxes.0, images: textBoxes.1)
         }
 
         if rectRecognizer.jitter < desiredJitter,

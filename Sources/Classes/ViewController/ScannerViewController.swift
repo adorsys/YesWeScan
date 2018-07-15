@@ -231,7 +231,7 @@ extension ScannerViewController: DocumentScannerDelegate {
         detectionLayer.path = feature.bezierPath.cgPath
     }
 
-    func didFindTextBoxes(boxes: [RectangleFeature]) {
+    func didFindTextBoxes(boxes: [RectangleFeature], images: [CIImage]) {
         addTextboxes(for: boxes)
     }
 }

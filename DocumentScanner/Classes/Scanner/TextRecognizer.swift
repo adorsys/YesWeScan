@@ -18,13 +18,28 @@ final class TextRecognizer {
         ])!
     }
 
-    func detectText(in image: CIImage) -> [RectangleFeature] {
-        return detector.features(in: image)
+    func detectText(in image: CIImage) -> ([RectangleFeature], [CIImage]) {
+        let textFeatures = detector.features(in: image)
             .compactMap { $0 as? CITextFeature }
+
+        let boundingRects = textFeatures
             .map(RectangleFeature.init)
             .map {
                 $0.normalized(source: image.extent.size,
                               target: UIScreen.main.bounds.size)
             }
+
+        let images = textFeatures
+            .map { image
+                .cropped(to: $0.bounds)
+                .applyingFilter("CIPerspectiveCorrection", parameters: [
+                    "inputTopLeft": CIVector(cgPoint: $0.topLeft),
+                    "inputTopRight": CIVector(cgPoint: $0.topRight),
+                    "inputBottomLeft": CIVector(cgPoint: $0.bottomLeft),
+                    "inputBottomRight": CIVector(cgPoint: $0.bottomRight)
+                ])
+            }
+
+        return (boundingRects, images)
     }
 }
