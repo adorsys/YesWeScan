@@ -1,7 +1,7 @@
 PODS:
   - DocumentScanner (1.0.0)
-  - SwiftLint (0.25.0)
-  - TOCropViewController (2.3.6)
+  - SwiftLint (0.27.0)
+  - TOCropViewController (2.3.8)
 
 DEPENDENCIES:
   - DocumentScanner (from `../`)
@@ -18,9 +18,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DocumentScanner: fb9318d9ae3e96b7c24137b49b7728862599a5df
-  SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
-  TOCropViewController: 6d972f2c609372312648f96758e13a7f689efbc0
+  DocumentScanner: 2c478a4a27fa226a678476904dfc59b7664ab222
+  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
+  TOCropViewController: 0a075f02c253e88095143bbac7b013fc6fba5090
 
 PODFILE CHECKSUM: e3e22dedac36f1cd6edd0e524210df6b12095f94
 
