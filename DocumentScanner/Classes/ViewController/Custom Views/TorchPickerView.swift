@@ -54,7 +54,7 @@ final class TorchPickerView: UIView {
     }
 
     private func setupBlurIfNeeded() -> UIVisualEffectView? {
-        guard !UIAccessibilityIsReduceTransparencyEnabled()
+        guard !UIAccessibility.isReduceTransparencyEnabled
             else { backgroundColor = .black; return nil }
 
         backgroundColor = .clear

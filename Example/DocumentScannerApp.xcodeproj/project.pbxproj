@@ -202,9 +202,11 @@
 				TargetAttributes = {
 					B23598EE2097134700813B39 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 					};
 					B23599022097134800813B39 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 						TestTargetID = B23598EE2097134700813B39;
 					};
 				};
@@ -501,7 +503,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.adorsys.DocumentScannerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -520,7 +522,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.adorsys.DocumentScannerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -541,7 +543,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.adorsys.DocumentScannerAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DocumentScannerApp.app/DocumentScannerApp";
 			};
@@ -563,7 +565,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.adorsys.DocumentScannerAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DocumentScannerApp.app/DocumentScannerApp";
 			};
