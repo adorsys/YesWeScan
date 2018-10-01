@@ -46,7 +46,7 @@ public final class ScannerViewController: UIViewController {
         layer.fillColor = previewColor.withAlphaComponent(0.3).cgColor
         layer.strokeColor = previewColor.withAlphaComponent(0.9).cgColor
         layer.lineWidth = 2
-        layer.contentsGravity = "resizeAspectFill"
+        layer.contentsGravity = .resizeAspectFill
         return layer
     }()
 

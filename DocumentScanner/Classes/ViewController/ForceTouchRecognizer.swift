@@ -50,7 +50,7 @@ final class ForceTouchGestureRecognizer: UIGestureRecognizer {
         normalizeForceAndFireEvent(.cancelled, touches: touches)
     }
 
-    private func normalizeForceAndFireEvent(_ state: UIGestureRecognizerState, touches: Set<UITouch>) {
+    private func normalizeForceAndFireEvent(_ state: UIGestureRecognizer.State, touches: Set<UITouch>) {
         guard let firstTouch = touches.first else { return }
 
         maximumForce = min(firstTouch.maximumPossibleForce, maximumForce)

@@ -80,7 +80,7 @@ class IconButton: UIButton {
         let paragraph = NSMutableParagraphStyle()
         paragraph.lineBreakMode = .byWordWrapping
 
-        var attributes: [NSAttributedStringKey: Any] = [:]
+        var attributes: [NSAttributedString.Key: Any] = [:]
         attributes[.font] = UIFont.systemFont(ofSize: 18)
         attributes[.foregroundColor] = drawColour
         attributes[.paragraphStyle] = paragraph
