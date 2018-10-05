@@ -30,7 +30,6 @@ class ViewController: UIViewController {
 
     // MARK: Init
     required init?(coder aDecoder: NSCoder) {
-
         super.init(coder: aDecoder)
     }
 
@@ -104,10 +103,8 @@ extension ViewController {
     }
 
     @IBAction func editImage(_ sender: UIButton) {
-        guard let image = self.scannedImage else {
-            return
-
-        }
+        guard let image = self.scannedImage
+            else { return }
 
         let cropViewController = TOCropViewController(image: image)
         cropViewController.delegate = self
