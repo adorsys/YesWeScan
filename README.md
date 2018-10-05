@@ -70,7 +70,7 @@ back to the default value.
 The scanner's UI can be configured using the initializer:
 
 ```swift
-ScannerViewController(config: [.all])
+ScannerViewController(config: [.torch, .manualCapture])
 ```
 
 The following options are available:
