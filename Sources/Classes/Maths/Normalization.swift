@@ -33,7 +33,7 @@ private func normalizer(from source: CGSize, to target: CGSize) -> (CGPoint) -> 
                               dy: target.height / normalizedSource.height)
 
     return { point in
-        return point
+        point
             .yAxisInverted(source.height)
             .shifted(by: CGPoint(x: xShift, y: yShift))
             .distorted(by: distortion)
