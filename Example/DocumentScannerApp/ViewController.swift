@@ -41,6 +41,8 @@ class ViewController: UIViewController {
 
         self.tapRecogniser.delegate = self
         self.view.addGestureRecognizer(tapRecogniser)
+        
+        addToSiriShortcuts()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -110,5 +112,27 @@ extension ViewController {
         cropViewController.delegate = self
 
         present(cropViewController, animated: true)
+    }
+}
+
+extension ViewController {
+    func addToSiriShortcuts(){
+        if #available(iOS 12.0, *) {
+            let activity = NSUserActivity(activityType: "de.adorsys.DocumentScannerApp.OpenDocumentScanner")
+            activity.title = "Scan Document"
+            activity.userInfo = ["Document Scanner" : "open document scanner"]
+            activity.isEligibleForSearch = true
+            activity.isEligibleForPrediction = true
+            activity.persistentIdentifier = NSUserActivityPersistentIdentifier("de.adorsys.DocumentScannerApp.OpenDocumentScanner")
+            view.userActivity = activity
+            activity.becomeCurrent()
+        }
+    }
+    
+    public func openDocumentScanner() {
+        let scanner = ScannerViewController()
+        scanner.delegate = self
+        navigationController?.pushViewController(scanner, animated: true)
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
 }

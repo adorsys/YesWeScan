@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DocumentScanner: 2c478a4a27fa226a678476904dfc59b7664ab222
+  DocumentScanner: b31b6fa70d07595596bd0cbcf0fa39c1774a03f3
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   TOCropViewController: 0a075f02c253e88095143bbac7b013fc6fba5090
 

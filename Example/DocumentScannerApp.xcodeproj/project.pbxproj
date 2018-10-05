@@ -34,6 +34,8 @@
 /* Begin PBXFileReference section */
 		051A466FCEA0595AB7387809 /* Pods-DocumentScannerAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentScannerAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentScannerAppTests/Pods-DocumentScannerAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		0535FB8FDBA0EF87ADC74B50 /* Pods-DocumentScannerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentScannerApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentScannerApp/Pods-DocumentScannerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		22CF73BE216777DE008C9FEB /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		22D8225221676AE90035206F /* DocumentScannerApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DocumentScannerApp.entitlements; sourceTree = "<group>"; };
 		5603B8B2D3724D5A6B2F17CE /* Pods_DocumentScannerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentScannerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA39DBC699FA54880710F8F /* Pods-DocumentScannerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentScannerApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentScannerApp/Pods-DocumentScannerApp.release.xcconfig"; sourceTree = "<group>"; };
 		B23598EF2097134700813B39 /* DocumentScannerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentScannerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,7 @@
 		A8D0652F25346879B92BA74B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22CF73BE216777DE008C9FEB /* Intents.framework */,
 				5603B8B2D3724D5A6B2F17CE /* Pods_DocumentScannerApp.framework */,
 				FF7AB44AFDCDC6FAECADE10F /* Pods_DocumentScannerAppTests.framework */,
 			);
@@ -117,6 +120,7 @@
 		B23598F12097134700813B39 /* DocumentScannerApp */ = {
 			isa = PBXGroup;
 			children = (
+				22D8225221676AE90035206F /* DocumentScannerApp.entitlements */,
 				B2B60675209715C0005A43D4 /* Views */,
 				B23598F22097134700813B39 /* AppDelegate.swift */,
 				B23598F42097134700813B39 /* ViewController.swift */,
@@ -203,6 +207,11 @@
 					B23598EE2097134700813B39 = {
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.Siri = {
+								enabled = 1;
+							};
+						};
 					};
 					B23599022097134800813B39 = {
 						CreatedOnToolsVersion = 9.3;
@@ -494,9 +503,11 @@
 			baseConfigurationReference = 0535FB8FDBA0EF87ADC74B50 /* Pods-DocumentScannerApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DocumentScannerApp/DocumentScannerApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FCNMCC2Y82;
 				INFOPLIST_FILE = DocumentScannerApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -513,9 +524,11 @@
 			baseConfigurationReference = 7CA39DBC699FA54880710F8F /* Pods-DocumentScannerApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DocumentScannerApp/DocumentScannerApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FCNMCC2Y82;
 				INFOPLIST_FILE = DocumentScannerApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
