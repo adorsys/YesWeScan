@@ -13,11 +13,11 @@
 
 Before you can do this, register yourself with trunk [according to this guide][1].
 
-`pod trunk push DocumentScanner.podspec`
+`pod trunk push YesWeScan.podspec`
 
 3. (Optional) Push to In-House Repo
 
-`pod repo push csi-podspecs DocumentScanner.podspec`
+`pod repo push csi-podspecs YesWeScan.podspec`
 
 You can find more info about releasing [here][2].
 
