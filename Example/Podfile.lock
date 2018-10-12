@@ -1,12 +1,12 @@
 PODS:
-  - DocumentScanner (1.0.0)
   - SwiftLint (0.27.0)
   - TOCropViewController (2.3.8)
+  - YesWeScan (1.0.2)
 
 DEPENDENCIES:
-  - DocumentScanner (from `../`)
   - SwiftLint
   - TOCropViewController
+  - YesWeScan (from `../`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -14,14 +14,14 @@ SPEC REPOS:
     - TOCropViewController
 
 EXTERNAL SOURCES:
-  DocumentScanner:
+  YesWeScan:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DocumentScanner: b31b6fa70d07595596bd0cbcf0fa39c1774a03f3
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   TOCropViewController: 0a075f02c253e88095143bbac7b013fc6fba5090
+  YesWeScan: 5825de3e8b5106ca65554ddb1307bb8dc6caf017
 
-PODFILE CHECKSUM: e3e22dedac36f1cd6edd0e524210df6b12095f94
+PODFILE CHECKSUM: 8a020456342e9d51e5b5d38fd3c327a62252d10b
 
 COCOAPODS: 1.5.3

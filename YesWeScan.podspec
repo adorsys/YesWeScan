@@ -7,8 +7,8 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'DocumentScanner'
-  s.version          = '1.0.0'
+  s.name             = 'YesWeScan'
+  s.version          = '1.0.2'
   s.summary          = 'adorsys Document Scanner (incl. View Controller)'
 
 # This description is used to generate tags and improve search results.
@@ -29,9 +29,9 @@ This pod contains a ready to use view controller for document scanning.
   s.ios.deployment_target = '10.0'
   s.swift_version = '4.2'
 
-  s.source_files = 'DocumentScanner/Classes/**/*'
+  s.source_files = 'Sources/Classes/**/*'
   s.resource_bundles = {
-    'Assets' => ['DocumentScanner/Assets/**/*']
+    'Assets' => ['Sources/Assets/**/*']
   }
   s.frameworks = 'AVFoundation'
 end

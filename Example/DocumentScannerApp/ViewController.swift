@@ -8,7 +8,7 @@
 
 import UIKit
 
-import DocumentScanner
+import YesWeScan
 import TOCropViewController
 
 class ViewController: UIViewController {

@@ -1,20 +1,22 @@
-# DocumentScanner
+# YesWeScan
 
+[![Build Status](https://travis-ci.com/adorsys/document-scanner-ios.svg?branch=master)](https://travis-ci.com/adorsys/document-scanner-ios.svg?branch=master)
 [![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg)](https://swift.org)
 [![license](https://img.shields.io/badge/license-Apache_2.0-lightgrey.svg)](https://github.com/adorsys/document-scanner-ios/blob/master/LICENSE)
 [![platform](https://img.shields.io/badge/platform-iOS_10+-lightgrey.svg)](https://img.shields.io/badge/platform-iOS_10+-lightgrey.svg)
 
-This pod contains a ready to use view controller for document scanning.
+
+This pod contains a ready to use view controller for document scanning. Yes we scan! 
 
 ## Requirements
 - iOS 10.0 SDK or later
 
 ## Installation
-DocumentScanner is available through [CocoaPods](http://cocoapods.org). To
+YesWeScan is available through [CocoaPods](http://cocoapods.org). To
 install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'DocumentScanner', :git => 'https://github.com/adorsys/document-scanner-ios'
+pod 'YesWeScan'
 ```
 
 ## Using this Pod
@@ -22,7 +24,7 @@ pod 'DocumentScanner', :git => 'https://github.com/adorsys/document-scanner-ios'
 #### Scanner View Controller
 
 The main class in this project is `ScannerViewController`. You can access it
-with `import DocumentScanner`.
+with `import YesWeScan`.
 
 ```swift
 class ViewController: UIViewController,  {
@@ -97,4 +99,4 @@ the Example project).
 
 ## License
 
-DocumentScanner is released under the **Apache 2.0 License**. Please see the [LICENSE](https://github.com/adorsys/document-scanner-ios/blob/master/LICENSE) file for more information.
+YesWeScan is released under the **Apache 2.0 License**. Please see the [LICENSE](https://github.com/adorsys/document-scanner-ios/blob/master/LICENSE) file for more information.
