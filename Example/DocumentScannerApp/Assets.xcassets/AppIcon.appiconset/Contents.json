@@ -33,13 +33,13 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "Canvas@2x.png",
+      "filename" : "YesWeScan@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "Canvas 2.png",
+      "filename" : "YesWeScan@3x.png",
       "scale" : "3x"
     },
     {
@@ -90,7 +90,7 @@
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "Canvas1024.png",
+      "filename" : "YesWeScan_1024.png",
       "scale" : "1x"
     }
   ],
