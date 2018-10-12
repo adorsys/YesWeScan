@@ -115,12 +115,13 @@ extension ViewController {
 extension ViewController {
     func addToSiriShortcuts(){
         if #available(iOS 12.0, *) {
-            let activity = NSUserActivity(activityType: "de.adorsys.DocumentScannerApp.OpenDocumentScanner")
+            let identifier = Bundle.main.userActivityIdentifier
+            let activity = NSUserActivity(activityType: identifier)
             activity.title = "Scan Document"
             activity.userInfo = ["Document Scanner" : "open document scanner"]
             activity.isEligibleForSearch = true
             activity.isEligibleForPrediction = true
-            activity.persistentIdentifier = NSUserActivityPersistentIdentifier("de.adorsys.DocumentScannerApp.OpenDocumentScanner")
+            activity.persistentIdentifier = NSUserActivityPersistentIdentifier(identifier)
             view.userActivity = activity
             activity.becomeCurrent()
         }
