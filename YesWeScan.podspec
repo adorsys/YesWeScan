@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YesWeScan'
-  s.version          = '1.0.0'
+  s.version          = `git describe --tags`
   s.summary          = 'adorsys Document Scanner (incl. View Controller)'
 
 # This description is used to generate tags and improve search results.
