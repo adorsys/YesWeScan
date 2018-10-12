@@ -97,6 +97,45 @@ Depending on your use case, it probably makes sense to store a strong reference
 to the `ScannerViewController` in the presenting View Controller (as seen in
 the Example project).
 
+#### Siri Shortcuts
+
+The scanner example project supports Siri Shortcuts since iOS 12*.
+The User own shortcut opens the app and navigates to the Document Scanner.
+You can find the implementation in the example project.
+
+The implementation works as follows:
+Activate Siri in the project and add a NSUserActivityType identifier in info.plist. 
+Then activate Siri Shortcut adding following lines in the project:
+
+```swift
+if #available(iOS 12.0, *) {
+    let identifier = Bundle.main.userActivityIdentifier
+    let activity = NSUserActivity(activityType: identifier)
+    activity.title = "The String the User will see in preferences"
+    activity.userInfo = ["Document Scanner" : "open document scanner"]
+    activity.isEligibleForSearch = true
+    activity.isEligibleForPrediction = true
+    activity.persistentIdentifier = NSUserActivityPersistentIdentifier(identifier)
+    view.userActivity = activity
+    activity.becomeCurrent()
+}
+
+```
+To call a specific function add in the AppDelegate file:
+```swift
+func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+    if #available(iOS 12.0, *) {
+        if userActivity.activityType == Bundle.main.userActivityIdentifier {
+            let navigationController = window?.rootViewController! as! UINavigationController
+            let viewController = navigationController.children.first as! ViewController
+            viewController.theFunctionToCall()
+        }
+        return true
+    }
+    return false
+}
+```
+
 ## License
 
 YesWeScan is released under the **Apache 2.0 License**. Please see the [LICENSE](https://github.com/adorsys/document-scanner-ios/blob/master/LICENSE) file for more information.
