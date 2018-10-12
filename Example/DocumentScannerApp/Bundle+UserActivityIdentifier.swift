@@ -10,7 +10,10 @@ import Foundation
 
 extension Bundle {
     var userActivityIdentifier: String {
-        let nsUserActivityTypes = Bundle.main.object(forInfoDictionaryKey: "NSUserActivityTypes")! as! [String]
-        return nsUserActivityTypes.first!
+        guard let nsUserActivityTypes = object(forInfoDictionaryKey: "NSUserActivityTypes") as? [String],
+            let activityId = nsUserActivityTypes.first else {
+            return "error"
+        }
+        return activityId
     }
 }

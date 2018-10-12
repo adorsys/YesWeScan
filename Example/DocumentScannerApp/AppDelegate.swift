@@ -20,11 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         if #available(iOS 12.0, *) {
-            if userActivity.activityType == Bundle.main.userActivityIdentifier {
-                let navigationController = window?.rootViewController! as! UINavigationController
-                let viewController = navigationController.children.first as! ViewController
-                viewController.openDocumentScanner()
+            guard userActivity.activityType == Bundle.main.userActivityIdentifier,
+                let navigationController = window?.rootViewController! as? UINavigationController,
+                let viewController = navigationController.children.first as? ViewController else {
+                    return false
             }
+            viewController.openDocumentScanner()
             return true
         } else {
             return false
