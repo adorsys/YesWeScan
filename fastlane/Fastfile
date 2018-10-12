@@ -1,42 +1,40 @@
 PodspecName = "DocumentScanner.podspec"
 
-platform :ios do
-    desc "Verfies the correctness of the podspec. This also runs tests"
-    lane :analyze do
-      pod_lib_lint(use_bundle_exec: true, verbose: true)
-    end
-  
-    desc "Push the current podspec to the CSI repository"
-    lane :publish do
-      pod_push
-      pod_push(repo: "csi-podspecs")
-    end
-  
-    desc 'Sets git tag to given version string (`1.2.3_build2` is possbile) and pushes to remote. E.g: fastlane ios setversion to:"0.2.6"'
-    lane :setversion do |options|
-      if is_ci?
-        UI.error "This lane is not allowed in CI"
-        return false
-      end
-      ensure_git_status_clean
-      version_number_to_set = options[:to]
-      git_tag_version_matches = /^([0-9])+.([0-9])+.([0-9])+(.*)?/.match(version_number_to_set)
-      only_version_number_matches = /^([0-9])+.([0-9])+.([0-9])+/.match(version_number_to_set)
-  
-      if only_version_number_matches[0] == nil || git_tag_version_matches[0] == nil
-        UI.error `Version number "#{version_number_to_set}" is not valid`
-        return false
-      end
-  
-      version = only_version_number_matches[0]
-  
-      version_bump_podspec(path: PodspecName, version_number: version)
-  
-      UI.message "Pod Version: #{version}"
+desc "Verfies the correctness of the podspec. This also runs tests"
+lane :analyze do
+  pod_lib_lint(use_bundle_exec: true, verbose: true)
+end
 
-      git_commit(path: PodspecName, message: "Version Bump to #{version}")
-      add_git_tag(tag: version)
-      reset_git_repo
-      push_to_git_remote
-    end
+desc "Push the current podspec to Trunk and CSI repository"
+lane :publish do
+  pod_push
+  pod_push(repo: "csi-podspecs")
+end
+
+desc 'Sets git tag to given version string (`1.2.3_build2` is possbile) and pushes to remote. E.g: fastlane ios setversion to:"0.2.6"'
+lane :setversion do |options|
+  if is_ci?
+    UI.error "This lane is not allowed in CI"
+    return false
+  end
+  ensure_git_status_clean
+  version_number_to_set = options[:to]
+  git_tag_version_matches = /^([0-9])+.([0-9])+.([0-9])+(.*)?/.match(version_number_to_set)
+  only_version_number_matches = /^([0-9])+.([0-9])+.([0-9])+/.match(version_number_to_set)
+
+  if only_version_number_matches[0] == nil || git_tag_version_matches[0] == nil
+    UI.error `Version number "#{version_number_to_set}" is not valid`
+    return false
+  end
+
+  version = only_version_number_matches[0]
+
+  version_bump_podspec(path: PodspecName, version_number: version)
+
+  UI.message "Pod Version: #{version}"
+
+  git_commit(path: PodspecName, message: "Version Bump to #{version}")
+  add_git_tag(tag: version)
+  reset_git_repo
+  push_to_git_remote
 end
