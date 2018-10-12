@@ -41,7 +41,7 @@ class ViewController: UIViewController {
 
         self.tapRecogniser.delegate = self
         self.view.addGestureRecognizer(tapRecogniser)
-        
+
         addToSiriShortcuts()
     }
 
@@ -113,12 +113,12 @@ extension ViewController {
 }
 
 extension ViewController {
-    func addToSiriShortcuts(){
+    func addToSiriShortcuts() {
         if #available(iOS 12.0, *) {
             let identifier = Bundle.main.userActivityIdentifier
             let activity = NSUserActivity(activityType: identifier)
             activity.title = "Scan Document"
-            activity.userInfo = ["Document Scanner" : "open document scanner"]
+            activity.userInfo = ["Document Scanner": "open document scanner"]
             activity.isEligibleForSearch = true
             activity.isEligibleForPrediction = true
             activity.persistentIdentifier = NSUserActivityPersistentIdentifier(identifier)
@@ -126,7 +126,7 @@ extension ViewController {
             activity.becomeCurrent()
         }
     }
-    
+
     public func openDocumentScanner() {
         let scanner = ScannerViewController()
         scanner.delegate = self
