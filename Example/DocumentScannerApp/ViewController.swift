@@ -98,10 +98,7 @@ extension ViewController: TOCropViewControllerDelegate {
 
 extension ViewController {
     @IBAction func scanDocument(_ sender: UIButton) {
-        let scanner = ScannerViewController()
-        scanner.delegate = self
-        navigationController?.pushViewController(scanner, animated: true)
-        navigationController?.setNavigationBarHidden(false, animated: false)
+        openDocumentScanner()
     }
 
     @IBAction func editImage(_ sender: UIButton) {
