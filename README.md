@@ -1,4 +1,4 @@
-# YesWeScan
+<img src="YesWeScan.png" width="250" max-width="90%" alt="YesWeScan" />
 
 [![Build Status](https://travis-ci.com/adorsys/document-scanner-ios.svg?branch=master)](https://travis-ci.com/adorsys/document-scanner-ios.svg?branch=master)
 [![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg)](https://swift.org)
