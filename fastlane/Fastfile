@@ -1,4 +1,4 @@
-PodspecName = "DocumentScanner.podspec"
+PodspecName = "YesWeScan.podspec"
 
 desc "Verfies the correctness of the podspec. This also runs tests"
 lane :analyze do
