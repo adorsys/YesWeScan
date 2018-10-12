@@ -35,7 +35,7 @@ opt_in_rules:
 
 # Include the development pod
 included:
-  - ../DocumentScanner/Classes
+  - ../Sources/Classes
 
 # Exclude tests, pods and vendor sources
 excluded:

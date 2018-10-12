@@ -3,7 +3,7 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'DocumentScannerApp' do
-  pod 'DocumentScanner', :path => '../'
+  pod 'YesWeScan', :path => '../'
   pod 'TOCropViewController'
   pod 'SwiftLint'
 
