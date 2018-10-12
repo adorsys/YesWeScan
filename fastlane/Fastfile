@@ -7,7 +7,7 @@ end
 
 desc "Push the current podspec to Trunk and CSI repository"
 lane :publish do
-  pod_push(repo: "csi-podspecs")
+  pod_push
 end
 
 desc 'Sets git tag to given version string (`1.2.3_build2` is possbile) and pushes to remote. E.g: fastlane ios setversion to:"0.2.6"'
