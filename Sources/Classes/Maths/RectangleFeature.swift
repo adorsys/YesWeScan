@@ -1,3 +1,5 @@
+import UIKit
+
 struct RectangleFeature {
     let topLeft: CGPoint
     let topRight: CGPoint

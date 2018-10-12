@@ -1,3 +1,5 @@
+import CoreGraphics
+
 extension Array where Element == RectangleFeature {
     // Difference of all elements vs. average
     var jitter: CGFloat {

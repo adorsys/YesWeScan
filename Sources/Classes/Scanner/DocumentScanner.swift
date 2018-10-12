@@ -1,4 +1,5 @@
 import AVFoundation
+import UIKit
 
 protocol DocumentScanner {
 
