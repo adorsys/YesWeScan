@@ -2,22 +2,19 @@
 
 0. Ensure the validation passes
 
-`pod lib lint`
+`bundle exec fastlane analyze`
+
+This will run `pod lib lint` internally.
 
 1. Tag the release
 
-`git tag 1.0.0`
-`git push --tags`
+`bundle exec fastlane setversion to:x.y.z`
 
 2. Submit to Cocoapods Trunk
 
 Before you can do this, register yourself with trunk [according to this guide][1].
 
-`pod trunk push YesWeScan.podspec`
-
-3. (Optional) Push to In-House Repo
-
-`pod repo push csi-podspecs YesWeScan.podspec`
+`bundle exec fastlane publish`
 
 You can find more info about releasing [here][2].
 
