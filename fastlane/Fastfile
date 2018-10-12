@@ -7,7 +7,6 @@ end
 
 desc "Push the current podspec to Trunk and CSI repository"
 lane :publish do
-  pod_push
   pod_push(repo: "csi-podspecs")
 end
 
