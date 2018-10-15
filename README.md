@@ -13,7 +13,7 @@ This pod contains a ready to use view controller for document scanning. Yes we s
 
 ## Scanner Preview
 
-<img src="Images/preview.gif" width="250" max-width="50%" alt="Demo" />
+<img src="Images/preview.GIF" width="250" max-width="50%" alt="Demo" />
 
 ## Installation
 YesWeScan is available through [CocoaPods](http://cocoapods.org). To
