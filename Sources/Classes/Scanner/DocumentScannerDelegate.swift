@@ -1,3 +1,6 @@
+import UIKit
+import CoreImage
+
 protocol DocumentScannerDelegate: class {
     // Always called on main queue
     func didCapture(image: UIImage)
