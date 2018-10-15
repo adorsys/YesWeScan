@@ -1,4 +1,4 @@
-<img src="YesWeScan.png" width="250" max-width="90%" alt="YesWeScan" />
+<img src="Images/YesWeScan.png" width="250" max-width="90%" alt="YesWeScan" />
 
 [![Build Status](https://travis-ci.com/adorsys/document-scanner-ios.svg?branch=master)](https://travis-ci.com/adorsys/document-scanner-ios.svg?branch=master)
 [![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg)](https://swift.org)
@@ -10,6 +10,10 @@ This pod contains a ready to use view controller for document scanning. Yes we s
 
 ## Requirements
 - iOS 10.0 SDK or later
+
+## Scanner Preview
+
+<img src="Images/preview.GIF" width="250" max-width="50%" alt="Demo" />
 
 ## Installation
 YesWeScan is available through [CocoaPods](http://cocoapods.org). To
