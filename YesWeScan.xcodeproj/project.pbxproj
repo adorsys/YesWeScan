@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E7C3E7B2174AC8C00AA4E31 /* AssetsAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7C3E7A2174AC8C00AA4E31 /* AssetsAccessTests.swift */; };
+		4E7C3E7C2174B12200AA4E31 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EDFAC632170E43C00B1402A /* Media.xcassets */; };
 		4EDFAC3D2170E3E100B1402A /* YesWeScan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDFAC332170E3E100B1402A /* YesWeScan.framework */; };
 		4EDFAC652170E43C00B1402A /* RectangleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC502170E43C00B1402A /* RectangleFeature.swift */; };
 		4EDFAC662170E43C00B1402A /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC512170E43C00B1402A /* Operators.swift */; };
@@ -23,8 +25,6 @@
 		4EDFAC712170E43C00B1402A /* ImageCapturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC5F2170E43C00B1402A /* ImageCapturer.swift */; };
 		4EDFAC722170E43C00B1402A /* DocumentScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC602170E43C00B1402A /* DocumentScanner.swift */; };
 		4EDFAC732170E43C00B1402A /* AVDocumentScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC612170E43C00B1402A /* AVDocumentScanner.swift */; };
-		4EDFAC742170E43C00B1402A /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EDFAC632170E43C00B1402A /* Media.xcassets */; };
-		4EDFAC752170E43C00B1402A /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4EDFAC642170E43C00B1402A /* .gitkeep */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E7C3E7A2174AC8C00AA4E31 /* AssetsAccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsAccessTests.swift; sourceTree = "<group>"; };
 		4EDFAC332170E3E100B1402A /* YesWeScan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YesWeScan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EDFAC3C2170E3E100B1402A /* YesWeScanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YesWeScanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EDFAC502170E43C00B1402A /* RectangleFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleFeature.swift; sourceTree = "<group>"; };
@@ -56,7 +57,6 @@
 		4EDFAC602170E43C00B1402A /* DocumentScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentScanner.swift; sourceTree = "<group>"; };
 		4EDFAC612170E43C00B1402A /* AVDocumentScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVDocumentScanner.swift; sourceTree = "<group>"; };
 		4EDFAC632170E43C00B1402A /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		4EDFAC642170E43C00B1402A /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,10 +78,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E7C3E792174AC7800AA4E31 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				4E7C3E7A2174AC8C00AA4E31 /* AssetsAccessTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		4EDFAC272170E3C500B1402A = {
 			isa = PBXGroup;
 			children = (
 				4EDFAC4D2170E43C00B1402A /* Sources */,
+				4E7C3E792174AC7800AA4E31 /* Tests */,
 				4EDFAC342170E3E100B1402A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -162,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				4EDFAC632170E43C00B1402A /* Media.xcassets */,
-				4EDFAC642170E43C00B1402A /* .gitkeep */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -230,6 +238,7 @@
 					};
 					4EDFAC3B2170E3E100B1402A = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -256,8 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EDFAC742170E43C00B1402A /* Media.xcassets in Resources */,
-				4EDFAC752170E43C00B1402A /* .gitkeep in Resources */,
+				4E7C3E7C2174B12200AA4E31 /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E7C3E7B2174AC8C00AA4E31 /* AssetsAccessTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,7 +544,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = YesWeScanTests/Info.plist;
+				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -603,7 +612,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = YesWeScanTests/Info.plist;
+				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
