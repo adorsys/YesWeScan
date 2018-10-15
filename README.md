@@ -104,7 +104,7 @@ The User own shortcut opens the app and navigates to the Document Scanner.
 You can find the implementation in the example project.
 
 The implementation works as follows:
-Activate Siri in the project and add a NSUserActivityType identifier in info.plist. 
+Activate Siri in the project and add a `NSUserActivityTypes` identifier in `info.plist`. 
 Then activate Siri Shortcut adding following lines in the project:
 
 ```swift
@@ -121,7 +121,7 @@ if #available(iOS 12.0, *) {
 }
 
 ```
-To call a specific function add in the AppDelegate file:
+To call a specific function add in the `AppDelegate.swift` file:
 ```swift
 func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
     if #available(iOS 12.0, *) {

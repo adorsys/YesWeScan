@@ -12,7 +12,7 @@ extension Bundle {
     var userActivityIdentifier: String {
         guard let nsUserActivityTypes = object(forInfoDictionaryKey: "NSUserActivityTypes") as? [String],
             let activityId = nsUserActivityTypes.first else {
-            return "error"
+            fatalError("Need to declare at least one NSUserActivityTypes in your info.plist")
         }
         return activityId
     }
