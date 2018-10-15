@@ -17,12 +17,22 @@ This pod contains a ready to use view controller for document scanning. Yes we s
 <img src="Images/preview.GIF" width="250" max-width="50%" alt="Demo" />
 
 ## Installation
-YesWeScan is available through [CocoaPods](http://cocoapods.org). To
-install it, simply add the following line to your Podfile:
+
+#### Cocoapods
+
+YesWeScan is available through [CocoaPods](http://cocoapods.org).
+To install it, simply add the following line to your `Podfile`:
 
 ```ruby
 pod 'YesWeScan'
 ```
+
+#### Carthage
+
+YesWeScan is also available via [Carthage](https://github.com/Carthage/Carthage).
+Add the following line to your `Cartfile`:
+
+`github "adorsys/document-scanner-ios"`
 
 ## Using this Pod
 
