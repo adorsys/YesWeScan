@@ -32,7 +32,9 @@ pod 'YesWeScan'
 YesWeScan is also available via [Carthage](https://github.com/Carthage/Carthage).
 Add the following line to your `Cartfile`:
 
-`github "adorsys/document-scanner-ios"`
+```
+github "adorsys/document-scanner-ios"
+```
 
 ## Using this Pod
 
