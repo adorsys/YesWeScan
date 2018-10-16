@@ -36,31 +36,13 @@ opt_in_rules:
 # Include the development pod
 included:
   - ../Sources/Classes
+  - .
 
 # Exclude tests, pods and vendor sources
 excluded:
   - DocumentScannerAppTests
   - Pods
 
-# Configure warning/error levels
-# file_length:
-#   - 450
-#   - 500
-# function_body_length:
-#   - 100
-#   - 150
-# function_parameter_count:
-#   - 9
-#   - 10
-# line_length:
-#   - 200
-#   - 250
-# identifier_name:
-#   max_length:
-#     warning: 45
-#     error: 60
-#   min_length:
-#     warning: 1
 type_name:
   max_length:
     warning: 40
