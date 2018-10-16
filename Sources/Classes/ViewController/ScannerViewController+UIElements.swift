@@ -1,9 +1,4 @@
-//
-//  ScannerViewController+UIElements.swift
-//  DocumentScanner
-//
-//  Created by Xaver Lohmueller on 25.09.17.
-//
+import UIKit
 
 extension ScannerViewController {
     func makeTargetBraceButton() -> UIView {

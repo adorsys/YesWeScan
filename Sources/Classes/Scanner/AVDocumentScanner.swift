@@ -1,5 +1,5 @@
 import AVFoundation
-import CoreMedia
+import UIKit
 
 final class AVDocumentScanner: NSObject {
     var lastTorchLevel: Float = 0

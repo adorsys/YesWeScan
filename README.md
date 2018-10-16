@@ -1,9 +1,10 @@
-# YesWeScan
+<img src="Images/YesWeScan.png" width="250" max-width="90%" alt="YesWeScan" />
 
 [![Build Status](https://travis-ci.com/adorsys/document-scanner-ios.svg?branch=master)](https://travis-ci.com/adorsys/document-scanner-ios.svg?branch=master)
 [![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg)](https://swift.org)
 [![license](https://img.shields.io/badge/license-Apache_2.0-lightgrey.svg)](https://github.com/adorsys/document-scanner-ios/blob/master/LICENSE)
 [![platform](https://img.shields.io/badge/platform-iOS_10+-lightgrey.svg)](https://img.shields.io/badge/platform-iOS_10+-lightgrey.svg)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 
 This pod contains a ready to use view controller for document scanning. Yes we scan! 
@@ -11,13 +12,27 @@ This pod contains a ready to use view controller for document scanning. Yes we s
 ## Requirements
 - iOS 10.0 SDK or later
 
+## Scanner Preview
+
+<img src="Images/preview.GIF" width="250" max-width="50%" alt="Demo" />
+
 ## Installation
-YesWeScan is available through [CocoaPods](http://cocoapods.org). To
-install it, simply add the following line to your Podfile:
+
+#### Cocoapods
+
+YesWeScan is available through [CocoaPods](http://cocoapods.org).
+To install it, simply add the following line to your `Podfile`:
 
 ```ruby
 pod 'YesWeScan'
 ```
+
+#### Carthage
+
+YesWeScan is also available via [Carthage](https://github.com/Carthage/Carthage).
+Add the following line to your `Cartfile`:
+
+`github "adorsys/document-scanner-ios"`
 
 ## Using this Pod
 

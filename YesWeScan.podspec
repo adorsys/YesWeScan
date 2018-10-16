@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YesWeScan'
-  s.version          = '1.0.2'
+  s.version          = '1.0.3'
   s.summary          = 'adorsys Document Scanner (incl. View Controller)'
 
 # This description is used to generate tags and improve search results.
@@ -30,8 +30,10 @@ This pod contains a ready to use view controller for document scanning.
   s.swift_version = '4.2'
 
   s.source_files = 'Sources/Classes/**/*'
-  s.resource_bundles = {
-    'Assets' => ['Sources/Assets/**/*']
-  }
+  s.resources = 'Sources/Assets/**/*'
   s.frameworks = 'AVFoundation'
+
+  s.test_spec 'Tests' do |test_spec|
+    test_spec.source_files = 'Tests/*.swift'
+  end
 end

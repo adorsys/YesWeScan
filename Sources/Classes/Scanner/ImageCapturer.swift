@@ -1,4 +1,5 @@
 import AVFoundation
+import UIKit
 
 final class ImageCapturer: NSObject {
     private var feature: RectangleFeature?
