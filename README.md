@@ -136,9 +136,10 @@ if #available(iOS 12.0, *) {
     view.userActivity = activity
     activity.becomeCurrent()
 }
-
 ```
+
 To call a specific function add in the `AppDelegate.swift` file:
+
 ```swift
 func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
     if #available(iOS 12.0, *) {
