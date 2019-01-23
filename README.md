@@ -15,7 +15,7 @@ This pod contains a ready to use view controller for document scanning. Yes we s
 - [Installation](#installation)
   - [CocoaPods](#cocoapods)
   - [Carthage](#carthage)
-- [Using this Pod](#using-this-pod)
+- [Usage](#usage)
   - [Scanner View Controller](#scanner-view-controller)
   - [Delegate Methods](#delegate-methods)
   - [Scanner Quality](#scanner-quality)
@@ -51,7 +51,7 @@ Add the following line to your `Cartfile`:
 github "adorsys/document-scanner-ios"
 ```
 
-## Using this Pod
+## Usage
 
 ### Scanner View Controller
 
