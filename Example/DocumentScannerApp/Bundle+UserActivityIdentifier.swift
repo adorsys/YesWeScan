@@ -3,7 +3,7 @@
 //  DocumentScannerApp
 //
 //  Created by Tim Abraham on 12.10.18.
-//  Copyright © 2018 Steff Blümm. All rights reserved.
+//  Copyright © 2018 adorsys GmbH & Co KG. All rights reserved.
 //
 
 import Foundation
