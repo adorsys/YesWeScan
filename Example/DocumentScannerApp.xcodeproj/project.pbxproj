@@ -8,29 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		229B7B212170D5E700619215 /* Bundle+UserActivityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229B7B202170D5E700619215 /* Bundle+UserActivityIdentifier.swift */; };
-		A3D534E756D17C59603E71CC /* Pods_DocumentScannerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7AB44AFDCDC6FAECADE10F /* Pods_DocumentScannerAppTests.framework */; };
 		B23598F32097134700813B39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23598F22097134700813B39 /* AppDelegate.swift */; };
 		B23598F52097134700813B39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23598F42097134700813B39 /* ViewController.swift */; };
 		B23598F82097134700813B39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B23598F62097134700813B39 /* Main.storyboard */; };
 		B23598FA2097134800813B39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B23598F92097134800813B39 /* Assets.xcassets */; };
 		B23598FD2097134800813B39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B23598FB2097134800813B39 /* LaunchScreen.storyboard */; };
-		B23599082097134800813B39 /* DocumentScannerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23599072097134800813B39 /* DocumentScannerAppTests.swift */; };
 		B2B60677209715D6005A43D4 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B60676209715D6005A43D4 /* LogoView.swift */; };
 		B2B6067920972343005A43D4 /* ScanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B6067820972343005A43D4 /* ScanButton.swift */; };
 		B2B6067B20978DB8005A43D4 /* EditButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B6067A20978DB8005A43D4 /* EditButton.swift */; };
 		B2B6067D20985A3C005A43D4 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B6067C20985A3C005A43D4 /* IconButton.swift */; };
 		C584DDBD81B6A70B9CDA60E0 /* Pods_DocumentScannerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5603B8B2D3724D5A6B2F17CE /* Pods_DocumentScannerApp.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B23599042097134800813B39 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B23598E72097134700813B39 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B23598EE2097134700813B39;
-			remoteInfo = DocumentScannerApp;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		051A466FCEA0595AB7387809 /* Pods-DocumentScannerAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentScannerAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentScannerAppTests/Pods-DocumentScannerAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -47,9 +35,6 @@
 		B23598F92097134800813B39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B23598FC2097134800813B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B23598FE2097134800813B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B23599032097134800813B39 /* DocumentScannerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DocumentScannerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B23599072097134800813B39 /* DocumentScannerAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentScannerAppTests.swift; sourceTree = "<group>"; };
-		B23599092097134800813B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2B60676209715D6005A43D4 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		B2B6067820972343005A43D4 /* ScanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanButton.swift; sourceTree = "<group>"; };
 		B2B6067A20978DB8005A43D4 /* EditButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditButton.swift; sourceTree = "<group>"; };
@@ -64,14 +49,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C584DDBD81B6A70B9CDA60E0 /* Pods_DocumentScannerApp.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B23599002097134800813B39 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A3D534E756D17C59603E71CC /* Pods_DocumentScannerAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				B23598F12097134700813B39 /* DocumentScannerApp */,
-				B23599062097134800813B39 /* DocumentScannerAppTests */,
 				B23598F02097134700813B39 /* Products */,
 				96DF4E0589AA15D0584B73D7 /* Pods */,
 				A8D0652F25346879B92BA74B /* Frameworks */,
@@ -114,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				B23598EF2097134700813B39 /* DocumentScannerApp.app */,
-				B23599032097134800813B39 /* DocumentScannerAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,15 +108,6 @@
 				B23598FE2097134800813B39 /* Info.plist */,
 			);
 			path = DocumentScannerApp;
-			sourceTree = "<group>";
-		};
-		B23599062097134800813B39 /* DocumentScannerAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				B23599072097134800813B39 /* DocumentScannerAppTests.swift */,
-				B23599092097134800813B39 /* Info.plist */,
-			);
-			path = DocumentScannerAppTests;
 			sourceTree = "<group>";
 		};
 		B2B60675209715C0005A43D4 /* Views */ = {
@@ -178,25 +144,6 @@
 			productReference = B23598EF2097134700813B39 /* DocumentScannerApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B23599022097134800813B39 /* DocumentScannerAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B235990F2097134800813B39 /* Build configuration list for PBXNativeTarget "DocumentScannerAppTests" */;
-			buildPhases = (
-				50022359A745DE0F2FAB0EBC /* [CP] Check Pods Manifest.lock */,
-				B23598FF2097134800813B39 /* Sources */,
-				B23599002097134800813B39 /* Frameworks */,
-				B23599012097134800813B39 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B23599052097134800813B39 /* PBXTargetDependency */,
-			);
-			name = DocumentScannerAppTests;
-			productName = DocumentScannerAppTests;
-			productReference = B23599032097134800813B39 /* DocumentScannerAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -216,11 +163,6 @@
 							};
 						};
 					};
-					B23599022097134800813B39 = {
-						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1000;
-						TestTargetID = B23598EE2097134700813B39;
-					};
 				};
 			};
 			buildConfigurationList = B23598EA2097134700813B39 /* Build configuration list for PBXProject "DocumentScannerApp" */;
@@ -237,7 +179,6 @@
 			projectRoot = "";
 			targets = (
 				B23598EE2097134700813B39 /* DocumentScannerApp */,
-				B23599022097134800813B39 /* DocumentScannerAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -250,13 +191,6 @@
 				B23598FD2097134800813B39 /* LaunchScreen.storyboard in Resources */,
 				B23598FA2097134800813B39 /* Assets.xcassets in Resources */,
 				B23598F82097134700813B39 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B23599012097134800813B39 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,24 +210,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" autocorrect\n\"${PODS_ROOT}/SwiftLint/swiftlint\" lint --config .swiftlint.yml\n";
-		};
-		50022359A745DE0F2FAB0EBC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DocumentScannerAppTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 		57D20B3908426DAFA3D0FC5C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -350,23 +266,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B23598FF2097134800813B39 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B23599082097134800813B39 /* DocumentScannerAppTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B23599052097134800813B39 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B23598EE2097134700813B39 /* DocumentScannerApp */;
-			targetProxy = B23599042097134800813B39 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B23598F62097134700813B39 /* Main.storyboard */ = {
@@ -544,50 +444,6 @@
 			};
 			name = Release;
 		};
-		B23599102097134800813B39 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA9EC9A9A578142338412FCC /* Pods-DocumentScannerAppTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FCNMCC2Y82;
-				INFOPLIST_FILE = DocumentScannerAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.adorsys.DocumentScannerAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DocumentScannerApp.app/DocumentScannerApp";
-			};
-			name = Debug;
-		};
-		B23599112097134800813B39 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 051A466FCEA0595AB7387809 /* Pods-DocumentScannerAppTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FCNMCC2Y82;
-				INFOPLIST_FILE = DocumentScannerAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.adorsys.DocumentScannerAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DocumentScannerApp.app/DocumentScannerApp";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -605,15 +461,6 @@
 			buildConfigurations = (
 				B235990D2097134800813B39 /* Debug */,
 				B235990E2097134800813B39 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B235990F2097134800813B39 /* Build configuration list for PBXNativeTarget "DocumentScannerAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B23599102097134800813B39 /* Debug */,
-				B23599112097134800813B39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

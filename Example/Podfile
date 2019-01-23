@@ -6,8 +6,4 @@ target 'DocumentScannerApp' do
   pod 'YesWeScan', :path => '../'
   pod 'TOCropViewController'
   pod 'SwiftLint'
-
-  target 'DocumentScannerAppTests' do
-    inherit! :search_paths
-  end
 end
