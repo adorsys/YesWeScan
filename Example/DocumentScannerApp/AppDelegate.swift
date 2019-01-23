@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         if #available(iOS 12.0, *) {
             guard userActivity.activityType == Bundle.main.userActivityIdentifier,
-                let navigationController = window?.rootViewController! as? UINavigationController,
+                let navigationController = window?.rootViewController as? UINavigationController,
                 let viewController = navigationController.children.first as? ViewController else {
                     return false
             }

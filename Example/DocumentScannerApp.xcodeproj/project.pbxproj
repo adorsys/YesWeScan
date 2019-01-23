@@ -209,7 +209,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" autocorrect\n\"${PODS_ROOT}/SwiftLint/swiftlint\" lint --config .swiftlint.yml\n";
+			shellScript = "#!/bin/bash\n\nSWIFTLINT_CONFIG_PATH=\".swiftlint.yml\"\nTEMP_FILE=\".temp.yml\"\n\n# If the file does not exist or is older than 1 day, download it\nif [[ ! -f $SWIFTLINT_CONFIG_PATH ]] || [[ $(find \"$SWIFTLINT_CONFIG_PATH\" -mtime +1 -print) ]]; then\nlast_modified=$(date -u -r $SWIFTLINT_CONFIG_PATH \"+%a, %d %b %Y %H:%M:%S GMT\" 2>/dev/null || true)\nhttp_code=$(curl \\\n-H 'Accept: application/vnd.github.v4.raw' \\\n-H \"If-Modified-Since: $last_modified\" \\\n-w \"%{http_code}\" \\\n-o $TEMP_FILE \\\nhttps://api.github.com/repos/adorsys/csi-coding-guidelines/contents/iOS/.swiftlint.default.yml)\n\nif [[ 200 == \"$http_code\" ]]; then\nmv $TEMP_FILE $SWIFTLINT_CONFIG_PATH\nelse\nrm -f $TEMP_FILE\nfi\nfi\n\nif [[ -e $SWIFTLINT_CONFIG_PATH ]]; then\n\"${PODS_ROOT}/SwiftLint/swiftlint\" autocorrect --config ${SWIFTLINT_CONFIG_PATH}\n\"${PODS_ROOT}/SwiftLint/swiftlint\" lint --config ${SWIFTLINT_CONFIG_PATH}\nfi\n";
 		};
 		57D20B3908426DAFA3D0FC5C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

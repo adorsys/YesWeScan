@@ -39,11 +39,12 @@ class EditButton: IconButton {
 }
 
 extension EditButton {
+    // swiftlint:disable line_length
     func drawCropIcon(frame: CGRect = CGRect(x: 30, y: 146, width: 58, height: 44),
                       borderWidth: CGFloat = 3,
                       drawColour: UIColor = .white) {
         //// General Declarations
-        let context = UIGraphicsGetCurrentContext()!
+        let context = UIGraphicsGetCurrentContext()
         // This non-generic function dramatically improves compilation times of complex expressions.
         func fastFloor(_ x: CGFloat) -> CGFloat { return floor(x) }
 
@@ -158,9 +159,10 @@ extension EditButton {
         bezier2Path.move(to: CGPoint(x: group.minX + 0.158_33 * group.width, y: group.minY + 0.908_00 * group.height))
         bezier2Path.addCurve(to: CGPoint(x: group.minX + 0.852_77 * group.width, y: group.minY + 0.108_00 * group.height), controlPoint1: CGPoint(x: group.minX + 0.863_93 * group.width, y: group.minY + 0.095_14 * group.height), controlPoint2: CGPoint(x: group.minX + 0.852_77 * group.width, y: group.minY + 0.108_00 * group.height))
         bezier2Path.lineWidth = borderWidth
-        context.saveGState()
-        context.setLineDash(phase: 13, lengths: [6, 8])
+        context?.saveGState()
+        context?.setLineDash(phase: 13, lengths: [6, 8])
         bezier2Path.stroke()
-        context.restoreGState()
+        context?.restoreGState()
     }
+    // swiftlint:enable line_length
 }

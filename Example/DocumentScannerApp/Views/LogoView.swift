@@ -9,6 +9,7 @@
 import UIKit
 
 @IBDesignable
+// swiftlint:disable:next type_body_length
 class LogoView: UIView {
 
     private var adorsysDarkBlue: UIColor {
@@ -77,6 +78,8 @@ class LogoView: UIView {
         return height * (397.0 / 63.0)
     }
 
+    // swiftlint:disable line_length
+    // swiftlint:disable function_body_length
     func drawLogo(frame: CGRect = CGRect(x: 0, y: 0, width: 397, height: 63),
                   colour: UIColor) {
         //// Color Declarations
@@ -260,6 +263,7 @@ class LogoView: UIView {
         yletterPath.fill()
 
         //// 2nd-s-letter Drawing
+        // swiftlint:disable:next identifier_name
         let _2ndsletterPath = UIBezierPath()
         _2ndsletterPath.move(to: CGPoint(x: logoletters.minX + 1.000_00 * logoletters.width, y: logoletters.minY + 0.646_58 * logoletters.height))
         _2ndsletterPath.addCurve(to: CGPoint(x: logoletters.minX + 0.954_53 * logoletters.width, y: logoletters.minY + 0.834_65 * logoletters.height), controlPoint1: CGPoint(x: logoletters.minX + 1.000_00 * logoletters.width, y: logoletters.minY + 0.771_94 * logoletters.height), controlPoint2: CGPoint(x: logoletters.minX + 0.984_84 * logoletters.width, y: logoletters.minY + 0.834_65 * logoletters.height))
@@ -291,4 +295,6 @@ class LogoView: UIView {
         adorsysBlueDark.setFill()
         _2ndsletterPath.fill()
     }
+    // swiftlint:enable line_length
+    // swiftlint:enable function_body_length
 }

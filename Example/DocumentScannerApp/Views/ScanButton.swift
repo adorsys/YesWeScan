@@ -41,6 +41,7 @@ class ScanButton: IconButton {
 }
 
 extension ScanButton {
+    // swiftlint:disable line_length
     func drawScanIcon(frame: CGRect = CGRect(x: 2, y: 2, width: 44, height: 43),
                       borderWidth: CGFloat = 3,
                       drawColour: UIColor = .white) {
@@ -137,4 +138,5 @@ extension ScanButton {
         lowerRightCornerPath.lineCapStyle = .round
         lowerRightCornerPath.stroke()
     }
+    // swiftlint:enable line_length
 }
