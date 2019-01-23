@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     // MARK: IBOutlets
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var editButton: UIButton!
+    @IBOutlet private var shareButton: UIButton!
 
     // MARK: Init
     required init?(coder aDecoder: NSCoder) {
@@ -60,6 +61,7 @@ class ViewController: UIViewController {
     private func set(isVisible: Bool) {
         imageView.isHidden = !isVisible
         editButton.isHidden = !isVisible
+        shareButton.isHidden = !isVisible
     }
 }
 
@@ -106,6 +108,14 @@ extension ViewController {
         cropViewController.delegate = self
 
         present(cropViewController, animated: true)
+    }
+
+    @IBAction func actionShare(_ sender: UIButton) {
+        guard let image = self.scannedImage
+            else { return }
+
+        let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
+        present(vc, animated: true)
     }
 }
 
