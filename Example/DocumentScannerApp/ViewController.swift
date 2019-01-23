@@ -21,7 +21,6 @@ class ViewController: UIViewController {
         }
     }
 
-    //private var previewingController: UIViewControllerPreviewing
     private lazy var tapRecogniser = UITapGestureRecognizer(target: self, action: #selector(editImage))
 
     // MARK: IBOutlets
@@ -36,11 +35,11 @@ class ViewController: UIViewController {
     // MARK: Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
         set(isVisible: false)
 
-        self.tapRecogniser.delegate = self
-        self.view.addGestureRecognizer(tapRecogniser)
+        tapRecogniser.delegate = self
+        view.addGestureRecognizer(tapRecogniser)
 
         addToSiriShortcuts()
     }
@@ -53,10 +52,9 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
 
-        self.imageView.image = nil
-        self.scannedImage = nil
+       imageView.image = nil
+       scannedImage = nil
     }
 
     private func set(isVisible: Bool) {
@@ -71,7 +69,7 @@ extension ViewController: UIGestureRecognizerDelegate {
             return false
         }
 
-        return imageView.bounds.contains(self.view.convert(tapRecogniser.location(in: self.view), to: imageView))
+        return imageView.bounds.contains(view.convert(tapRecogniser.location(in: view), to: imageView))
     }
 }
 
@@ -79,8 +77,7 @@ extension ViewController: ScannerViewControllerDelegate {
     func scanner(_ scanner: ScannerViewController,
                  didCaptureImage image: UIImage) {
 
-        self.scannedImage = image
-
+        scannedImage = image
         navigationController?.popViewController(animated: true)
     }
 }
@@ -91,7 +88,7 @@ extension ViewController: TOCropViewControllerDelegate {
                             rect cropRect: CGRect,
                             angle: Int) {
 
-        self.scannedImage = image
+        scannedImage = image
         cropViewController.dismiss(animated: true, completion: nil)
     }
 }
@@ -102,7 +99,7 @@ extension ViewController {
     }
 
     @IBAction func editImage(_ sender: UIButton) {
-        guard let image = self.scannedImage
+        guard let image = scannedImage
             else { return }
 
         let cropViewController = TOCropViewController(image: image)
