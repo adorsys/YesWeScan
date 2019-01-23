@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B23598EE2097134700813B39"
-               BuildableName = "DocumentScannerApp.app"
-               BlueprintName = "DocumentScannerApp"
-               ReferencedContainer = "container:DocumentScannerApp.xcodeproj">
+               BuildableName = "YesWeScanExampleApp.app"
+               BlueprintName = "YesWeScanExampleApp"
+               ReferencedContainer = "container:YesWeScanExampleApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B23598EE2097134700813B39"
-            BuildableName = "DocumentScannerApp.app"
-            BlueprintName = "DocumentScannerApp"
-            ReferencedContainer = "container:DocumentScannerApp.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -56,9 +47,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B23598EE2097134700813B39"
-            BuildableName = "DocumentScannerApp.app"
-            BlueprintName = "DocumentScannerApp"
-            ReferencedContainer = "container:DocumentScannerApp.xcodeproj">
+            BuildableName = "YesWeScanExampleApp.app"
+            BlueprintName = "YesWeScanExampleApp"
+            ReferencedContainer = "container:YesWeScanExampleApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,16 +61,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B23598EE2097134700813B39"
-            BuildableName = "DocumentScannerApp.app"
-            BlueprintName = "DocumentScannerApp"
-            ReferencedContainer = "container:DocumentScannerApp.xcodeproj">
+            BuildableName = "YesWeScanExampleApp.app"
+            BlueprintName = "YesWeScanExampleApp"
+            ReferencedContainer = "container:YesWeScanExampleApp.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

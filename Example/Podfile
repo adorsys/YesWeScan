@@ -2,7 +2,7 @@ platform :ios, '10.0'
 use_frameworks!
 inhibit_all_warnings!
 
-target 'DocumentScannerApp' do
+target 'YesWeScanExampleApp' do
   pod 'YesWeScan', :path => '../'
   pod 'TOCropViewController'
   pod 'SwiftLint'
