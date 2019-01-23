@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="Images/banner.png" width="1700" max-width="100%" alt="YesWeScan" />
+    <img src="Images/banner.jpg" width="1700" max-width="100%" alt="YesWeScan" />
 </p>
 
 [![Build Status](https://travis-ci.com/adorsys/document-scanner-ios.svg?branch=master)](https://travis-ci.com/adorsys/document-scanner-ios.svg?branch=master)
