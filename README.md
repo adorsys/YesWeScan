@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="Images/banner.jpg" width="1700" max-width="100%" alt="YesWeScan" />
+    <img src="https://raw.githubusercontent.com/adorsys/document-scanner-ios/master/Images/banner.jpg" width="1700" max-width="100%" alt="YesWeScan" />
 </p>
 
 [![Build Status](https://travis-ci.com/adorsys/document-scanner-ios.svg?branch=master)](https://travis-ci.com/adorsys/document-scanner-ios.svg?branch=master)
@@ -29,7 +29,7 @@ This pod contains a ready to use view controller for document scanning. Yes we s
 
 ## Scanner Preview
 
-<img src="Images/preview.GIF" width="250" max-width="50%" alt="Demo" />
+<img src="https://raw.githubusercontent.com/adorsys/document-scanner-ios/master/Images/preview.GIF" width="250" max-width="50%" alt="Demo" />
 
 ## Installation
 
