@@ -31,7 +31,7 @@ class LogoView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
-        self.backgroundColor = .clear
+        backgroundColor = .clear
     }
 
     required init() {
@@ -51,12 +51,12 @@ class LogoView: UIView {
     }
 
     override func draw(_ rect: CGRect) {
-        guard self.bounds.width > 0 else {
+        guard bounds.width > 0 else {
             return
         }
 
-        let frameWidth = self.frame.width
-        let frameHeight = self.frame.height
+        let frameWidth = frame.width
+        let frameHeight = frame.height
 
         guard (frameHeight / frameWidth) >= factor else {
             debugPrint("ratio is to small \(frameHeight / frameWidth) vs \(factor)")

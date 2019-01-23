@@ -68,11 +68,11 @@ class IconButton: UIButton {
     // MARK: Custom Drawing
 
     override func draw(_: CGRect) {
-        guard self.bounds.width > 0 else {
+        guard bounds.width > 0 else {
             return
         }
 
-        let smaller = min(self.frame.width, self.frame.height)
+        let smaller = min(frame.width, frame.height)
 
         //
         //      Prepare drawing button claim text
@@ -90,16 +90,24 @@ class IconButton: UIButton {
         //
         let claimSize = buttonClaim.size(withAttributes: attributes)
         let contentWidth = iconSize.width + spacing + claimSize.width
-        let margin = (self.frame.width - contentWidth) * 0.5
+        let margin = (frame.width - contentWidth) * 0.5
         let xOffset = margin + iconSize.width + spacing
-        //        let yOffset = (self.frame.height - smaller) * 0.5
+        let yOffset = (frame.height - claimSize.height) * 0.5
 
         //
         //      Draw
         //
-        buttonClaim.draw(in: CGRect(x: xOffset, y: (self.frame.height - claimSize.height) * 0.5, width: self.frame.width - smaller - 30.0, height: self.frame.height - 4.0), withAttributes: attributes)
+        buttonClaim.draw(in: CGRect(x: xOffset,
+                                    y: yOffset,
+                                    width: frame.width - smaller - 30.0,
+                                    height: frame.height - 4.0),
+                         withAttributes: attributes)
 
-        drawIcon(frame: CGRect(x: margin, y: 2, width: iconSize.width, height: iconSize.height), drawColour: drawColour)
+        drawIcon(frame: CGRect(x: margin,
+                               y: 2,
+                               width: iconSize.width,
+                               height: iconSize.height),
+                 drawColour: drawColour)
     }
 
     // MARK: Do specific drawing here in sub-class
