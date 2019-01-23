@@ -118,7 +118,7 @@ extension ViewController {
             else { return }
 
         let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
-        present(vc, animated: true, completion: nil)
+        present(vc, animated: true)
     }
 }
 
