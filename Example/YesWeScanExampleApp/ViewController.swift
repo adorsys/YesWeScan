@@ -84,8 +84,8 @@ extension ViewController: ScannerViewControllerDelegate {
 
 extension ViewController: TOCropViewControllerDelegate {
     func cropViewController(_ cropViewController: TOCropViewController,
-                            didCropToImage image: UIImage,
-                            rect cropRect: CGRect,
+                            didCropTo image: UIImage,
+                            with cropRect: CGRect,
                             angle: Int) {
 
         scannedImage = image
