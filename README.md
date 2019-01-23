@@ -10,13 +10,19 @@
 
 This pod contains a ready to use view controller for document scanning. Yes we scan! 
 
-## Table of contents
-
-[Requirements](https://github.com/Luur/SwiftTips#57-render-html-within-a-uilabel)<br />
-[Scanner Preview](https://github.com/Luur/SwiftTips#57-render-html-within-a-uilabel)<br />
-[Installation](https://github.com/Luur/SwiftTips#57-render-html-within-a-uilabel)<br />
-[Using this Pod](https://github.com/Luur/SwiftTips#57-render-html-within-a-uilabel)<br />
-[License](https://github.com/Luur/SwiftTips#57-render-html-within-a-uilabel)<br />
+- [Requirements](#requirements)
+- [Scanner Preview](#scanner-preview)
+- [Installation](#installation)
+  - [CocoaPods](#cocoapods)
+  - [Carthage](#carthage)
+- [Using this Pod](#using-this-pod)
+  - [Scanner View Controller](#scanner-view-controller)
+  - [Delegate Methods](#delegate-methods)
+  - [Scanner Quality](#scanner-quality)
+  - [UI Configuration](#ui-configuration)
+  - [Performance hint](#performance-hint)
+  - [Siri Shortcuts](#siri-shortcuts)
+- [License](#license)
 
 ## Requirements
 - iOS 10.0 SDK or later
@@ -27,7 +33,7 @@ This pod contains a ready to use view controller for document scanning. Yes we s
 
 ## Installation
 
-### Cocoapods
+### CocoaPods
 
 YesWeScan is available through [CocoaPods](http://cocoapods.org).
 To install it, simply add the following line to your `Podfile`:
@@ -53,11 +59,14 @@ The main class in this project is `ScannerViewController`. You can access it
 with `import YesWeScan`.
 
 ```swift
+import YesWeScan
+
 class ViewController: UIViewController,  {
   var scannedImage: UIImage?
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     let scanner = ScannerViewController()
     scanner.delegate = self
     navigationController?.pushViewController(scanner, animated: true)
