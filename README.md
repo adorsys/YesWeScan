@@ -1,4 +1,6 @@
-<img src="Images/YesWeScan.png" width="250" max-width="90%" alt="YesWeScan" />
+<p align="center">
+    <img src="Images/Banner.png" width="1700" max-width="100%" alt="YesWeScan" />
+</p>
 
 [![Build Status](https://travis-ci.com/adorsys/document-scanner-ios.svg?branch=master)](https://travis-ci.com/adorsys/document-scanner-ios.svg?branch=master)
 [![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg)](https://swift.org)
@@ -6,8 +8,15 @@
 [![platform](https://img.shields.io/badge/platform-iOS_10+-lightgrey.svg)](https://img.shields.io/badge/platform-iOS_10+-lightgrey.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-
 This pod contains a ready to use view controller for document scanning. Yes we scan! 
+
+## Table of contents
+
+[Requirements](https://github.com/Luur/SwiftTips#57-render-html-within-a-uilabel)<br />
+[Scanner Preview](https://github.com/Luur/SwiftTips#57-render-html-within-a-uilabel)<br />
+[Installation](https://github.com/Luur/SwiftTips#57-render-html-within-a-uilabel)<br />
+[Using this Pod](https://github.com/Luur/SwiftTips#57-render-html-within-a-uilabel)<br />
+[License](https://github.com/Luur/SwiftTips#57-render-html-within-a-uilabel)<br />
 
 ## Requirements
 - iOS 10.0 SDK or later
