@@ -21,7 +21,10 @@ class ViewController: UIViewController {
         }
     }
 
-    private lazy var tapRecogniser = UITapGestureRecognizer(target: self, action: #selector(editImage))
+    private lazy var tapRecogniser = UITapGestureRecognizer(
+        target: self,
+        action: #selector(editImage)
+    )
 
     // MARK: IBOutlets
     @IBOutlet private var imageView: UIImageView!
@@ -71,7 +74,10 @@ extension ViewController: UIGestureRecognizerDelegate {
             return false
         }
 
-        return imageView.bounds.contains(view.convert(tapRecogniser.location(in: view), to: imageView))
+        return imageView.bounds.contains(
+            view.convert(tapRecogniser.location(in: view),
+                         to: imageView)
+        )
     }
 }
 
@@ -111,7 +117,7 @@ extension ViewController {
     }
 
     @IBAction func actionShare(_ sender: UIButton) {
-        guard let image = self.scannedImage
+        guard let image = scannedImage
             else { return }
 
         let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])

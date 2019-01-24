@@ -12,20 +12,15 @@ final class ImageCapturer: NSObject {
         output.isHighResolutionCaptureEnabled = true
         session.addOutput(output)
         self.output = output
-        self.imageClosure = { _ in }
+        imageClosure = { _ in }
 
         super.init()
     }
 
-    func captureImage(in feature: RectangleFeature?, completion: @escaping (UIImage) -> Void) {
+    func captureImage(in rectangleFeature: RectangleFeature?, completion: @escaping (UIImage) -> Void) {
+        feature = rectangleFeature
+        imageClosure = completion
 
-        self.feature = feature
-        self.imageClosure = completion
-
-        /*
-        let settings = AVCapturePhotoSettings(format: [
-            AVVideoCodecKey as String: output.availablePhotoCodecTypes.first!
-        ]) */
         let settings = AVCapturePhotoSettings()
         settings.isAutoStillImageStabilizationEnabled = true
         settings.isHighResolutionPhotoEnabled = true
@@ -53,7 +48,7 @@ extension ImageCapturer: AVCapturePhotoCaptureDelegate {
             else { return }
 
         let processed: CIImage
-        if let feature = self.feature {
+        if let feature = feature {
             let normalized = feature.normalized(source: UIScreen.main.bounds.size,
                                                 target: image.extent.size)
 

@@ -3,13 +3,8 @@ import CoreGraphics
 extension Array where Element == RectangleFeature {
     // Difference of all elements vs. average
     var jitter: CGFloat {
-
-        let averageElement = self.average
-
-        let diffs = self.map {
-            $0.difference(to: averageElement)
-        }
-
+        let averageElement = average
+        let diffs = map { $0.difference(to: averageElement) }
         return diffs.reduce(0, +)
     }
 
