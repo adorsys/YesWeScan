@@ -13,12 +13,12 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DocumentScannerApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="YesWeScanExampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQu-Y8-SbL" customClass="LogoView" customModule="DocumentScannerApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQu-Y8-SbL" customClass="LogoView" customModule="YesWeScanExampleApp" customModuleProvider="target">
                                 <rect key="frame" x="24" y="60" width="327" height="53"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -34,7 +34,7 @@
                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="j4Y-xp-zDH">
                                 <rect key="frame" x="0.0" y="195" width="375" height="452"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukx-Lm-zw4" customClass="ScanButton" customModule="DocumentScannerApp" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukx-Lm-zw4" customClass="ScanButton" customModule="YesWeScanExampleApp" customModuleProvider="target">
                                         <rect key="frame" x="21" y="20" width="327" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="vo7-QU-K5D"/>
@@ -50,13 +50,13 @@
                                             <constraint firstAttribute="width" secondItem="SSm-fM-RLr" secondAttribute="height" multiplier="3:4" id="xZg-Yz-H5h"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cv9-1I-nAw" customClass="EditButton" customModule="DocumentScannerApp" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="348" width="327" height="48"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cv9-1I-nAw" customClass="EditButton" customModule="YesWeScanExampleApp" customModuleProvider="target">
+                                        <rect key="frame" x="168" y="348" width="30" height="48"/>
                                         <connections>
                                             <action selector="editImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nj2-NI-Ro4"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYq-G5-fbs">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYq-G5-fbs">
                                         <rect key="frame" x="21" y="404" width="327" height="48"/>
                                         <state key="normal" title="Share"/>
                                         <connections>
@@ -114,9 +114,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ghs-m4-NQ0" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jn0-pv-J4w">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Jn0-pv-J4w">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
