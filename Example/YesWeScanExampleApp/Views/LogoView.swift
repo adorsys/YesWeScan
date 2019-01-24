@@ -8,10 +8,7 @@
 
 import UIKit
 
-@IBDesignable
-// swiftlint:disable:next type_body_length
 class LogoView: UIView {
-
     private var adorsysDarkBlue: UIColor {
         return UIColor(red: 0.000, green: 0.352, blue: 0.484, alpha: 1.000)
     }
@@ -35,18 +32,14 @@ class LogoView: UIView {
     }
 
     required init() {
-
         super.init(frame: .zero)
 
-        // set other operations after super.init, if required
         backgroundColor = .clear
     }
 
     required override init(frame: CGRect) {
-
         super.init(frame: frame)
 
-        // set other operations after super.init, if required
         backgroundColor = .clear
     }
 
@@ -64,10 +57,13 @@ class LogoView: UIView {
         }
 
         let requestedHeight = height(from: frameWidth)
-
         let ymargin = (frameHeight - requestedHeight) * 0.5
 
-        drawLogo(frame: CGRect(x: 0.0, y: ymargin, width: frameWidth, height: requestedHeight), colour: white)
+        drawLogo(frame: CGRect(x: 0.0,
+                               y: ymargin,
+                               width: frameWidth,
+                               height: requestedHeight),
+                 colour: white)
     }
 
     private func height(from width: CGFloat) -> CGFloat {
@@ -78,6 +74,9 @@ class LogoView: UIView {
         return height * (397.0 / 63.0)
     }
 
+}
+
+extension LogoView {
     // swiftlint:disable line_length
     // swiftlint:disable function_body_length
     func drawLogo(frame: CGRect = CGRect(x: 0, y: 0, width: 397, height: 63),

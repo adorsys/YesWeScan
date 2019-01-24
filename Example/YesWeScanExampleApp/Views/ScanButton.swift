@@ -8,25 +8,19 @@
 
 import UIKit
 
-@IBDesignable
 class ScanButton: IconButton {
-
     override var iconSize: CGSize {
         return CGSize(width: 44.0, height: 43.0)
     }
 
     public required init?(coder aDecoder: NSCoder) {
-
         super.init(coder: aDecoder)
+
         buttonClaim = "Scan Document"
     }
 
     public required init() {
-
         super.init()
-
-        // set other operations after super.init, if required
-        backgroundColor = .clear
 
         buttonClaim = "Scan Document"
     }
@@ -35,16 +29,18 @@ class ScanButton: IconButton {
                            borderWidth: CGFloat = 3.0,
                            drawColour: UIColor = .white) {
 
-        drawScanIcon(frame: frame, borderWidth: borderWidth, drawColour: drawColour)
+        drawScanIcon(frame: frame,
+                     borderWidth: borderWidth,
+                     drawColour: drawColour)
     }
 
 }
 
 extension ScanButton {
     // swiftlint:disable line_length
-    func drawScanIcon(frame: CGRect = CGRect(x: 2, y: 2, width: 44, height: 43),
-                      borderWidth: CGFloat = 3,
-                      drawColour: UIColor = .white) {
+    func drawScanIcon(frame: CGRect,
+                      borderWidth: CGFloat,
+                      drawColour: UIColor) {
         //// Color Declarations
         let paperColour = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0.412)
         let paperBorder = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0.639)

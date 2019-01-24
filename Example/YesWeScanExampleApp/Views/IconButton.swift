@@ -8,13 +8,12 @@
 
 import UIKit
 
-@IBDesignable
 class IconButton: UIButton {
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 280, height: 48)
     }
 
-    var buttonClaim: String = "Call To Action"
+    var buttonClaim = "Call To Action"
     var spacing: CGFloat = 8.0
     var iconSize: CGSize {
         return CGSize.zero
@@ -26,23 +25,18 @@ class IconButton: UIButton {
     }
 
     required init?(coder aDecoder: NSCoder) {
-
         super.init(coder: aDecoder)
     }
 
     required init() {
-
         super.init(frame: .zero)
 
-        // set other operations after super.init, if required
         backgroundColor = .clear
     }
 
     override init(frame: CGRect) {
-
         super.init(frame: frame)
 
-        // set other operations after super.init, if required
         backgroundColor = .clear
     }
 

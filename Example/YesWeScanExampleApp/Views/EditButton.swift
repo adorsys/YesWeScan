@@ -8,24 +8,20 @@
 
 import UIKit
 
-@IBDesignable
 class EditButton: IconButton {
-
     override var iconSize: CGSize {
         return CGSize(width: 58.0, height: 44.0)
     }
 
     public required init?(coder aDecoder: NSCoder) {
-
         super.init(coder: aDecoder)
+
         buttonClaim = "Edit Image"
     }
 
     public required init() {
-
         super.init()
 
-        // set other operations after super.init, if required
         buttonClaim = "Edit Image"
     }
 
@@ -33,16 +29,17 @@ class EditButton: IconButton {
                            borderWidth: CGFloat = 3.0,
                            drawColour: UIColor = .white) {
 
-        drawCropIcon(frame: frame, borderWidth: borderWidth, drawColour: drawColour)
+        drawCropIcon(frame: frame,
+                     borderWidth: borderWidth,
+                     drawColour: drawColour)
     }
-
 }
 
 extension EditButton {
     // swiftlint:disable line_length
-    func drawCropIcon(frame: CGRect = CGRect(x: 30, y: 146, width: 58, height: 44),
-                      borderWidth: CGFloat = 3,
-                      drawColour: UIColor = .white) {
+    func drawCropIcon(frame: CGRect,
+                      borderWidth: CGFloat,
+                      drawColour: UIColor) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()
         // This non-generic function dramatically improves compilation times of complex expressions.
