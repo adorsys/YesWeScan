@@ -1,7 +1,7 @@
 PODS:
   - SwiftLint (0.29.3)
   - TOCropViewController (2.4.0)
-  - YesWeScan (1.0.5)
+  - YesWeScan (1.1.0)
 
 DEPENDENCIES:
   - SwiftLint
@@ -20,7 +20,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   SwiftLint: bfa7ca7b4d170cfaf0d236ca3ffd969e88a2f002
   TOCropViewController: 368d8df3ea43b62c3dc5a61f11b9048274d240bd
-  YesWeScan: 337c676ddb71c2b2f4e294105851b695a7939b11
+  YesWeScan: 0b1a55bf9c904d6d11ce8afd9686a2f412c49fa3
 
 PODFILE CHECKSUM: 2072a059059456ea19217f4b9200d97597246165
 
