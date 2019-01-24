@@ -46,9 +46,9 @@ excluded:
   - Carthage
   - ./*/SnapshotHelper.swift
 
-# # Include the development pod
-# included:
-#   - ../Sources/Classes
+# Include the development pod
+included:
+  - ../Sources/Classes
 
 # Configure warning/error levels
 file_length:
