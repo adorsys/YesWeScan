@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol TorchPickerViewDelegate: class {
+protocol TorchPickerViewDelegate: AnyObject {
     var lastTorchLevel: Float { get }
 
     func toggleTorch()

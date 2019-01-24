@@ -151,7 +151,7 @@ extension ScannerViewController {
     func toggleTargetBraces() {
         let newColor: UIColor = targetButton.backgroundColor == .white ? .clear : .white
         targetButton.backgroundColor = newColor
-        targetView.isHidden = !targetView.isHidden
+        targetView.isHidden.toggle()
     }
 
     @objc
@@ -166,6 +166,7 @@ extension ScannerViewController {
 
     @objc
     func showTorchUI(_ sender: Any) {
+        // swiftlint:disable:next force_unwrapping
         let superview = navigationController?.view ?? view!
 
         guard superview.subviews

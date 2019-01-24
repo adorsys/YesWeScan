@@ -1,5 +1,5 @@
 //
-//  ForceTouchRecognizer.swift
+//  ForceTouchGestureRecognizer.swift
 //  DocumentScanner
 //
 //  Created by Xaver Lohmueller on 26.09.17.

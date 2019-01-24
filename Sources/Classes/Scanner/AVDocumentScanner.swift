@@ -76,6 +76,8 @@ final class AVDocumentScanner: NSObject {
     private let detector = CIDetector(ofType: CIDetectorTypeRectangle, context: nil, options: [
         CIDetectorAccuracy: CIDetectorAccuracyHigh,
         CIDetectorMaxFeatureCount: 10
+
+        // swiftlint:disable:next force_unwrapping
     ])!
 }
 

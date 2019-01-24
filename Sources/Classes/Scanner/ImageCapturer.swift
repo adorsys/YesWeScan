@@ -31,7 +31,6 @@ final class ImageCapturer: NSObject {
 
 extension ImageCapturer: AVCapturePhotoCaptureDelegate {
 
-    // swiftlint:disable:next function_parameter_count
     func photoOutput(_ output: AVCapturePhotoOutput,
                      didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?,
                      previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?,
