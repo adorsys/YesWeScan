@@ -1,16 +1,33 @@
 ## Release to Cocoapods
 
-0. Ensure the validation passes
+### 0. Ensure the validation passes
 
 `bundle exec fastlane analyze`
 
 This will run `pod lib lint` internally.
 
-1. Tag the release
+### 1. Tag the release
 
 `bundle exec fastlane setversion to:x.y.z`
 
-2. Submit to Cocoapods Trunk
+This will create a commit with `Version bump to x.y.z` and set a tag with `x.y.z`.
+
+### 2. Update the Changelog
+
+Describe all new features and bugfixes in `CHANGELOG.md`.
+
+### 3. Update Example App
+
+Run `pod install` in the Example app folder. 
+
+Add the changes to the version bump commit.
+This can be done with `git commit --amend`. 
+
+### 4. Push to origin
+
+Push the tag and the commit to origin.
+
+### 5. Submit to Cocoapods Trunk
 
 Before you can do this, register yourself with trunk [according to this guide][1].
 

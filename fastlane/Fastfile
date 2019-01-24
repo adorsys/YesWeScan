@@ -34,6 +34,4 @@ lane :setversion do |options|
 
   git_commit(path: PodspecName, message: "Version Bump to #{version}")
   add_git_tag(tag: version)
-  reset_git_repo
-  push_to_git_remote
 end
