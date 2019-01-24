@@ -22,6 +22,11 @@ public final class ScannerViewController: UIViewController {
             detectionLayer.strokeColor = previewColor.withAlphaComponent(0.9).cgColor
         }
     }
+    public var featuresRequired: Int = 7 {
+        didSet {
+            scanner.featuresRequired = featuresRequired
+        }
+    }
 
     public init(sessionPreset: AVCaptureSession.Preset = .photo, config: ScannerConfig = .all) {
         self.sessionPreset = sessionPreset

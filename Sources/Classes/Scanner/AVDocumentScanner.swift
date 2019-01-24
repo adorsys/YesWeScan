@@ -4,6 +4,7 @@ import UIKit
 final class AVDocumentScanner: NSObject {
     var lastTorchLevel: Float = 0
     var desiredJitter: CGFloat = 100
+    var featuresRequired: Int = 7
 
     lazy var previewLayer: CALayer = {
         let layer = AVCaptureVideoPreviewLayer(session: self.captureSession)
@@ -111,7 +112,7 @@ extension AVDocumentScanner: AVCaptureVideoDataOutputSampleBufferDelegate {
         let (smoothed, newFeatures) = feature.smoothed(with: lastFeatures)
         lastFeatures = newFeatures
 
-        if newFeatures.count > 7,
+        if newFeatures.count > featuresRequired,
             newFeatures.jitter < desiredJitter,
             isStopped == false,
             let delegate = delegate {
