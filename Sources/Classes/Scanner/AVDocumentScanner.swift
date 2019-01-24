@@ -6,7 +6,7 @@ final class AVDocumentScanner: NSObject {
     var desiredJitter: CGFloat = 100
 
     lazy var previewLayer: CALayer = {
-        let layer = AVCaptureVideoPreviewLayer(session: self.captureSession)
+        let layer = AVCaptureVideoPreviewLayer(session: captureSession)
         layer.videoGravity = .resizeAspectFill
         return layer
     }()
@@ -14,7 +14,7 @@ final class AVDocumentScanner: NSObject {
     init(sessionPreset: AVCaptureSession.Preset) {
         let session = AVCaptureSession()
 
-        if let device = self.device {
+        if let device = device {
             do {
                 try device.lockForConfiguration()
                 device.focusMode = .continuousAutoFocus
@@ -68,7 +68,7 @@ final class AVDocumentScanner: NSObject {
         output.videoSettings = [
             kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA
         ]
-        self.captureSession.addOutput(output)
+        captureSession.addOutput(output)
         output.connection(with: .video)?.videoOrientation = .portrait
         return output
     }()
@@ -76,6 +76,8 @@ final class AVDocumentScanner: NSObject {
     private let detector = CIDetector(ofType: CIDetectorTypeRectangle, context: nil, options: [
         CIDetectorAccuracy: CIDetectorAccuracyHigh,
         CIDetectorMaxFeatureCount: 10
+
+        // swiftlint:disable:next force_unwrapping
     ])!
 }
 

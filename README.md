@@ -1,4 +1,6 @@
-<img src="Images/YesWeScan.png" width="250" max-width="90%" alt="YesWeScan" />
+<p align="center">
+    <img src="https://raw.githubusercontent.com/adorsys/document-scanner-ios/master/Images/banner.jpg" width="1700" max-width="100%" alt="YesWeScan" />
+</p>
 
 [![Build Status](https://travis-ci.com/adorsys/document-scanner-ios.svg?branch=master)](https://travis-ci.com/adorsys/document-scanner-ios.svg?branch=master)
 [![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg)](https://swift.org)
@@ -6,19 +8,32 @@
 [![platform](https://img.shields.io/badge/platform-iOS_10+-lightgrey.svg)](https://img.shields.io/badge/platform-iOS_10+-lightgrey.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-
 This pod contains a ready to use view controller for document scanning. Yes we scan! 
+
+- [Requirements](#requirements)
+- [Scanner Preview](#scanner-preview)
+- [Installation](#installation)
+  - [CocoaPods](#cocoapods)
+  - [Carthage](#carthage)
+- [Usage](#usage)
+  - [Scanner View Controller](#scanner-view-controller)
+  - [Delegate Methods](#delegate-methods)
+  - [Scanner Quality](#scanner-quality)
+  - [UI Configuration](#ui-configuration)
+  - [Performance hint](#performance-hint)
+  - [Siri Shortcuts](#siri-shortcuts)
+- [License](#license)
 
 ## Requirements
 - iOS 10.0 SDK or later
 
 ## Scanner Preview
 
-<img src="Images/preview.GIF" width="250" max-width="50%" alt="Demo" />
+<img src="https://raw.githubusercontent.com/adorsys/document-scanner-ios/master/Images/preview.GIF" width="250" max-width="50%" alt="Demo" />
 
 ## Installation
 
-### Cocoapods
+### CocoaPods
 
 YesWeScan is available through [CocoaPods](http://cocoapods.org).
 To install it, simply add the following line to your `Podfile`:
@@ -36,7 +51,7 @@ Add the following line to your `Cartfile`:
 github "adorsys/document-scanner-ios"
 ```
 
-## Using this Pod
+## Usage
 
 ### Scanner View Controller
 
@@ -44,11 +59,14 @@ The main class in this project is `ScannerViewController`. You can access it
 with `import YesWeScan`.
 
 ```swift
+import YesWeScan
+
 class ViewController: UIViewController,  {
   var scannedImage: UIImage?
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     let scanner = ScannerViewController()
     scanner.delegate = self
     navigationController?.pushViewController(scanner, animated: true)

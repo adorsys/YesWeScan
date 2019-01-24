@@ -84,7 +84,9 @@ extension RectangleFeature {
     private var areaQualifier: CGFloat {
         let diagonalToLeft = (topRight - bottomLeft)
         let diagonalToRight = (topLeft - bottomRight)
-        let phi = diagonalToLeft.x * diagonalToRight.x + diagonalToLeft.y * diagonalToRight.y / (diagonalToLeft.length * diagonalToRight.length)
+        let phi = diagonalToLeft.x * diagonalToRight.x
+            + diagonalToLeft.y * diagonalToRight.y
+            / (diagonalToLeft.length * diagonalToRight.length)
         return sqrt(1 - phi * phi) * diagonalToLeft.length * diagonalToRight.length
     }
 }
