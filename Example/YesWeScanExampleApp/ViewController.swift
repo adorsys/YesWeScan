@@ -21,30 +21,16 @@ class ViewController: UIViewController {
         }
     }
 
-    private lazy var tapRecogniser = UITapGestureRecognizer(
-        target: self,
-        action: #selector(editImage)
-    )
-
     // MARK: IBOutlets
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var editButton: UIButton!
     @IBOutlet private var shareButton: UIButton!
-
-    // MARK: Init
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
 
     // MARK: Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
         set(isVisible: false)
-
-        tapRecogniser.delegate = self
-        view.addGestureRecognizer(tapRecogniser)
-
         addToSiriShortcuts()
     }
 
@@ -65,19 +51,6 @@ class ViewController: UIViewController {
         imageView.isHidden = !isVisible
         editButton.isHidden = !isVisible
         shareButton.isHidden = !isVisible
-    }
-}
-
-extension ViewController: UIGestureRecognizerDelegate {
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        guard scannedImage != nil else {
-            return false
-        }
-
-        return imageView.bounds.contains(
-            view.convert(tapRecogniser.location(in: view),
-                         to: imageView)
-        )
     }
 }
 
