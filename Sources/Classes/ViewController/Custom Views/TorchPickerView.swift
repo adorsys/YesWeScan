@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol TorchPickerViewDelegate: class {
+protocol TorchPickerViewDelegate: AnyObject {
     var lastTorchLevel: Float { get }
 
     func toggleTorch()
@@ -38,7 +38,7 @@ final class TorchPickerView: UIView {
         super.init(frame: frame)
 
         let stackBackgroundView = makeStackView()
-        self.stackView = stackBackgroundView.subviews.first as? UIStackView
+        stackView = stackBackgroundView.subviews.first as? UIStackView
         addSubview(stackBackgroundView)
 
         let tapToDismiss = UITapGestureRecognizer(target: self, action: #selector(removeFromSuperview))
@@ -101,8 +101,8 @@ final class TorchPickerView: UIView {
         }
         stackView.frame = view.frame
         view.addSubview(stackView)
-        view.center.y = self.center.y
-        view.frame.origin.x = self.frame.width - view.frame.width
+        view.center.y = center.y
+        view.frame.origin.x = frame.width - view.frame.width
 
         let action = #selector(didPan)
         let pan = UIPanGestureRecognizer(target: self, action: action)

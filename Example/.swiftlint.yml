@@ -1,9 +1,3 @@
-disabled_rules:
-    - line_length
-    - force_unwrapping
-    - identifier_name
-    - function_body_length
-    - type_body_length
 # Enable more optional rules
 opt_in_rules:
   - implicit_return
@@ -15,6 +9,7 @@ opt_in_rules:
   - closure_end_indentation
   - empty_count
   - fatal_error_message
+  - force_unwrapping
   - force_try
   - force_cast
   - switch_case_on_newline
@@ -32,24 +27,60 @@ opt_in_rules:
   - discouraged_optional_boolean
   - trailing_closure
   - vertical_parameter_alignment_on_call
+  - no_fallthrough_only
+  - file_name
+  - empty_xctest_method
+  - convenience_type
+  - anyobject_protocol
+  - legacy_random
+  - closure_body_length
+  - inert_defer
+  - toggle_bool
+  - identical_operands
+  - collection_alignment
+  - static_operator
+
+# Exclude pods and vendor sources
+excluded:
+  - Pods
+  - Carthage
+  - ./*/SnapshotHelper.swift
 
 # Include the development pod
 included:
   - ../Sources/Classes
-  - .
 
-# Exclude tests, pods and vendor sources
-excluded:
-  - DocumentScannerAppTests
-  - Pods
-
+# Configure warning/error levels
+file_length:
+  warning: 450
+  error: 500
+function_body_length:
+  warning: 100
+  error: 150
+function_parameter_count:
+  warning: 9
+  error: 10
+line_length:
+  warning: 120
+  error: 250
+  ignores_function_declarations: true
+  ignores_comments: true
+  ignores_interpolated_strings: true
+  ignores_urls: true
+identifier_name:
+  max_length:
+    warning: 45
+    error: 60
+  min_length:
+    warning: 1
 type_name:
   max_length:
     warning: 40
     error: 70
   min_length:
     warning: 3
-# Configure rules violation to be traited as an error
+
+# Configure rules violation to be treated as an error
 explicit_init:
   severity: error
 prohibited_super_call:
@@ -60,3 +91,5 @@ force_unwrapping:
   severity: error
 weak_delegate:
   severity: error
+multiline_arguments:
+  only_enforce_after_first_closure_on_first_line: true

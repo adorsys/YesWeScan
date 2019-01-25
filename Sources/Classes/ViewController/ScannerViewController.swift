@@ -38,7 +38,7 @@ public final class ScannerViewController: UIViewController {
     @IBOutlet private weak var torchButton: UIView!
 
     private lazy var scanner: DocumentScanner & TorchPickerViewDelegate = {
-        AVDocumentScanner(sessionPreset: self.sessionPreset, delegate: self)
+        AVDocumentScanner(sessionPreset: sessionPreset, delegate: self)
     }()
 
     private lazy var detectionLayer: CAShapeLayer = {
@@ -98,7 +98,7 @@ public final class ScannerViewController: UIViewController {
             view.centerYAnchor.constraint(equalTo: braces.centerYAnchor, constant: 50).isActive = true
             view.widthAnchor.constraint(equalTo: braces.widthAnchor, multiplier: 1.5).isActive = true
             braces.heightAnchor.constraint(equalTo: braces.widthAnchor, multiplier: 1.5).isActive = true
-            self.targetView = braces
+            targetView = braces
         }
 
         if config.contains(.torch) {
@@ -166,7 +166,7 @@ extension ScannerViewController {
     func toggleTargetBraces() {
         let newColor: UIColor = targetButton.backgroundColor == .white ? .clear : .white
         targetButton.backgroundColor = newColor
-        targetView.isHidden = !targetView.isHidden
+        targetView.isHidden.toggle()
     }
 
     @objc
@@ -181,7 +181,8 @@ extension ScannerViewController {
 
     @objc
     func showTorchUI(_ sender: Any) {
-        let superview = navigationController?.view ?? self.view!
+        // swiftlint:disable:next force_unwrapping
+        let superview = navigationController?.view ?? view!
 
         guard superview.subviews
             .contains(where: { $0 is TorchPickerView }) == false
@@ -200,10 +201,10 @@ extension ScannerViewController {
         }
         let picker = TorchPickerView(frame: view.frame)
         picker.torchLevel = scanner.lastTorchLevel
-        picker.frame.origin.y = self.torchButton.frame.height
+        picker.frame.origin.y = torchButton.frame.height
         picker.delegate = self
         superview.addSubview(picker)
-        picker.frame.origin.x = self.view.frame.width
+        picker.frame.origin.x = view.frame.width
         UIView.animate(withDuration: 0.5) {
             picker.frame.origin.x = self.view.frame.width - picker.frame.width
         }
