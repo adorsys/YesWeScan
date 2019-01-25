@@ -71,9 +71,14 @@ public final class ScannerViewController: UIViewController {
             view.centerXAnchor.constraint(equalTo: button.centerXAnchor).isActive = true
 
             if #available(iOS 11.0, *) {
-                view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: button.bottomAnchor, constant: 8).isActive = true
+                view.safeAreaLayoutGuide
+                    .bottomAnchor
+                    .constraint(equalTo: button.bottomAnchor, constant: 8)
+                    .isActive = true
             } else {
-                view.bottomAnchor.constraint(equalTo: button.bottomAnchor, constant: 16).isActive = true
+                view.bottomAnchor
+                    .constraint(equalTo: button.bottomAnchor, constant: 16)
+                    .isActive = true
             }
         }
 
@@ -84,9 +89,14 @@ public final class ScannerViewController: UIViewController {
             view.leadingAnchor.constraint(equalTo: targetBraceButton.leadingAnchor, constant: -8).isActive = true
 
             if #available(iOS 11.0, *) {
-                view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: targetBraceButton.bottomAnchor, constant: 8).isActive = true
+                view.safeAreaLayoutGuide
+                    .bottomAnchor
+                    .constraint(equalTo: targetBraceButton.bottomAnchor, constant: 8)
+                    .isActive = true
             } else {
-                view.bottomAnchor.constraint(equalTo: targetBraceButton.bottomAnchor, constant: 8).isActive = true
+                view.bottomAnchor
+                    .constraint(equalTo: targetBraceButton.bottomAnchor, constant: 8)
+                    .isActive = true
             }
 
             let braces = TargetBraceView()
@@ -108,9 +118,14 @@ public final class ScannerViewController: UIViewController {
             view.trailingAnchor.constraint(equalTo: torch.trailingAnchor, constant: 8).isActive = true
 
             if #available(iOS 11.0, *) {
-                view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: torch.bottomAnchor, constant: 8).isActive = true
+                view.safeAreaLayoutGuide
+                    .bottomAnchor
+                    .constraint(equalTo: torch.bottomAnchor, constant: 8)
+                    .isActive = true
             } else {
-                view.bottomAnchor.constraint(equalTo: torch.bottomAnchor, constant: 8).isActive = true
+                view.bottomAnchor
+                    .constraint(equalTo: torch.bottomAnchor, constant: 8)
+                    .isActive = true
             }
         }
     }
