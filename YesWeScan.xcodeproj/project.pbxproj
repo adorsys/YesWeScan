@@ -11,13 +11,10 @@
 		4E7C3E7C2174B12200AA4E31 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EDFAC632170E43C00B1402A /* Media.xcassets */; };
 		4EDFAC3D2170E3E100B1402A /* YesWeScan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDFAC332170E3E100B1402A /* YesWeScan.framework */; };
 		4EDFAC652170E43C00B1402A /* RectangleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC502170E43C00B1402A /* RectangleFeature.swift */; };
-		4EDFAC662170E43C00B1402A /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC512170E43C00B1402A /* Operators.swift */; };
-		4EDFAC672170E43C00B1402A /* [RectangleFeature]+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC522170E43C00B1402A /* [RectangleFeature]+Extensions.swift */; };
 		4EDFAC682170E43C00B1402A /* UIImage+ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC542170E43C00B1402A /* UIImage+ScannerViewController.swift */; };
 		4EDFAC692170E43C00B1402A /* ScannerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC552170E43C00B1402A /* ScannerConfig.swift */; };
 		4EDFAC6A2170E43C00B1402A /* ScannerViewController+UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC562170E43C00B1402A /* ScannerViewController+UIElements.swift */; };
 		4EDFAC6B2170E43C00B1402A /* ScannerViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC572170E43C00B1402A /* ScannerViewControllerDelegate.swift */; };
-		4EDFAC6C2170E43C00B1402A /* ForceTouchRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC582170E43C00B1402A /* ForceTouchRecognizer.swift */; };
 		4EDFAC6D2170E43C00B1402A /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC592170E43C00B1402A /* ScannerViewController.swift */; };
 		4EDFAC6E2170E43C00B1402A /* TargetBraceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC5B2170E43C00B1402A /* TargetBraceView.swift */; };
 		4EDFAC6F2170E43C00B1402A /* TorchPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC5C2170E43C00B1402A /* TorchPickerView.swift */; };
@@ -25,6 +22,9 @@
 		4EDFAC712170E43C00B1402A /* ImageCapturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC5F2170E43C00B1402A /* ImageCapturer.swift */; };
 		4EDFAC722170E43C00B1402A /* DocumentScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC602170E43C00B1402A /* DocumentScanner.swift */; };
 		4EDFAC732170E43C00B1402A /* AVDocumentScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC612170E43C00B1402A /* AVDocumentScanner.swift */; };
+		DA9BE85921FF765800D43CEA /* CGPoint+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9BE85721FF765800D43CEA /* CGPoint+Operators.swift */; };
+		DA9BE85A21FF765800D43CEA /* Array+RectangleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9BE85821FF765800D43CEA /* Array+RectangleFeature.swift */; };
+		DA9BE85C21FF767700D43CEA /* ForceTouchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9BE85B21FF767700D43CEA /* ForceTouchGestureRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,13 +42,10 @@
 		4EDFAC332170E3E100B1402A /* YesWeScan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YesWeScan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EDFAC3C2170E3E100B1402A /* YesWeScanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YesWeScanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EDFAC502170E43C00B1402A /* RectangleFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleFeature.swift; sourceTree = "<group>"; };
-		4EDFAC512170E43C00B1402A /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
-		4EDFAC522170E43C00B1402A /* [RectangleFeature]+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "[RectangleFeature]+Extensions.swift"; sourceTree = "<group>"; };
 		4EDFAC542170E43C00B1402A /* UIImage+ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ScannerViewController.swift"; sourceTree = "<group>"; };
 		4EDFAC552170E43C00B1402A /* ScannerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerConfig.swift; sourceTree = "<group>"; };
 		4EDFAC562170E43C00B1402A /* ScannerViewController+UIElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScannerViewController+UIElements.swift"; sourceTree = "<group>"; };
 		4EDFAC572170E43C00B1402A /* ScannerViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewControllerDelegate.swift; sourceTree = "<group>"; };
-		4EDFAC582170E43C00B1402A /* ForceTouchRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceTouchRecognizer.swift; sourceTree = "<group>"; };
 		4EDFAC592170E43C00B1402A /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		4EDFAC5B2170E43C00B1402A /* TargetBraceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetBraceView.swift; sourceTree = "<group>"; };
 		4EDFAC5C2170E43C00B1402A /* TorchPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TorchPickerView.swift; sourceTree = "<group>"; };
@@ -57,6 +54,9 @@
 		4EDFAC602170E43C00B1402A /* DocumentScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentScanner.swift; sourceTree = "<group>"; };
 		4EDFAC612170E43C00B1402A /* AVDocumentScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVDocumentScanner.swift; sourceTree = "<group>"; };
 		4EDFAC632170E43C00B1402A /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		DA9BE85721FF765800D43CEA /* CGPoint+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Operators.swift"; sourceTree = "<group>"; };
+		DA9BE85821FF765800D43CEA /* Array+RectangleFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+RectangleFeature.swift"; sourceTree = "<group>"; };
+		DA9BE85B21FF767700D43CEA /* ForceTouchGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceTouchGestureRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				4EDFAC502170E43C00B1402A /* RectangleFeature.swift */,
-				4EDFAC512170E43C00B1402A /* Operators.swift */,
-				4EDFAC522170E43C00B1402A /* [RectangleFeature]+Extensions.swift */,
+				DA9BE85821FF765800D43CEA /* Array+RectangleFeature.swift */,
+				DA9BE85721FF765800D43CEA /* CGPoint+Operators.swift */,
 			);
 			path = Maths;
 			sourceTree = "<group>";
@@ -139,8 +139,8 @@
 				4EDFAC542170E43C00B1402A /* UIImage+ScannerViewController.swift */,
 				4EDFAC552170E43C00B1402A /* ScannerConfig.swift */,
 				4EDFAC562170E43C00B1402A /* ScannerViewController+UIElements.swift */,
+				DA9BE85B21FF767700D43CEA /* ForceTouchGestureRecognizer.swift */,
 				4EDFAC572170E43C00B1402A /* ScannerViewControllerDelegate.swift */,
-				4EDFAC582170E43C00B1402A /* ForceTouchRecognizer.swift */,
 				4EDFAC592170E43C00B1402A /* ScannerViewController.swift */,
 				4EDFAC5A2170E43C00B1402A /* Custom Views */,
 			);
@@ -283,21 +283,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA9BE85921FF765800D43CEA /* CGPoint+Operators.swift in Sources */,
 				4EDFAC6A2170E43C00B1402A /* ScannerViewController+UIElements.swift in Sources */,
 				4EDFAC732170E43C00B1402A /* AVDocumentScanner.swift in Sources */,
 				4EDFAC6E2170E43C00B1402A /* TargetBraceView.swift in Sources */,
 				4EDFAC652170E43C00B1402A /* RectangleFeature.swift in Sources */,
-				4EDFAC672170E43C00B1402A /* [RectangleFeature]+Extensions.swift in Sources */,
 				4EDFAC712170E43C00B1402A /* ImageCapturer.swift in Sources */,
 				4EDFAC702170E43C00B1402A /* DocumentScannerDelegate.swift in Sources */,
-				4EDFAC662170E43C00B1402A /* Operators.swift in Sources */,
 				4EDFAC6F2170E43C00B1402A /* TorchPickerView.swift in Sources */,
 				4EDFAC6D2170E43C00B1402A /* ScannerViewController.swift in Sources */,
 				4EDFAC682170E43C00B1402A /* UIImage+ScannerViewController.swift in Sources */,
 				4EDFAC6B2170E43C00B1402A /* ScannerViewControllerDelegate.swift in Sources */,
 				4EDFAC722170E43C00B1402A /* DocumentScanner.swift in Sources */,
+				DA9BE85A21FF765800D43CEA /* Array+RectangleFeature.swift in Sources */,
+				DA9BE85C21FF767700D43CEA /* ForceTouchGestureRecognizer.swift in Sources */,
 				4EDFAC692170E43C00B1402A /* ScannerConfig.swift in Sources */,
-				4EDFAC6C2170E43C00B1402A /* ForceTouchRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

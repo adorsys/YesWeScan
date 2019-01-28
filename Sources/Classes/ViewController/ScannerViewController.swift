@@ -22,9 +22,21 @@ public final class ScannerViewController: UIViewController {
             detectionLayer.strokeColor = previewColor.withAlphaComponent(0.9).cgColor
         }
     }
-    public var featuresRequired: Int = 7 {
+
+    public enum Quality {
+        case high, medium, fast
+    }
+
+    public var scanningQuality: Quality = .medium {
         didSet {
-            scanner.featuresRequired = featuresRequired
+            switch scanningQuality {
+            case .fast:
+                scanner.featuresRequired = 1
+            case .medium:
+                scanner.featuresRequired = 3
+            case .high:
+                scanner.featuresRequired = 7
+            }
         }
     }
 

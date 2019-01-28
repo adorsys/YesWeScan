@@ -104,12 +104,21 @@ back to the default value.
 
 ### Image Features needed before automatically capture
 
-By default, image will be automatically captured when there're 7
-RectangleFeatures. You can change that setting by modifying a variable for the
-`ScannerViewController`.
+You can change the variable `scanningQuality` to control the scanning quality
+of the image. Changes to `scanningQuality` will influence the number of
+features required before taking a capture.
 
+```swift
+enum Quality {
+  case high, medium, fast
+}
 ```
-scanner.featuresRequired = 7
+
+The default value is .medium, and this variable is available
+in `ScannerViewController`
+
+```swift
+scanner.scanningQuality = .fast
 ```
 
 ### UI Configuration

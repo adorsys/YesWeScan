@@ -116,6 +116,7 @@ extension ViewController {
     public func openDocumentScanner() {
         let scanner = ScannerViewController()
         scanner.delegate = self
+        scanner.scanningQuality = .fast
         navigationController?.pushViewController(scanner, animated: true)
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
