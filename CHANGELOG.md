@@ -1,8 +1,13 @@
 # Changelog
 
+## 1.2.0
+
+* New: You can set the quality of the scanner for automatic captures (by @msztech)
+* Fix: Adjust spacing for safe area in `ScannerViewController`
+
 ## 1.1.0
 
-* New: Share your scanned image with the Example App (by msztech)
+* New: Share your scanned image with the Example App (by @msztech)
 * Updated: Simplify layout of Example App
 
 ## 1.0.5
