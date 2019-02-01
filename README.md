@@ -19,6 +19,7 @@ This pod contains a ready to use view controller for document scanning. Yes we s
   - [Scanner View Controller](#scanner-view-controller)
   - [Delegate Methods](#delegate-methods)
   - [Scanner Quality](#scanner-quality)
+  - [Image Features needed before automatically capture](#image-features-needed-before-automatically-capture)
   - [UI Configuration](#ui-configuration)
   - [Performance hint](#performance-hint)
   - [Siri Shortcuts](#siri-shortcuts)
