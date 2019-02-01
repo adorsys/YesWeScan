@@ -8,7 +8,7 @@
 [![platform](https://img.shields.io/badge/platform-iOS_10+-lightgrey.svg)](https://img.shields.io/badge/platform-iOS_10+-lightgrey.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-This pod contains a ready to use view controller for document scanning. Yes we scan! 
+This pod contains a ready to use view controller for document scanning. Yes we scan!
 
 - [Requirements](#requirements)
 - [Scanner Preview](#scanner-preview)
@@ -66,7 +66,7 @@ class ViewController: UIViewController,  {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     let scanner = ScannerViewController()
     scanner.delegate = self
     navigationController?.pushViewController(scanner, animated: true)
@@ -101,6 +101,25 @@ The Scanner resolution can be configured by passing the `ScannerViewController`
 an `AVCaptureSession.Preset` during initialization. The default value is
 `.high`. If the given preset isn't supported by the capture device, it'll fall
 back to the default value.
+
+### Image Features needed before automatically capture
+
+You can change the variable `scanningQuality` to control the scanning quality
+of the image. Changes to `scanningQuality` will influence the number of
+features required before taking a capture.
+
+```swift
+enum Quality {
+  case high, medium, fast
+}
+```
+
+The default value is .medium, and this variable is available
+in `ScannerViewController`
+
+```swift
+scanner.scanningQuality = .fast
+```
 
 ### UI Configuration
 
@@ -139,7 +158,7 @@ The User own shortcut opens the app and navigates to the Document Scanner.
 You can find the implementation in the example project.
 
 The implementation works as follows:
-Activate Siri in the project and add a `NSUserActivityTypes` identifier in `info.plist`. 
+Activate Siri in the project and add a `NSUserActivityTypes` identifier in `info.plist`.
 Then activate Siri Shortcut adding following lines in the project:
 
 ```swift

@@ -23,6 +23,23 @@ public final class ScannerViewController: UIViewController {
         }
     }
 
+    public enum Quality {
+        case high, medium, fast
+    }
+
+    public var scanningQuality: Quality = .medium {
+        didSet {
+            switch scanningQuality {
+            case .fast:
+                scanner.featuresRequired = 1
+            case .medium:
+                scanner.featuresRequired = 3
+            case .high:
+                scanner.featuresRequired = 7
+            }
+        }
+    }
+
     public init(sessionPreset: AVCaptureSession.Preset = .photo, config: ScannerConfig = .all) {
         self.sessionPreset = sessionPreset
         super.init(nibName: nil, bundle: nil)

@@ -7,6 +7,10 @@ protocol DocumentScanner {
     /// but will reduce quality. Default value is 100.
     var desiredJitter: CGFloat { get set }
 
+    /// A value that controls the desiered features captured before pausing
+    /// the camera and use the capture.
+    var featuresRequired: Int { get set }
+
     /// A layer for preview in the view controller. The scanner assumes that
     /// this will have the same bounds as the device's screen
     var previewLayer: CALayer { get }
