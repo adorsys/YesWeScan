@@ -10,6 +10,8 @@ import AVFoundation
 
 public final class ScannerViewController: UIViewController {
 
+    private var observer: Any?
+
     public weak var delegate: ScannerViewControllerDelegate?
     public var jitter: CGFloat {
         set { scanner.desiredJitter = newValue }
@@ -40,11 +42,19 @@ public final class ScannerViewController: UIViewController {
         }
     }
 
+    public var progress: Progress {
+        return scanner.progress
+    }
+
     public init(sessionPreset: AVCaptureSession.Preset = .photo, config: ScannerConfig = .all) {
         self.sessionPreset = sessionPreset
         super.init(nibName: nil, bundle: nil)
         setupUI(config: config)
+        observer = progress.observe(\.fractionCompleted) { progress, _ in
+            print(progress.fractionCompleted)
+        }
     }
+
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) isn't supported")
     }

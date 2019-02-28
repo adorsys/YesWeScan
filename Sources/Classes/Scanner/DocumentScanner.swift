@@ -15,6 +15,9 @@ protocol DocumentScanner {
     /// this will have the same bounds as the device's screen
     var previewLayer: CALayer { get }
 
+    /// Indicates the progress of the scan
+    var progress: Progress { get }
+
     /// Manually capture an image in given bounds
     ///
     /// - Parameters:
