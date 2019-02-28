@@ -50,8 +50,10 @@ public final class ScannerViewController: UIViewController {
         self.sessionPreset = sessionPreset
         super.init(nibName: nil, bundle: nil)
         setupUI(config: config)
-        observer = progress.observe(\.fractionCompleted) { progress, _ in
-            print(progress.fractionCompleted)
+        observer = progress.observe(\.fractionCompleted) { [weak self] progress, _ in
+            DispatchQueue.main.async {
+                self?.progressBar?.setProgress(Float(progress.fractionCompleted), animated: true)
+            }
         }
     }
 
@@ -63,6 +65,7 @@ public final class ScannerViewController: UIViewController {
     @IBOutlet private weak var targetView: UIView!
     @IBOutlet private weak var targetButton: UIView!
     @IBOutlet private weak var torchButton: UIView!
+    @IBOutlet private weak var progressBar: UIProgressView!
 
     private lazy var scanner: DocumentScanner & TorchPickerViewDelegate = {
         AVDocumentScanner(sessionPreset: sessionPreset, delegate: self)
@@ -154,6 +157,17 @@ public final class ScannerViewController: UIViewController {
                     .constraint(equalTo: torch.bottomAnchor, constant: 8)
                     .isActive = true
             }
+        }
+
+        if config.contains(.progressBar) {
+            let progressBar = makeProgressBar()
+            self.progressBar = progressBar
+            view.addSubview(progressBar)
+            NSLayoutConstraint.activate([
+                progressBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                progressBar.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                progressBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            ])
         }
     }
 

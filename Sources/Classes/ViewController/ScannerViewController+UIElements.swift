@@ -49,6 +49,12 @@ extension ScannerViewController {
                          for: .touchUpInside)
         return button
     }
+
+    func makeProgressBar() -> UIProgressView {
+        let progressBar = UIProgressView()
+        progressBar.translatesAutoresizingMaskIntoConstraints = false
+        return progressBar
+    }
 }
 
 private func blurView() -> UIVisualEffectView {
