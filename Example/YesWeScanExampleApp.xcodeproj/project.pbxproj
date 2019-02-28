@@ -235,7 +235,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-YesWeScanExampleApp/Pods-YesWeScanExampleApp-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-YesWeScanExampleApp/Pods-YesWeScanExampleApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/TOCropViewController/TOCropViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/YesWeScan/YesWeScan.framework",
 			);
@@ -248,7 +248,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YesWeScanExampleApp/Pods-YesWeScanExampleApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YesWeScanExampleApp/Pods-YesWeScanExampleApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
