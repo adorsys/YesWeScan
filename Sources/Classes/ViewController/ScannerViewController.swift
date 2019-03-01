@@ -55,6 +55,7 @@ public final class ScannerViewController: UIViewController {
                 self?.progressBar?.setProgress(Float(progress.fractionCompleted), animated: true)
             }
         }
+        edgesForExtendedLayout.remove(.top)
     }
 
     public required init?(coder aDecoder: NSCoder) {
@@ -165,7 +166,7 @@ public final class ScannerViewController: UIViewController {
             view.addSubview(progressBar)
             NSLayoutConstraint.activate([
                 progressBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                progressBar.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                progressBar.topAnchor.constraint(equalTo: view.topAnchor),
                 progressBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ])
         }
