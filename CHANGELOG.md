@@ -1,5 +1,7 @@
 # Changelog
 
+* New: Track progress of the current scan
+
 ## 1.2.0
 
 * New: You can set the quality of the scanner for automatic captures (by @msztech)

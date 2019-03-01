@@ -135,6 +135,7 @@ The following options are available:
 + `.targetBraces`: A button to toggle targeting braces
 + `.torch`: A button for controlling the torch
 + `.manualCapture`: A manual camera shutter
++ `.progressBar`: Show a progress bar for the current scan
 
 The default value here is `.all`
 
