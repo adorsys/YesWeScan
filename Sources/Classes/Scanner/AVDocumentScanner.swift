@@ -3,8 +3,12 @@ import UIKit
 
 final class AVDocumentScanner: NSObject {
     var lastTorchLevel: Float = 0
-    var desiredJitter: CGFloat = 100
+    var desiredJitter: CGFloat = 100 {
+        didSet { progress.completedUnitCount = Int64(desiredJitter) }
+    }
     var featuresRequired: Int = 7
+
+    let progress = Progress()
 
     lazy var previewLayer: CALayer = {
         let layer = AVCaptureVideoPreviewLayer(session: captureSession)
@@ -38,6 +42,7 @@ final class AVDocumentScanner: NSObject {
         captureSession = session
         imageCapturer = ImageCapturer(session: session)
         super.init()
+        progress.completedUnitCount = Int64(desiredJitter)
         output.setSampleBufferDelegate(self, queue: imageQueue)
     }
 
@@ -113,6 +118,7 @@ extension AVDocumentScanner: AVCaptureVideoDataOutputSampleBufferDelegate {
 
         let (smoothed, newFeatures) = feature.smoothed(with: lastFeatures)
         lastFeatures = newFeatures
+        progress.totalUnitCount = Int64(newFeatures.jitter)
 
         if newFeatures.count > featuresRequired,
             newFeatures.jitter < desiredJitter,

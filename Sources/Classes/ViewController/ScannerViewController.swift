@@ -10,6 +10,8 @@ import AVFoundation
 
 public final class ScannerViewController: UIViewController {
 
+    private var observer: Any?
+
     public weak var delegate: ScannerViewControllerDelegate?
     public var jitter: CGFloat {
         set { scanner.desiredJitter = newValue }
@@ -40,11 +42,22 @@ public final class ScannerViewController: UIViewController {
         }
     }
 
+    public var progress: Progress {
+        return scanner.progress
+    }
+
     public init(sessionPreset: AVCaptureSession.Preset = .photo, config: ScannerConfig = .all) {
         self.sessionPreset = sessionPreset
         super.init(nibName: nil, bundle: nil)
         setupUI(config: config)
+        observer = progress.observe(\.fractionCompleted) { [weak self] progress, _ in
+            DispatchQueue.main.async {
+                self?.progressBar?.setProgress(Float(progress.fractionCompleted), animated: true)
+            }
+        }
+        edgesForExtendedLayout.remove(.top)
     }
+
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) isn't supported")
     }
@@ -53,6 +66,7 @@ public final class ScannerViewController: UIViewController {
     @IBOutlet private weak var targetView: UIView!
     @IBOutlet private weak var targetButton: UIView!
     @IBOutlet private weak var torchButton: UIView!
+    @IBOutlet private weak var progressBar: UIProgressView!
 
     private lazy var scanner: DocumentScanner & TorchPickerViewDelegate = {
         AVDocumentScanner(sessionPreset: sessionPreset, delegate: self)
@@ -144,6 +158,17 @@ public final class ScannerViewController: UIViewController {
                     .constraint(equalTo: torch.bottomAnchor, constant: 8)
                     .isActive = true
             }
+        }
+
+        if config.contains(.progressBar) {
+            let progressBar = makeProgressBar()
+            self.progressBar = progressBar
+            view.addSubview(progressBar)
+            NSLayoutConstraint.activate([
+                progressBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                progressBar.topAnchor.constraint(equalTo: view.topAnchor),
+                progressBar.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            ])
         }
     }
 
