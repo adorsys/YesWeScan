@@ -62,7 +62,7 @@ with `import YesWeScan`.
 ```swift
 import YesWeScan
 
-class ViewController: UIViewController,  {
+class ViewController: UIViewController {
   var scannedImage: UIImage?
 
   override func viewDidLoad() {
@@ -84,7 +84,9 @@ You will then receive calls when the scanner found an image of suitable quality:
 
 ```swift
 extension ViewController: ScannerViewControllerDelegate {
-  func didCapture(image: UIImage) {
+  func scanner(_ scanner: ScannerViewController,
+                 didCaptureImage image: UIImage) {
+
     scannedImage = image
     navigationController?.popViewController(animated: true)
   }
@@ -181,15 +183,17 @@ To call a specific function add in the `AppDelegate.swift` file:
 
 ```swift
 func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-    if #available(iOS 12.0, *) {
-        if userActivity.activityType == Bundle.main.userActivityIdentifier {
-            let navigationController = window?.rootViewController! as! UINavigationController
-            let viewController = navigationController.children.first as! ViewController
-            viewController.theFunctionToCall()
-        }
-        return true
+  if #available(iOS 12.0, *) {
+    guard userActivity.activityType == Bundle.main.userActivityIdentifier,
+      let navigationController = window?.rootViewController as? UINavigationController,
+      let viewController = navigationController.children.first as? ViewController else {
+        return false
     }
+    viewController.openDocumentScanner()
+    return true
+  } else {
     return false
+  }
 }
 ```
 
