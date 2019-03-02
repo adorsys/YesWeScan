@@ -84,9 +84,7 @@ You will then receive calls when the scanner found an image of suitable quality:
 
 ```swift
 extension ViewController: ScannerViewControllerDelegate {
-  func scanner(_ scanner: ScannerViewController,
-                 didCaptureImage image: UIImage) {
-
+  func scanner(_ scanner: ScannerViewController, didCaptureImage image: UIImage) {
     scannedImage = image
     navigationController?.popViewController(animated: true)
   }
