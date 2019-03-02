@@ -28,7 +28,7 @@
                                             <constraint firstAttribute="width" secondItem="OQu-Y8-SbL" secondAttribute="height" multiplier="397:64" id="jwx-If-Q5i"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YesWeScan Example App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ho-Ac-hss">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YesWeScan Example App" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ho-Ac-hss">
                                         <rect key="frame" x="0.0" y="56.5" width="300" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
