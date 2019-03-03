@@ -62,7 +62,7 @@ with `import YesWeScan`.
 ```swift
 import YesWeScan
 
-class ViewController: UIViewController,  {
+class ViewController: UIViewController {
   var scannedImage: UIImage?
 
   override func viewDidLoad() {
@@ -78,13 +78,13 @@ class ViewController: UIViewController,  {
 ### Delegate Methods
 
 The scanner will __not__ capture images without a delegate.
-You should therefore set the `delegate` property of the scanner VC.
+You should therefore set the `delegate` property of the `ScannerViewController`.
 
 You will then receive calls when the scanner found an image of suitable quality:
 
 ```swift
 extension ViewController: ScannerViewControllerDelegate {
-  func didCapture(image: UIImage) {
+  func scanner(_ scanner: ScannerViewController, didCaptureImage image: UIImage) {
     scannedImage = image
     navigationController?.popViewController(animated: true)
   }
@@ -115,8 +115,8 @@ enum Quality {
 }
 ```
 
-The default value is .medium, and this variable is available
-in `ScannerViewController`
+The default value is `.medium` and this variable is available
+in `ScannerViewController`.
 
 ```swift
 scanner.scanningQuality = .fast
@@ -137,7 +137,7 @@ The following options are available:
 + `.manualCapture`: A manual camera shutter
 + `.progressBar`: Show a progress bar for the current scan
 
-The default value here is `.all`
+The default value here is `.all`.
 
 You can also configure the `previewColor` (color of scan preview rect) and
 `braceColor` (color of the target finder braces).
@@ -165,31 +165,33 @@ Then activate Siri Shortcut adding following lines in the project:
 
 ```swift
 if #available(iOS 12.0, *) {
-    let identifier = Bundle.main.userActivityIdentifier
-    let activity = NSUserActivity(activityType: identifier)
-    activity.title = "The String the User will see in preferences"
-    activity.userInfo = ["Document Scanner" : "open document scanner"]
-    activity.isEligibleForSearch = true
-    activity.isEligibleForPrediction = true
-    activity.persistentIdentifier = NSUserActivityPersistentIdentifier(identifier)
-    view.userActivity = activity
-    activity.becomeCurrent()
+  let identifier = Bundle.main.userActivityIdentifier
+  let activity = NSUserActivity(activityType: identifier)
+  activity.title = "The String the User will see in preferences"
+  activity.userInfo = ["Document Scanner": "open document scanner"]
+  activity.isEligibleForSearch = true
+  activity.isEligibleForPrediction = true
+  activity.persistentIdentifier = NSUserActivityPersistentIdentifier(identifier)
+  view.userActivity = activity
+  activity.becomeCurrent()
 }
 ```
 
-To call a specific function add in the `AppDelegate.swift` file:
+To call a specific function, like `openDocumentScanner()`, add this to `AppDelegate`:
 
 ```swift
 func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-    if #available(iOS 12.0, *) {
-        if userActivity.activityType == Bundle.main.userActivityIdentifier {
-            let navigationController = window?.rootViewController! as! UINavigationController
-            let viewController = navigationController.children.first as! ViewController
-            viewController.theFunctionToCall()
-        }
-        return true
+  if #available(iOS 12.0, *) {
+    guard userActivity.activityType == Bundle.main.userActivityIdentifier,
+      let navigationController = window?.rootViewController as? UINavigationController,
+      let viewController = navigationController.children.first as? ViewController else {
+        return false
     }
+    viewController.openDocumentScanner()
+    return true
+  } else {
     return false
+  }
 }
 ```
 
