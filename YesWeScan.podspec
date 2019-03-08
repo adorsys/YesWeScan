@@ -21,10 +21,10 @@ Pod::Spec.new do |s|
 This pod contains a ready to use view controller for document scanning.
                        DESC
 
-  s.homepage         = 'https://github.com/adorsys/document-scanner-ios.git'
+  s.homepage         = 'https://github.com/adorsys/YesWeScan.git'
   s.license          = { :type => 'Apache License 2.0', :file => 'LICENSE' }
-  s.author           = { 'xaverlohmueller' => 'xlo@adorsys.de', 'steffen blümm' => 'sbl@adorsys.de' }
-  s.source           = { :git => 'https://github.com/adorsys/document-scanner-ios.git', :tag => s.version.to_s }
+  s.author           = { 'Xavier Lowmiller' => 'xlo@adorsys.de', 'steffen blümm' => 'sbl@adorsys.de' }
+  s.source           = { :git => 'https://github.com/adorsys/YesWeScan.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '10.0'
   s.swift_version = '4.2'
