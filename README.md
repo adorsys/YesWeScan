@@ -1,10 +1,10 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/adorsys/document-scanner-ios/master/Images/banner.jpg" width="1700" max-width="100%" alt="YesWeScan" />
+    <img src="https://raw.githubusercontent.com/adorsys/YesWeScan/master/Images/banner.jpg" width="1700" max-width="100%" alt="YesWeScan" />
 </p>
 
-[![Build Status](https://travis-ci.com/adorsys/document-scanner-ios.svg?branch=master)](https://travis-ci.com/adorsys/document-scanner-ios.svg?branch=master)
+[![Build Status](https://travis-ci.com/adorsys/YesWeScan.svg?branch=master)](https://travis-ci.com/adorsys/YesWeScan.svg?branch=master)
 [![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg)](https://swift.org)
-[![license](https://img.shields.io/badge/license-Apache_2.0-lightgrey.svg)](https://github.com/adorsys/document-scanner-ios/blob/master/LICENSE)
+[![license](https://img.shields.io/badge/license-Apache_2.0-lightgrey.svg)](https://github.com/adorsys/YesWeScan/blob/master/LICENSE)
 [![platform](https://img.shields.io/badge/platform-iOS_10+-lightgrey.svg)](https://img.shields.io/badge/platform-iOS_10+-lightgrey.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
@@ -30,7 +30,7 @@ This pod contains a ready to use view controller for document scanning. Yes we s
 
 ## Scanner Preview
 
-<img src="https://raw.githubusercontent.com/adorsys/document-scanner-ios/master/Images/preview.GIF" width="250" max-width="50%" alt="Demo" />
+<img src="https://raw.githubusercontent.com/adorsys/YesWeScan/master/Images/preview.GIF" width="250" max-width="50%" alt="Demo" />
 
 ## Installation
 
@@ -49,7 +49,7 @@ YesWeScan is also available via [Carthage](https://github.com/Carthage/Carthage)
 Add the following line to your `Cartfile`:
 
 ```
-github "adorsys/document-scanner-ios"
+github "adorsys/YesWeScan"
 ```
 
 ## Usage
@@ -197,4 +197,4 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
 
 ## License
 
-YesWeScan is released under the **Apache 2.0 License**. Please see the [LICENSE](https://github.com/adorsys/document-scanner-ios/blob/master/LICENSE) file for more information.
+YesWeScan is released under the **Apache 2.0 License**. Please see the [LICENSE](https://github.com/adorsys/YesWeScan/blob/master/LICENSE) file for more information.
