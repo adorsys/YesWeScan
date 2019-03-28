@@ -253,7 +253,6 @@ extension ScannerViewController {
 
             guard forceTap.force > 0.75 else { return }
             let generator = UIImpactFeedbackGenerator(style: .medium)
-            generator.prepare()
             generator.impactOccurred()
         }
         let picker = TorchPickerView(frame: view.frame)
@@ -290,7 +289,6 @@ extension ScannerViewController: TorchPickerViewDelegate {
         guard level != lastTorchLevel else { return }
 
         let generator = UIImpactFeedbackGenerator(style: .medium)
-        generator.prepare()
         generator.impactOccurred()
 
         setTorchUIOn(level != 0)
