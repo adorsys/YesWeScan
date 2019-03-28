@@ -1,6 +1,6 @@
 public extension ScannerViewController {
 
-    public struct ScannerConfig: OptionSet {
+    struct ScannerConfig: OptionSet {
         public let rawValue: Int
 
         public init(rawValue: Int) {
