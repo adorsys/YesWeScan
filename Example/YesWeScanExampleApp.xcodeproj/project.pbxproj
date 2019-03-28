@@ -150,7 +150,7 @@
 				TargetAttributes = {
 					B23598EE2097134700813B39 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.Siri = {
 								enabled = 1;
@@ -420,7 +420,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.adorsys.DocumentScannerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -441,7 +441,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.adorsys.DocumentScannerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
