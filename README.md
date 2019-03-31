@@ -26,7 +26,13 @@ This pod contains a ready to use view controller for document scanning. Yes we s
 - [License](#license)
 
 ## Requirements
+
 - iOS 10.0 SDK or later
+
+| Xcode Version | YesWeScan |
+|---------------|-----------|
+| <= 10.1       | <= 1.3.0  |
+| 10.2          | => 2.0.0  |
 
 ## Scanner Preview
 
@@ -40,7 +46,7 @@ YesWeScan is available through [CocoaPods](http://cocoapods.org).
 To install it, simply add the following line to your `Podfile`:
 
 ```ruby
-pod 'YesWeScan'
+pod 'YesWeScan', ~> '2.0'
 ```
 
 ### Carthage
