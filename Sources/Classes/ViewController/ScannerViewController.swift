@@ -268,14 +268,14 @@ extension ScannerViewController {
 }
 
 extension ScannerViewController: DocumentScannerDelegate {
-    func didCapture(image: UIImage) {
+    public func didCapture(image: UIImage) {
         if let delegate = delegate {
             scanner.pause()
             delegate.scanner(self, didCaptureImage: image)
         }
     }
 
-    func didRecognize(feature: RectangleFeature?, in image: CIImage) {
+    public func didRecognize(feature: RectangleFeature?, in image: CIImage) {
         guard let feature = feature else { detectionLayer.path = nil; return }
 
         detectionLayer.path = feature.bezierPath.cgPath

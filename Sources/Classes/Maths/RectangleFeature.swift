@@ -1,6 +1,6 @@
 import UIKit
 
-struct RectangleFeature {
+public struct RectangleFeature {
     let topLeft: CGPoint
     let topRight: CGPoint
     let bottomLeft: CGPoint
@@ -92,11 +92,11 @@ extension RectangleFeature {
 }
 
 extension RectangleFeature: Comparable {
-    static func < (lhs: RectangleFeature, rhs: RectangleFeature) -> Bool {
+    public static func < (lhs: RectangleFeature, rhs: RectangleFeature) -> Bool {
         return lhs.areaQualifier < rhs.areaQualifier
     }
 
-    static func == (lhs: RectangleFeature, rhs: RectangleFeature) -> Bool {
+    public static func == (lhs: RectangleFeature, rhs: RectangleFeature) -> Bool {
         return lhs.topLeft == rhs.topLeft
             && lhs.topRight == rhs.topRight
             && lhs.bottomLeft == rhs.bottomLeft

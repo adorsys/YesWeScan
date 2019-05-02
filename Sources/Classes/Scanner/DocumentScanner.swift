@@ -1,7 +1,7 @@
 import AVFoundation
 import UIKit
 
-protocol DocumentScanner {
+public protocol DocumentScanner {
 
     /// Jitter of automatic capture. Higher values will capture images faster,
     /// but will reduce quality. Default value is 100.
