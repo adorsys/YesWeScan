@@ -23,6 +23,7 @@ This pod contains a ready to use view controller for document scanning. Yes we s
   - [UI Configuration](#ui-configuration)
   - [Performance hint](#performance-hint)
   - [Siri Shortcuts](#siri-shortcuts)
+  - [Using the scanner directly](#using-the-scanner-directly)
 - [License](#license)
 
 ## Requirements
@@ -200,6 +201,15 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
   }
 }
 ```
+
+### Using the scanner directly
+
+It's also possible to use the scanner class without the `ScannerViewController`
+class (that is part of this pod) directly.
+
+As an example how to do this, take a look at the [`CustomUIViewController`][custom VC] class.
+
+[custom VC]: https://github.com/adorsys/YesWeScan/blob/master/Example/YesWeScanExampleApp/CustomUIViewController.swift
 
 ## License
 
