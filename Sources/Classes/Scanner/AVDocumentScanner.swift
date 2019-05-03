@@ -89,8 +89,8 @@ public final class AVDocumentScanner: NSObject {
 
 extension AVDocumentScanner: AVCaptureVideoDataOutputSampleBufferDelegate {
     public func captureOutput(_: AVCaptureOutput,
-                       didOutput sampleBuffer: CMSampleBuffer,
-                       from _: AVCaptureConnection) {
+                              didOutput sampleBuffer: CMSampleBuffer,
+                              from _: AVCaptureConnection) {
 
         guard isStopped == false,
             CMSampleBufferIsValid(sampleBuffer),
