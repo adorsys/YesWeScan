@@ -60,7 +60,7 @@ extension RectangleFeature {
         )
     }
 
-    var bezierPath: UIBezierPath {
+    public var bezierPath: UIBezierPath {
 
         let path = UIBezierPath()
         path.move(to: topLeft)
