@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.0
+
+* New: Expose AVDocumentScanner to be public
+
 ## 2.0.0
 
 * Bump to Swift 5
