@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		229B7B212170D5E700619215 /* Bundle+UserActivityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229B7B202170D5E700619215 /* Bundle+UserActivityIdentifier.swift */; };
+		4ED16A52227B68ED0020CEB2 /* CustomUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED16A51227B68ED0020CEB2 /* CustomUIViewController.swift */; };
 		AB100DEAC71BE98E3B0188D0 /* Pods_YesWeScanExampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F337E1B4DB2217E8FBAF8016 /* Pods_YesWeScanExampleApp.framework */; };
 		B23598F32097134700813B39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23598F22097134700813B39 /* AppDelegate.swift */; };
 		B23598F52097134700813B39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23598F42097134700813B39 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 		229B7B202170D5E700619215 /* Bundle+UserActivityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+UserActivityIdentifier.swift"; sourceTree = "<group>"; };
 		22CF73BE216777DE008C9FEB /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		22D8225221676AE90035206F /* DocumentScannerApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DocumentScannerApp.entitlements; sourceTree = "<group>"; };
+		4ED16A51227B68ED0020CEB2 /* CustomUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIViewController.swift; sourceTree = "<group>"; };
 		91CD6F12F8CED7AD02974558 /* Pods-YesWeScanExampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesWeScanExampleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YesWeScanExampleApp/Pods-YesWeScanExampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B23598EF2097134700813B39 /* YesWeScanExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YesWeScanExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23598F22097134700813B39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				B2B60675209715C0005A43D4 /* Views */,
 				B23598F22097134700813B39 /* AppDelegate.swift */,
 				B23598F42097134700813B39 /* ViewController.swift */,
+				4ED16A51227B68ED0020CEB2 /* CustomUIViewController.swift */,
 				229B7B202170D5E700619215 /* Bundle+UserActivityIdentifier.swift */,
 				B23598F62097134700813B39 /* Main.storyboard */,
 				B23598F92097134800813B39 /* Assets.xcassets */,
@@ -107,10 +110,10 @@
 		B2B60675209715C0005A43D4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B2B60676209715D6005A43D4 /* LogoView.swift */,
-				B2B6067C20985A3C005A43D4 /* IconButton.swift */,
-				B2B6067820972343005A43D4 /* ScanButton.swift */,
 				B2B6067A20978DB8005A43D4 /* EditButton.swift */,
+				B2B6067C20985A3C005A43D4 /* IconButton.swift */,
+				B2B60676209715D6005A43D4 /* LogoView.swift */,
+				B2B6067820972343005A43D4 /* ScanButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				B2B6067920972343005A43D4 /* ScanButton.swift in Sources */,
 				B23598F52097134700813B39 /* ViewController.swift in Sources */,
 				229B7B212170D5E700619215 /* Bundle+UserActivityIdentifier.swift in Sources */,
+				4ED16A52227B68ED0020CEB2 /* CustomUIViewController.swift in Sources */,
 				B2B60677209715D6005A43D4 /* LogoView.swift in Sources */,
 				B23598F32097134700813B39 /* AppDelegate.swift in Sources */,
 			);

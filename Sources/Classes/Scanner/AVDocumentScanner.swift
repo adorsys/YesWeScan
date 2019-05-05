@@ -1,16 +1,16 @@
 import AVFoundation
 import UIKit
 
-final class AVDocumentScanner: NSObject {
+public final class AVDocumentScanner: NSObject {
     var lastTorchLevel: Float = 0
-    var desiredJitter: CGFloat = 100 {
+    public var desiredJitter: CGFloat = 100 {
         didSet { progress.completedUnitCount = Int64(desiredJitter) }
     }
-    var featuresRequired: Int = 7
+    public var featuresRequired: Int = 7
 
-    let progress = Progress()
+    public let progress = Progress()
 
-    lazy var previewLayer: CALayer = {
+    public lazy var previewLayer: CALayer = {
         let layer = AVCaptureVideoPreviewLayer(session: captureSession)
         layer.videoGravity = .resizeAspectFill
         return layer
@@ -46,8 +46,8 @@ final class AVDocumentScanner: NSObject {
         output.setSampleBufferDelegate(self, queue: imageQueue)
     }
 
-    convenience init(sessionPreset: AVCaptureSession.Preset = .photo,
-                     delegate: DocumentScannerDelegate) {
+    public convenience init(sessionPreset: AVCaptureSession.Preset = .photo,
+                            delegate: DocumentScannerDelegate) {
         self.init(sessionPreset: sessionPreset)
         self.delegate = delegate
     }
@@ -64,8 +64,8 @@ final class AVDocumentScanner: NSObject {
             deviceTypes: [.builtInWideAngleCamera],
             mediaType: .video,
             position: .back
-        ).devices
-        .first { $0.hasTorch }
+            ).devices
+            .first { $0.hasTorch }
     }()
 
     private lazy var output: AVCaptureVideoDataOutput = {
@@ -84,13 +84,13 @@ final class AVDocumentScanner: NSObject {
         CIDetectorMaxFeatureCount: 10
 
         // swiftlint:disable:next force_unwrapping
-    ])!
+        ])!
 }
 
 extension AVDocumentScanner: AVCaptureVideoDataOutputSampleBufferDelegate {
-    func captureOutput(_: AVCaptureOutput,
-                       didOutput sampleBuffer: CMSampleBuffer,
-                       from _: AVCaptureConnection) {
+    public func captureOutput(_: AVCaptureOutput,
+                              didOutput sampleBuffer: CMSampleBuffer,
+                              from _: AVCaptureConnection) {
 
         guard isStopped == false,
             CMSampleBufferIsValid(sampleBuffer),
@@ -137,20 +137,20 @@ extension AVDocumentScanner: AVCaptureVideoDataOutputSampleBufferDelegate {
 }
 
 extension AVDocumentScanner: DocumentScanner {
-    func captureImage(in bounds: RectangleFeature?, completion: @escaping (UIImage) -> Void) {
+    public func captureImage(in bounds: RectangleFeature?, completion: @escaping (UIImage) -> Void) {
         imageCapturer.captureImage(in: bounds, completion: completion)
     }
-    func start() {
+    public func start() {
         guard !captureSession.isRunning else {
             return
         }
         captureSession.startRunning()
         isStopped = false
     }
-    func pause() {
+    public func pause() {
         isStopped = true
     }
-    func stop() {
+    public func stop() {
         guard captureSession.isRunning else {
             return
         }
