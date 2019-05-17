@@ -87,12 +87,12 @@ class ViewController: UIViewController {
 The scanner will __not__ capture images without a delegate.
 You should therefore set the `delegate` property of the `ScannerViewController`.
 
-You will then receive calls when the scanner found an image of suitable quality:
+You will then receive calls when the scanner is done scanning images.
 
 ```swift
 extension ViewController: ScannerViewControllerDelegate {
-  func scanner(_ scanner: ScannerViewController, didCaptureImage image: UIImage) {
-    scannedImage = image
+  func scanner(_ scanner: ScannerViewController, didCaptureImages images: [UIImage]) {
+    scannedImages = images
     navigationController?.popViewController(animated: true)
   }
 }
