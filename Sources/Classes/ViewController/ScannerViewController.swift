@@ -214,7 +214,7 @@ extension ScannerViewController {
         scanner.captureImage(in: boundingRect) { [weak self] image in
             if let scanner = self {
                 scanner.scanner.stop()
-                self?.delegate?.scanner(scanner, didCaptureImage: image)
+                self?.delegate?.scanner(scanner, didCaptureImages: [image])
             }
         }
     }
@@ -271,7 +271,7 @@ extension ScannerViewController: DocumentScannerDelegate {
     public func didCapture(image: UIImage) {
         if let delegate = delegate {
             scanner.pause()
-            delegate.scanner(self, didCaptureImage: image)
+            delegate.scanner(self, didCaptureImages: [image])
         }
     }
 
