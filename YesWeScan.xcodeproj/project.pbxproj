@@ -116,21 +116,21 @@
 		4EDFAC4E2170E43C00B1402A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4EDFAC4F2170E43C00B1402A /* Maths */,
+				4EDFAC4F2170E43C00B1402A /* Math */,
 				4EDFAC532170E43C00B1402A /* ViewController */,
 				4EDFAC5D2170E43C00B1402A /* Scanner */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		4EDFAC4F2170E43C00B1402A /* Maths */ = {
+		4EDFAC4F2170E43C00B1402A /* Math */ = {
 			isa = PBXGroup;
 			children = (
 				4EDFAC502170E43C00B1402A /* RectangleFeature.swift */,
 				DA9BE85821FF765800D43CEA /* Array+RectangleFeature.swift */,
 				DA9BE85721FF765800D43CEA /* CGPoint+Operators.swift */,
 			);
-			path = Maths;
+			path = Math;
 			sourceTree = "<group>";
 		};
 		4EDFAC532170E43C00B1402A /* ViewController */ = {
