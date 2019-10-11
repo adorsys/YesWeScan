@@ -61,6 +61,11 @@ github "adorsys/YesWeScan"
 
 ## Usage
 
+The scanner needs access to the camera.
+In order to allow this, your `Info.plist` must contain the `NSCameraUsageDescription` key.
+
+![An info.plist entry for NSCameraUsageDescription](https://raw.githubusercontent.com/adorsys/YesWeScan/master/Images/CameraUsagePlist.png)
+
 ### Scanner View Controller
 
 The main class in this project is `ScannerViewController`. You can access it
