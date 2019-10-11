@@ -64,7 +64,7 @@ github "adorsys/YesWeScan"
 The scanner needs access to the camera.
 In order to allow this, your `Info.plist` must contain the `NSCameraUsageDescription` key.
 
-![](https://raw.githubusercontent.com/adorsys/YesWeScan/master/Images/CameraUsagePlist.png)
+![An info.plist entry for NSCameraUsageDescription](https://raw.githubusercontent.com/adorsys/YesWeScan/master/Images/CameraUsagePlist.png)
 
 ### Scanner View Controller
 
