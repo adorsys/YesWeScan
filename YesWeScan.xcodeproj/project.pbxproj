@@ -22,6 +22,8 @@
 		4EDFAC712170E43C00B1402A /* ImageCapturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC5F2170E43C00B1402A /* ImageCapturer.swift */; };
 		4EDFAC722170E43C00B1402A /* DocumentScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC602170E43C00B1402A /* DocumentScanner.swift */; };
 		4EDFAC732170E43C00B1402A /* AVDocumentScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC612170E43C00B1402A /* AVDocumentScanner.swift */; };
+		C1B8322F2359E9FF00A6192A /* FocusRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B8322D2359E9FF00A6192A /* FocusRectView.swift */; };
+		C1B832302359E9FF00A6192A /* TriggerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B8322E2359E9FF00A6192A /* TriggerView.swift */; };
 		DA9BE85921FF765800D43CEA /* CGPoint+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9BE85721FF765800D43CEA /* CGPoint+Operators.swift */; };
 		DA9BE85A21FF765800D43CEA /* Array+RectangleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9BE85821FF765800D43CEA /* Array+RectangleFeature.swift */; };
 		DA9BE85C21FF767700D43CEA /* ForceTouchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9BE85B21FF767700D43CEA /* ForceTouchGestureRecognizer.swift */; };
@@ -54,6 +56,8 @@
 		4EDFAC602170E43C00B1402A /* DocumentScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentScanner.swift; sourceTree = "<group>"; };
 		4EDFAC612170E43C00B1402A /* AVDocumentScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVDocumentScanner.swift; sourceTree = "<group>"; };
 		4EDFAC632170E43C00B1402A /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		C1B8322D2359E9FF00A6192A /* FocusRectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusRectView.swift; sourceTree = "<group>"; };
+		C1B8322E2359E9FF00A6192A /* TriggerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriggerView.swift; sourceTree = "<group>"; };
 		DA9BE85721FF765800D43CEA /* CGPoint+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Operators.swift"; sourceTree = "<group>"; };
 		DA9BE85821FF765800D43CEA /* Array+RectangleFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+RectangleFeature.swift"; sourceTree = "<group>"; };
 		DA9BE85B21FF767700D43CEA /* ForceTouchGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceTouchGestureRecognizer.swift; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				4EDFAC5B2170E43C00B1402A /* TargetBraceView.swift */,
+				C1B8322D2359E9FF00A6192A /* FocusRectView.swift */,
+				C1B8322E2359E9FF00A6192A /* TriggerView.swift */,
 				4EDFAC5C2170E43C00B1402A /* TorchPickerView.swift */,
 			);
 			path = "Custom Views";
@@ -292,6 +298,8 @@
 				4EDFAC652170E43C00B1402A /* RectangleFeature.swift in Sources */,
 				4EDFAC712170E43C00B1402A /* ImageCapturer.swift in Sources */,
 				4EDFAC702170E43C00B1402A /* DocumentScannerDelegate.swift in Sources */,
+				C1B8322F2359E9FF00A6192A /* FocusRectView.swift in Sources */,
+				C1B832302359E9FF00A6192A /* TriggerView.swift in Sources */,
 				4EDFAC6F2170E43C00B1402A /* TorchPickerView.swift in Sources */,
 				4EDFAC6D2170E43C00B1402A /* ScannerViewController.swift in Sources */,
 				4EDFAC682170E43C00B1402A /* UIImage+ScannerViewController.swift in Sources */,

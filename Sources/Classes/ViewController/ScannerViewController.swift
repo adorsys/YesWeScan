@@ -97,7 +97,7 @@ public final class ScannerViewController: UIViewController {
     private func setupUI(config: ScannerConfig) {
 
         if config.contains(.manualCapture) {
-            let button = takePhotoButton()
+            let button = takePhotoButtonView()
             view.addSubview(button)
             view.centerXAnchor.constraint(equalTo: button.centerXAnchor).isActive = true
 
