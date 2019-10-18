@@ -4,11 +4,16 @@ extension ScannerViewController {
     func makeTargetBraceButton() -> UIView {
         let view = blurView()
 
-        let image = UIImageView(image: .targetBracesToggleImage)
-        image.translatesAutoresizingMaskIntoConstraints = false
-        view.contentView.addSubview(image)
-        view.centerXAnchor.constraint(equalTo: image.centerXAnchor).isActive = true
-        view.centerYAnchor.constraint(equalTo: image.centerYAnchor).isActive = true
+        let focusView = FocusRectView()
+        focusView.translatesAutoresizingMaskIntoConstraints = false
+        view.contentView.addSubview(focusView)
+
+        NSLayoutConstraint.activate([
+            view.centerXAnchor.constraint(equalTo: focusView.centerXAnchor),
+            view.centerYAnchor.constraint(equalTo: focusView.centerYAnchor),
+            view.widthAnchor.constraint(equalTo: focusView.widthAnchor, multiplier: 2),
+            view.heightAnchor.constraint(equalTo: focusView.heightAnchor, multiplier: 2)
+        ])
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(toggleTargetBraces))
         view.addGestureRecognizer(tap)
@@ -40,14 +45,16 @@ extension ScannerViewController {
         return view
     }
 
-    func takePhotoButton() -> UIButton {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(.buttonImage, for: .normal)
-        button.addTarget(self,
-                         action: #selector(captureScreen),
-                         for: .touchUpInside)
-        return button
+    func takePhotoButtonView() -> UIView {
+        let view = TriggerView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        let tap = UITapGestureRecognizer(target: self, action: #selector(captureScreen))
+               view.addGestureRecognizer(tap)
+        NSLayoutConstraint.activate([
+            view.widthAnchor.constraint(equalToConstant: 66),
+            view.heightAnchor.constraint(equalTo: view.widthAnchor)
+        ])
+        return view
     }
 
     func makeProgressBar() -> UIProgressView {

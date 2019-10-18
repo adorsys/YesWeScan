@@ -12,9 +12,5 @@ private var bundle: Bundle {
 }
 
 extension UIImage {
-    static let buttonImage = UIImage(named: "CaptureButton", in: bundle, compatibleWith: nil)
-
-    static let targetBracesToggleImage = UIImage(named: "FocusIndicator", in: bundle, compatibleWith: nil)
-
     static let torchImage = UIImage(named: "Torch", in: bundle, compatibleWith: nil)
 }
