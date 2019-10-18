@@ -11,8 +11,6 @@ import XCTest
 class AssetsAccessTests: XCTestCase {
 
     func testAssetsCanBeAccessed() {
-        XCTAssertNotNil(UIImage.buttonImage)
-        XCTAssertNotNil(UIImage.targetBracesToggleImage)
         XCTAssertNotNil(UIImage.torchImage)
     }
 }
