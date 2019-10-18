@@ -1,6 +1,6 @@
 PODS:
-  - SwiftLint (0.31.0)
-  - TOCropViewController (2.4.0)
+  - SwiftLint (0.35.0)
+  - TOCropViewController (2.5.1)
   - YesWeScan (2.1.0)
 
 DEPENDENCIES:
@@ -9,7 +9,7 @@ DEPENDENCIES:
   - YesWeScan (from `../`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://cdn.cocoapods.org/:
     - SwiftLint
     - TOCropViewController
 
@@ -18,10 +18,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
-  TOCropViewController: 368d8df3ea43b62c3dc5a61f11b9048274d240bd
-  YesWeScan: 339b411e85aed79c210fb2da213cd3ee0b013e3c
+  SwiftLint: 5553187048b900c91aa03552807681bb6b027846
+  TOCropViewController: 00dc36c4e4a0f4a45efa91adbf22df8a4fae01d3
+  YesWeScan: 6d56e15555188d2dcb4c276f7e2b8ca134d93695
 
 PODFILE CHECKSUM: 2072a059059456ea19217f4b9200d97597246165
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.4
