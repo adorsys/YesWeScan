@@ -1,5 +1,5 @@
 import UIKit
 
-public protocol ScannerViewControllerDelegate: AnyObject {
+@objc public protocol ScannerViewControllerDelegate {
     func scanner(_ scanner: ScannerViewController, didCaptureImage image: UIImage)
 }
