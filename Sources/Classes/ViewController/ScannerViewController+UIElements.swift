@@ -24,11 +24,28 @@ extension ScannerViewController {
     func makeTorchButton() -> UIView {
         let view = blurView()
 
-        let image = UIImageView(image: .torchImage)
-        image.translatesAutoresizingMaskIntoConstraints = false
-        view.contentView.addSubview(image)
-        view.centerXAnchor.constraint(equalTo: image.centerXAnchor).isActive = true
-        view.centerYAnchor.constraint(equalTo: image.centerYAnchor).isActive = true
+        let torchImage: UIView
+
+        if #available(iOS 13.0, *) {
+            let image = UIImage(systemName: "flashlight.on.fill")
+            let imageView = UIImageView(image: image?.withRenderingMode(.alwaysTemplate))
+            imageView.contentMode = .scaleAspectFit
+            imageView.tintColor = .black
+            torchImage = imageView
+        } else {
+            let label = UILabel()
+            label.text = "🔦"
+            torchImage = label
+        }
+
+        torchImage.translatesAutoresizingMaskIntoConstraints = false
+        view.contentView.addSubview(torchImage)
+        NSLayoutConstraint.activate([
+            view.centerXAnchor.constraint(equalTo: torchImage.centerXAnchor),
+            view.centerYAnchor.constraint(equalTo: torchImage.centerYAnchor),
+            view.widthAnchor.constraint(equalTo: torchImage.widthAnchor, multiplier: 2),
+            view.heightAnchor.constraint(equalTo: torchImage.heightAnchor, multiplier: 2)
+        ])
 
         let action = #selector(showTorchUI)
         if UIScreen.main.traitCollection.forceTouchCapability == .available {

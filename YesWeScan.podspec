@@ -30,7 +30,6 @@ This pod contains a ready to use view controller for document scanning.
   s.swift_version = '5.0'
 
   s.source_files = 'Sources/Classes/**/*'
-  s.resources = 'Sources/Assets/**/*'
   s.frameworks = 'AVFoundation'
 
   s.test_spec 'Tests' do |test_spec|
