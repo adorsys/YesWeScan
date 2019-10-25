@@ -7,26 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E7C3E7B2174AC8C00AA4E31 /* AssetsAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7C3E7A2174AC8C00AA4E31 /* AssetsAccessTests.swift */; };
-		4E7C3E7C2174B12200AA4E31 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EDFAC632170E43C00B1402A /* Media.xcassets */; };
+		4E7FB7B52362E96A004D7681 /* YesWeScan in Resources */ = {isa = PBXBuildFile; fileRef = 4E7FB7B42362E96A004D7681 /* YesWeScan */; };
 		4EDFAC3D2170E3E100B1402A /* YesWeScan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EDFAC332170E3E100B1402A /* YesWeScan.framework */; };
-		4EDFAC652170E43C00B1402A /* RectangleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC502170E43C00B1402A /* RectangleFeature.swift */; };
-		4EDFAC682170E43C00B1402A /* UIImage+ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC542170E43C00B1402A /* UIImage+ScannerViewController.swift */; };
-		4EDFAC692170E43C00B1402A /* ScannerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC552170E43C00B1402A /* ScannerConfig.swift */; };
-		4EDFAC6A2170E43C00B1402A /* ScannerViewController+UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC562170E43C00B1402A /* ScannerViewController+UIElements.swift */; };
-		4EDFAC6B2170E43C00B1402A /* ScannerViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC572170E43C00B1402A /* ScannerViewControllerDelegate.swift */; };
-		4EDFAC6D2170E43C00B1402A /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC592170E43C00B1402A /* ScannerViewController.swift */; };
-		4EDFAC6E2170E43C00B1402A /* TargetBraceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC5B2170E43C00B1402A /* TargetBraceView.swift */; };
-		4EDFAC6F2170E43C00B1402A /* TorchPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC5C2170E43C00B1402A /* TorchPickerView.swift */; };
-		4EDFAC702170E43C00B1402A /* DocumentScannerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC5E2170E43C00B1402A /* DocumentScannerDelegate.swift */; };
-		4EDFAC712170E43C00B1402A /* ImageCapturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC5F2170E43C00B1402A /* ImageCapturer.swift */; };
-		4EDFAC722170E43C00B1402A /* DocumentScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC602170E43C00B1402A /* DocumentScanner.swift */; };
-		4EDFAC732170E43C00B1402A /* AVDocumentScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFAC612170E43C00B1402A /* AVDocumentScanner.swift */; };
-		C1B8322F2359E9FF00A6192A /* FocusRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B8322D2359E9FF00A6192A /* FocusRectView.swift */; };
-		C1B832302359E9FF00A6192A /* TriggerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B8322E2359E9FF00A6192A /* TriggerView.swift */; };
-		DA9BE85921FF765800D43CEA /* CGPoint+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9BE85721FF765800D43CEA /* CGPoint+Operators.swift */; };
-		DA9BE85A21FF765800D43CEA /* Array+RectangleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9BE85821FF765800D43CEA /* Array+RectangleFeature.swift */; };
-		DA9BE85C21FF767700D43CEA /* ForceTouchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9BE85B21FF767700D43CEA /* ForceTouchGestureRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,27 +22,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4E7C3E7A2174AC8C00AA4E31 /* AssetsAccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsAccessTests.swift; sourceTree = "<group>"; };
+		4E7FB7B42362E96A004D7681 /* YesWeScan */ = {isa = PBXFileReference; lastKnownFileType = folder; path = YesWeScan; sourceTree = "<group>"; };
 		4EDFAC332170E3E100B1402A /* YesWeScan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YesWeScan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EDFAC3C2170E3E100B1402A /* YesWeScanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YesWeScanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4EDFAC502170E43C00B1402A /* RectangleFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleFeature.swift; sourceTree = "<group>"; };
-		4EDFAC542170E43C00B1402A /* UIImage+ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ScannerViewController.swift"; sourceTree = "<group>"; };
-		4EDFAC552170E43C00B1402A /* ScannerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerConfig.swift; sourceTree = "<group>"; };
-		4EDFAC562170E43C00B1402A /* ScannerViewController+UIElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScannerViewController+UIElements.swift"; sourceTree = "<group>"; };
-		4EDFAC572170E43C00B1402A /* ScannerViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewControllerDelegate.swift; sourceTree = "<group>"; };
-		4EDFAC592170E43C00B1402A /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
-		4EDFAC5B2170E43C00B1402A /* TargetBraceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetBraceView.swift; sourceTree = "<group>"; };
-		4EDFAC5C2170E43C00B1402A /* TorchPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TorchPickerView.swift; sourceTree = "<group>"; };
-		4EDFAC5E2170E43C00B1402A /* DocumentScannerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentScannerDelegate.swift; sourceTree = "<group>"; };
-		4EDFAC5F2170E43C00B1402A /* ImageCapturer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCapturer.swift; sourceTree = "<group>"; };
-		4EDFAC602170E43C00B1402A /* DocumentScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentScanner.swift; sourceTree = "<group>"; };
-		4EDFAC612170E43C00B1402A /* AVDocumentScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVDocumentScanner.swift; sourceTree = "<group>"; };
-		4EDFAC632170E43C00B1402A /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		C1B8322D2359E9FF00A6192A /* FocusRectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusRectView.swift; sourceTree = "<group>"; };
-		C1B8322E2359E9FF00A6192A /* TriggerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriggerView.swift; sourceTree = "<group>"; };
-		DA9BE85721FF765800D43CEA /* CGPoint+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Operators.swift"; sourceTree = "<group>"; };
-		DA9BE85821FF765800D43CEA /* Array+RectangleFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+RectangleFeature.swift"; sourceTree = "<group>"; };
-		DA9BE85B21FF767700D43CEA /* ForceTouchGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceTouchGestureRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,19 +46,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4E7C3E792174AC7800AA4E31 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				4E7C3E7A2174AC8C00AA4E31 /* AssetsAccessTests.swift */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
 		4EDFAC272170E3C500B1402A = {
 			isa = PBXGroup;
 			children = (
 				4EDFAC4D2170E43C00B1402A /* Sources */,
-				4E7C3E792174AC7800AA4E31 /* Tests */,
 				4EDFAC342170E3E100B1402A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -111,74 +66,9 @@
 		4EDFAC4D2170E43C00B1402A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				4EDFAC4E2170E43C00B1402A /* Classes */,
-				4EDFAC622170E43C00B1402A /* Assets */,
+				4E7FB7B42362E96A004D7681 /* YesWeScan */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		4EDFAC4E2170E43C00B1402A /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				4EDFAC4F2170E43C00B1402A /* Math */,
-				4EDFAC532170E43C00B1402A /* ViewController */,
-				4EDFAC5D2170E43C00B1402A /* Scanner */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		4EDFAC4F2170E43C00B1402A /* Math */ = {
-			isa = PBXGroup;
-			children = (
-				4EDFAC502170E43C00B1402A /* RectangleFeature.swift */,
-				DA9BE85821FF765800D43CEA /* Array+RectangleFeature.swift */,
-				DA9BE85721FF765800D43CEA /* CGPoint+Operators.swift */,
-			);
-			path = Math;
-			sourceTree = "<group>";
-		};
-		4EDFAC532170E43C00B1402A /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				4EDFAC542170E43C00B1402A /* UIImage+ScannerViewController.swift */,
-				4EDFAC552170E43C00B1402A /* ScannerConfig.swift */,
-				4EDFAC562170E43C00B1402A /* ScannerViewController+UIElements.swift */,
-				DA9BE85B21FF767700D43CEA /* ForceTouchGestureRecognizer.swift */,
-				4EDFAC572170E43C00B1402A /* ScannerViewControllerDelegate.swift */,
-				4EDFAC592170E43C00B1402A /* ScannerViewController.swift */,
-				4EDFAC5A2170E43C00B1402A /* Custom Views */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		4EDFAC5A2170E43C00B1402A /* Custom Views */ = {
-			isa = PBXGroup;
-			children = (
-				4EDFAC5B2170E43C00B1402A /* TargetBraceView.swift */,
-				C1B8322D2359E9FF00A6192A /* FocusRectView.swift */,
-				C1B8322E2359E9FF00A6192A /* TriggerView.swift */,
-				4EDFAC5C2170E43C00B1402A /* TorchPickerView.swift */,
-			);
-			path = "Custom Views";
-			sourceTree = "<group>";
-		};
-		4EDFAC5D2170E43C00B1402A /* Scanner */ = {
-			isa = PBXGroup;
-			children = (
-				4EDFAC5E2170E43C00B1402A /* DocumentScannerDelegate.swift */,
-				4EDFAC5F2170E43C00B1402A /* ImageCapturer.swift */,
-				4EDFAC602170E43C00B1402A /* DocumentScanner.swift */,
-				4EDFAC612170E43C00B1402A /* AVDocumentScanner.swift */,
-			);
-			path = Scanner;
-			sourceTree = "<group>";
-		};
-		4EDFAC622170E43C00B1402A /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				4EDFAC632170E43C00B1402A /* Media.xcassets */,
-			);
-			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,7 +163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E7C3E7C2174B12200AA4E31 /* Media.xcassets in Resources */,
+				4E7FB7B52362E96A004D7681 /* YesWeScan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,23 +181,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA9BE85921FF765800D43CEA /* CGPoint+Operators.swift in Sources */,
-				4EDFAC6A2170E43C00B1402A /* ScannerViewController+UIElements.swift in Sources */,
-				4EDFAC732170E43C00B1402A /* AVDocumentScanner.swift in Sources */,
-				4EDFAC6E2170E43C00B1402A /* TargetBraceView.swift in Sources */,
-				4EDFAC652170E43C00B1402A /* RectangleFeature.swift in Sources */,
-				4EDFAC712170E43C00B1402A /* ImageCapturer.swift in Sources */,
-				4EDFAC702170E43C00B1402A /* DocumentScannerDelegate.swift in Sources */,
-				C1B8322F2359E9FF00A6192A /* FocusRectView.swift in Sources */,
-				C1B832302359E9FF00A6192A /* TriggerView.swift in Sources */,
-				4EDFAC6F2170E43C00B1402A /* TorchPickerView.swift in Sources */,
-				4EDFAC6D2170E43C00B1402A /* ScannerViewController.swift in Sources */,
-				4EDFAC682170E43C00B1402A /* UIImage+ScannerViewController.swift in Sources */,
-				4EDFAC6B2170E43C00B1402A /* ScannerViewControllerDelegate.swift in Sources */,
-				4EDFAC722170E43C00B1402A /* DocumentScanner.swift in Sources */,
-				DA9BE85A21FF765800D43CEA /* Array+RectangleFeature.swift in Sources */,
-				DA9BE85C21FF767700D43CEA /* ForceTouchGestureRecognizer.swift in Sources */,
-				4EDFAC692170E43C00B1402A /* ScannerConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,7 +188,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E7C3E7B2174AC8C00AA4E31 /* AssetsAccessTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,7 +427,6 @@
 		4EDFAC492170E3E100B1402A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -629,7 +500,6 @@
 		4EDFAC4A2170E3E100B1402A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
