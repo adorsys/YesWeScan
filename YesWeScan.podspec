@@ -29,10 +29,7 @@ This pod contains a ready to use view controller for document scanning.
   s.ios.deployment_target = '10.0'
   s.swift_version = '5.0'
 
-  s.source_files = 'Sources/Classes/**/*'
+  s.source_files = 'Sources/**/*'
   s.frameworks = 'AVFoundation'
 
-  s.test_spec 'Tests' do |test_spec|
-    test_spec.source_files = 'Tests/*.swift'
-  end
 end
