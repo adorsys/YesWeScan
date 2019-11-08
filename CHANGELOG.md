@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.2.0
+
+* New: Migrate to Swift Package Manager (#44)
+* New: Speed up Scanner Launch
+* New: Verbose error message when app crashes (#37)
+* New: Make ScannerViewControllerDelegate usable with ObjC (#30 by @RWarnecke)
+
 ## 2.1.0
 
 * New: Expose AVDocumentScanner to be public
