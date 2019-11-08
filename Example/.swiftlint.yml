@@ -48,7 +48,7 @@ excluded:
 
 # Include the development pod
 included:
-  - ../Sources/Classes
+  - ../Sources
 
 # Configure warning/error levels
 file_length:
