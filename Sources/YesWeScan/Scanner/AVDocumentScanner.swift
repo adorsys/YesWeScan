@@ -17,33 +17,29 @@ public final class AVDocumentScanner: NSObject {
     }()
 
     init(sessionPreset: AVCaptureSession.Preset) {
-        let session = AVCaptureSession()
-
-        if let device = device {
-            do {
-                try device.lockForConfiguration()
-                device.focusMode = .continuousAutoFocus
-                device.unlockForConfiguration()
-
-                let input = try AVCaptureDeviceInput(device: device)
-
-                session.beginConfiguration()
-                if device.supportsSessionPreset(sessionPreset) {
-                    session.sessionPreset = sessionPreset
-                }
-                session.addInput(input)
-                session.commitConfiguration()
-                session.startRunning()
-            } catch let error {
-                fatalError("Device couldn't be initialized - \(error.localizedDescription)")
-            }
-        }
-
-        captureSession = session
-        imageCapturer = ImageCapturer(session: session)
+        imageCapturer = ImageCapturer(session: captureSession)
         super.init()
+
         progress.completedUnitCount = Int64(desiredJitter)
-        output.setSampleBufferDelegate(self, queue: imageQueue)
+
+        imageQueue.async {
+            guard let device = self.device,
+                let input = try? AVCaptureDeviceInput(device: device)
+                else { return }
+
+            try? device.lockForConfiguration()
+            device.focusMode = .continuousAutoFocus
+            device.unlockForConfiguration()
+
+            self.captureSession.beginConfiguration()
+            if device.supportsSessionPreset(sessionPreset) {
+                self.captureSession.sessionPreset = sessionPreset
+            }
+            self.captureSession.addInput(input)
+            self.captureSession.commitConfiguration()
+            self.captureSession.startRunning()
+            self.output.setSampleBufferDelegate(self, queue: self.imageQueue)
+        }
     }
 
     public convenience init(sessionPreset: AVCaptureSession.Preset = .photo,
@@ -56,7 +52,7 @@ public final class AVDocumentScanner: NSObject {
     private var isStopped = false
     private let imageCapturer: ImageCapturer
     private var lastFeatures: [RectangleFeature] = []
-    private let captureSession: AVCaptureSession
+    private let captureSession = AVCaptureSession()
     private let imageQueue = DispatchQueue(label: "imageQueue")
 
     private let device: AVCaptureDevice? = {
@@ -84,7 +80,7 @@ public final class AVDocumentScanner: NSObject {
         CIDetectorMaxFeatureCount: 10
 
         // swiftlint:disable:next force_unwrapping
-        ])!
+    ])!
 }
 
 extension AVDocumentScanner: AVCaptureVideoDataOutputSampleBufferDelegate {
