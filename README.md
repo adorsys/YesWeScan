@@ -156,15 +156,6 @@ You can also configure the `previewColor` (color of scan preview rect) and
 
 The defaults here are `UIColor.green` and `UIColor.red`, respectively.
 
-### Performance hint
-
-The scanner takes quite some time to fire up the AVCaptureSession, etc, which
-means initializing a `ScannerViewController` is expensive.
-
-Depending on your use case, it probably makes sense to store a strong reference
-to the `ScannerViewController` in the presenting View Controller (as seen in
-the Example project).
-
 ### Siri Shortcuts
 
 The scanner example project supports Siri Shortcuts since iOS 12*.
