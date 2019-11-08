@@ -59,6 +59,19 @@ Add the following line to your `Cartfile`:
 github "adorsys/YesWeScan"
 ```
 
+### Swift Package Manager
+
+Starting in version 2.2.0,
+[Swift Package Manager](https://swift.org/package-manager/) is also supported 🎉
+
+Add it to your project like this:
+
+```
+dependencies: [
+    .package(url: "https://github.com/adorsys/YesWeScan.git", from: "2.2.0")
+]
+```
+
 ## Usage
 
 The scanner needs access to the camera.
