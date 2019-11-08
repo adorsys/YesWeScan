@@ -33,7 +33,7 @@ This pod contains a ready to use view controller for document scanning. Yes we s
 | Xcode Version | YesWeScan |
 |---------------|-----------|
 | <= 10.1       | <= 1.3.0  |
-| 10.2          | => 2.0.0  |
+| >= 10.2       | => 2.0.0  |
 
 ## Scanner Preview
 
@@ -66,7 +66,7 @@ Starting in version 2.2.0,
 
 Add it to your project like this:
 
-```
+```swift
 dependencies: [
     .package(url: "https://github.com/adorsys/YesWeScan.git", from: "2.2.0")
 ]
