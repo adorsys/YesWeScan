@@ -7,6 +7,7 @@
 [![license](https://img.shields.io/badge/license-Apache_2.0-lightgrey.svg)](https://github.com/adorsys/YesWeScan/blob/master/LICENSE)
 [![platform](https://img.shields.io/badge/platform-iOS_10+-lightgrey.svg)](https://img.shields.io/badge/platform-iOS_10+-lightgrey.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![SPM compatible](https://img.shields.io/badge/SPM-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager/)
 
 This pod contains a ready to use view controller for document scanning. Yes we scan!
 
@@ -15,6 +16,7 @@ This pod contains a ready to use view controller for document scanning. Yes we s
 - [Installation](#installation)
   - [CocoaPods](#cocoapods)
   - [Carthage](#carthage)
+  - [Swift Package Manager](#swift-package-manager)
 - [Usage](#usage)
   - [Scanner View Controller](#scanner-view-controller)
   - [Delegate Methods](#delegate-methods)
