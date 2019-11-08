@@ -198,7 +198,14 @@ public final class ScannerViewController: UIViewController {
 // Actions
 extension ScannerViewController {
     @objc
-    func captureScreen() {
+    func captureScreen(gesture: UIGestureRecognizer) {
+        if let trigger = gesture.view as? TriggerView {
+            trigger.isHighlighted = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+                trigger.isHighlighted = false
+            }
+        }
+
         let boundingRect: RectangleFeature?
         if targetView.isHidden {
             boundingRect = nil

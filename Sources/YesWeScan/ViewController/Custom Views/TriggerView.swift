@@ -17,10 +17,14 @@ class TriggerView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    var isHighlighted = false {
+        didSet { setNeedsDisplay() }
+    }
+
     override func draw(_ rect: CGRect) {
 
         let color = UIColor.white
-        let gap = 0.03 * rect.width
+        let gap = rect.width * (isHighlighted ? 0.06 : 0.03)
         let thickness = 0.09 * rect.width
         let center = CGPoint(x: rect.midX, y: rect.midY)
 
