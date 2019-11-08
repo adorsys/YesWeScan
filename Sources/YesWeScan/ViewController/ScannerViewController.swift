@@ -66,6 +66,7 @@ public final class ScannerViewController: UIViewController {
     @IBOutlet private weak var targetView: UIView!
     @IBOutlet private weak var targetButton: UIView!
     @IBOutlet private weak var torchButton: UIView!
+    @IBOutlet private weak var torchIcon: UIImageView!
     @IBOutlet private weak var progressBar: UIProgressView!
 
     private lazy var scanner: DocumentScanner & TorchPickerViewDelegate = {
@@ -241,6 +242,15 @@ extension ScannerViewController {
 
     private func setTorchUIOn(_ on: Bool) {
         torchButton.backgroundColor = on ? .white : .clear
+        if #available(iOS 13.0, *),
+            let imageView = torchButton.subviews
+                .flatMap({ $0.subviews })
+                .compactMap({ $0 as? UIImageView }).first {
+
+            imageView.image = on
+                ? UIImage(systemName: "flashlight.on.fill")
+                : UIImage(systemName: "flashlight.off.fill")
+        }
     }
 
     @objc

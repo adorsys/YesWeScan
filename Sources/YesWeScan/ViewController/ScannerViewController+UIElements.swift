@@ -27,7 +27,7 @@ extension ScannerViewController {
         let torchImage: UIView
 
         if #available(iOS 13.0, *) {
-            let image = UIImage(systemName: "flashlight.on.fill")
+            let image = UIImage(systemName: "flashlight.off.fill")
             let imageView = UIImageView(image: image?.withRenderingMode(.alwaysTemplate))
             imageView.contentMode = .scaleAspectFit
             imageView.tintColor = .black
