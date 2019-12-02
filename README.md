@@ -28,6 +28,17 @@ This pod contains a ready to use view controller for document scanning. Yes we s
   - [Using the scanner directly](#using-the-scanner-directly)
 - [License](#license)
 
+## iOS 13 notice
+
+iOS 13 contains the [`VNDocumentCameraViewController`][ios-scanner], which is an
+Apple-provided class that is likely to achieve better results and have less bugs
+than this pod.
+
+If your app is targeting iOS 13 or higher, please consider using it instead of
+this pod.
+
+[ios-scanner]: https://developer.apple.com/documentation/visionkit/vndocumentcameraviewcontroller
+
 ## Requirements
 
 - iOS 10.0 SDK or later
