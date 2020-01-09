@@ -1,0 +1,14 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: macOS-latest
+
+    steps:
+    - name: Install Gem Dependencies
+      run: bundle install
+    - name: Run Fastlane Analyze
+      run: bundle exec fastlane analyze
