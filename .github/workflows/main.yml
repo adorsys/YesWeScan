@@ -9,7 +9,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+
+    - name: Cache Gem Dependencies
+      uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gem-
+
     - name: Install Gem Dependencies
-      run: bundle install
+      run: |
+        bundle config path vendor/bundle
+        bundle install
+
     - name: Run Fastlane Analyze
       run: bundle exec fastlane analyze
