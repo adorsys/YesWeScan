@@ -8,6 +8,7 @@ jobs:
     runs-on: macOS-latest
 
     steps:
+    - uses: actions/checkout@v1
     - name: Install Gem Dependencies
       run: bundle install
     - name: Run Fastlane Analyze
