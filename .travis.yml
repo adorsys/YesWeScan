@@ -1,6 +1,0 @@
-language: swift
-osx_image: xcode11.1
-install:
-  - bundle install
-script:
-  - bundle exec fastlane analyze
