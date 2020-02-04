@@ -137,11 +137,13 @@ extension AVDocumentScanner: DocumentScanner {
         imageCapturer.captureImage(in: bounds, completion: completion)
     }
     public func start() {
-        guard !captureSession.isRunning else {
-            return
+        imageQueue.async {
+            guard !self.captureSession.isRunning else {
+                return
+            }
+            self.captureSession.startRunning()
+            self.isStopped = false
         }
-        captureSession.startRunning()
-        isStopped = false
     }
     public func pause() {
         isStopped = true
