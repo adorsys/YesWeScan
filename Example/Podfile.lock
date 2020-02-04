@@ -9,7 +9,7 @@ DEPENDENCIES:
   - YesWeScan (from `../`)
 
 SPEC REPOS:
-  trunk:
+  https://cdn.cocoapods.org/:
     - SwiftLint
     - TOCropViewController
 
