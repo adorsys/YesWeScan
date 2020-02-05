@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.1
+
+* Fixed: Crash on background queues
+
 ## 2.2.0
 
 * New: Migrate to Swift Package Manager (#44)
