@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.2
+
+* Fixed: Hide torch on devices without torch (#49)
+
 ## 2.2.1
 
 * Fixed: Crash on background queues
