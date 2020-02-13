@@ -2,6 +2,8 @@
 
 ### 0. Ensure the validation passes
 
+(Make sure you are on the latest `master` branch)
+
 `bundle exec fastlane analyze`
 
 This will run `pod lib lint` internally.
