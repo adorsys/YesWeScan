@@ -97,6 +97,12 @@ public final class ScannerViewController: UIViewController {
 
     private func setupUI(config: ScannerConfig) {
 
+        var config = config
+        // Some devices have no build-in torch
+        if !scanner.hasTorch {
+            config.remove(.torch)
+        }
+
         if config.contains(.manualCapture) {
             let button = takePhotoButtonView()
             view.addSubview(button)
@@ -301,6 +307,7 @@ extension ScannerViewController: DocumentScannerDelegate {
 
 extension ScannerViewController: TorchPickerViewDelegate {
     var lastTorchLevel: Float { return scanner.lastTorchLevel }
+    var hasTorch: Bool { return scanner.hasTorch }
 
     func didPickTorchLevel(_ level: Float) {
         guard level != lastTorchLevel else { return }
