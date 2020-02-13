@@ -7,7 +7,7 @@ public final class AVDocumentScanner: NSObject {
         didSet { progress.completedUnitCount = Int64(desiredJitter) }
     }
     public var featuresRequired: Int = 7
-
+    public var hasTorch: Bool = false
     public let progress = Progress()
 
     public lazy var previewLayer: CALayer = {
@@ -21,6 +21,7 @@ public final class AVDocumentScanner: NSObject {
         super.init()
 
         progress.completedUnitCount = Int64(desiredJitter)
+        hasTorch = device?.hasTorch ?? false
 
         imageQueue.async {
             guard let device = self.device,
@@ -61,7 +62,7 @@ public final class AVDocumentScanner: NSObject {
             mediaType: .video,
             position: .back
             ).devices
-            .first { $0.hasTorch }
+            .first
     }()
 
     private lazy var output: AVCaptureVideoDataOutput = {

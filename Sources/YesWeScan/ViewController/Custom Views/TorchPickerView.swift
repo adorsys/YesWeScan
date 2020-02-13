@@ -9,6 +9,7 @@ import UIKit
 
 protocol TorchPickerViewDelegate: AnyObject {
     var lastTorchLevel: Float { get }
+    var hasTorch: Bool { get }
 
     func toggleTorch()
     func didPickTorchLevel(_ level: Float)
