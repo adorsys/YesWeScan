@@ -2,8 +2,8 @@
     <img src="https://raw.githubusercontent.com/adorsys/YesWeScan/master/Images/banner.jpg" width="1700" max-width="100%" alt="YesWeScan" />
 </p>
 
-[![Build Status](https://travis-ci.com/adorsys/YesWeScan.svg?branch=master)](https://travis-ci.com/adorsys/YesWeScan.svg?branch=master)
-[![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://swift.org)
+![Build Status](https://github.com/adorsys/YesWeScan/workflows/CI/badge.svg)
+[![Swift 5.1](https://img.shields.io/badge/swift-5.1-ED523F.svg?style=flat)](https://swift.org/download/)
 [![license](https://img.shields.io/badge/license-Apache_2.0-lightgrey.svg)](https://github.com/adorsys/YesWeScan/blob/master/LICENSE)
 [![platform](https://img.shields.io/badge/platform-iOS_10+-lightgrey.svg)](https://img.shields.io/badge/platform-iOS_10+-lightgrey.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
