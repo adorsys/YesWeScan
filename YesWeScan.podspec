@@ -27,7 +27,7 @@ This pod contains a ready to use view controller for document scanning.
   s.source           = { :git => 'https://github.com/adorsys/YesWeScan.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '10.0'
-  s.swift_version = '5.0'
+  s.swift_version = '5.2'
 
   s.source_files = 'Sources/**/*'
   s.frameworks = 'AVFoundation'

@@ -10,6 +10,6 @@ extension Array where Element == RectangleFeature {
 
     var average: RectangleFeature {
         // Calculates the mean Rectangle Feature. Maybe the median is better...
-        return reduce(RectangleFeature(), +) / CGFloat(count)
+        reduce(RectangleFeature(), +) / CGFloat(count)
     }
 }

@@ -15,7 +15,7 @@ public final class ScannerViewController: UIViewController {
     public weak var delegate: ScannerViewControllerDelegate?
     public var jitter: CGFloat {
         set { scanner.desiredJitter = newValue }
-        get { return scanner.desiredJitter }
+        get { scanner.desiredJitter }
     }
     public var braceColor: UIColor = .red
     public var previewColor: UIColor = .green {
@@ -43,7 +43,7 @@ public final class ScannerViewController: UIViewController {
     }
 
     public var progress: Progress {
-        return scanner.progress
+        scanner.progress
     }
 
     public init(sessionPreset: AVCaptureSession.Preset = .photo, config: ScannerConfig = .all) {
@@ -142,10 +142,12 @@ public final class ScannerViewController: UIViewController {
             braces.isHidden = true
             braces.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(braces)
-            view.centerXAnchor.constraint(equalTo: braces.centerXAnchor).isActive = true
-            view.centerYAnchor.constraint(equalTo: braces.centerYAnchor, constant: 50).isActive = true
-            view.widthAnchor.constraint(equalTo: braces.widthAnchor, multiplier: 1.5).isActive = true
-            braces.heightAnchor.constraint(equalTo: braces.widthAnchor, multiplier: 1.5).isActive = true
+            NSLayoutConstraint.activate([
+                view.centerXAnchor.constraint(equalTo: braces.centerXAnchor),
+                view.centerYAnchor.constraint(equalTo: braces.centerYAnchor, constant: 50),
+                view.widthAnchor.constraint(equalTo: braces.widthAnchor, multiplier: 1.5),
+                braces.heightAnchor.constraint(equalTo: braces.widthAnchor, multiplier: 1.5)
+            ])
             targetView = braces
         }
 
@@ -250,7 +252,7 @@ extension ScannerViewController {
         torchButton.backgroundColor = on ? .white : .clear
         if #available(iOS 13.0, *),
             let imageView = torchButton.subviews
-                .flatMap({ $0.subviews })
+                .flatMap(\.subviews)
                 .compactMap({ $0 as? UIImageView }).first {
 
             imageView.image = on
@@ -306,8 +308,8 @@ extension ScannerViewController: DocumentScannerDelegate {
 }
 
 extension ScannerViewController: TorchPickerViewDelegate {
-    var lastTorchLevel: Float { return scanner.lastTorchLevel }
-    var hasTorch: Bool { return scanner.hasTorch }
+    var lastTorchLevel: Float { scanner.lastTorchLevel }
+    var hasTorch: Bool { scanner.hasTorch }
 
     func didPickTorchLevel(_ level: Float) {
         guard level != lastTorchLevel else { return }

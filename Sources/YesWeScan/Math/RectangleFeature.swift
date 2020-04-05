@@ -25,12 +25,13 @@ extension RectangleFeature {
         bottomRight = rectangleFeature.bottomRight
     }
 
-    func smoothed(with previous: [RectangleFeature]) -> (RectangleFeature, [RectangleFeature]) {
+    func smoothed(with previous: inout [RectangleFeature]) -> RectangleFeature {
 
         let allFeatures = [self] + previous
         let smoothed = allFeatures.average
+        previous = Array(allFeatures.prefix(10))
 
-        return (smoothed, Array(allFeatures.prefix(10)))
+        return smoothed
     }
 
     func normalized(source: CGSize, target: CGSize) -> RectangleFeature {
@@ -46,7 +47,7 @@ extension RectangleFeature {
                                   dy: target.height / normalizedSource.height)
 
         func normalize(_ point: CGPoint) -> CGPoint {
-            return point
+            point
                 .yAxisInverted(source.height)
                 .shifted(by: CGPoint(x: xShift, y: yShift))
                 .distorted(by: distortion)
@@ -73,11 +74,10 @@ extension RectangleFeature {
     }
 
     func difference(to: RectangleFeature) -> CGFloat {
-            return
-                abs(to.topLeft - topLeft) +
-                abs(to.topRight - topRight) +
-                abs(to.bottomLeft - bottomLeft) +
-                abs(to.bottomRight - bottomRight)
+        abs(to.topLeft - topLeft) +
+        abs(to.topRight - topRight) +
+        abs(to.bottomLeft - bottomLeft) +
+        abs(to.bottomRight - bottomRight)
     }
 
     /// This isn't the real area, but enables correct comparison
@@ -93,37 +93,30 @@ extension RectangleFeature {
 
 extension RectangleFeature: Comparable {
     public static func < (lhs: RectangleFeature, rhs: RectangleFeature) -> Bool {
-        return lhs.areaQualifier < rhs.areaQualifier
-    }
-
-    public static func == (lhs: RectangleFeature, rhs: RectangleFeature) -> Bool {
-        return lhs.topLeft == rhs.topLeft
-            && lhs.topRight == rhs.topRight
-            && lhs.bottomLeft == rhs.bottomLeft
-            && lhs.bottomRight == rhs.bottomRight
+        lhs.areaQualifier < rhs.areaQualifier
     }
 }
 
 private extension CGSize {
     var aspectRatio: CGFloat {
-        return width / height
+        width / height
     }
 }
 
 private extension CGPoint {
     func distorted(by distortion: CGVector) -> CGPoint {
-        return CGPoint(x: x * distortion.dx, y: y * distortion.dy)
+        CGPoint(x: x * distortion.dx, y: y * distortion.dy)
     }
 
     func yAxisInverted(_ maxY: CGFloat) -> CGPoint {
-        return CGPoint(x: x, y: maxY - y)
+        CGPoint(x: x, y: maxY - y)
     }
 
     func shifted(by shiftAmount: CGPoint) -> CGPoint {
-        return CGPoint(x: x + shiftAmount.x, y: y + shiftAmount.y)
+        CGPoint(x: x + shiftAmount.x, y: y + shiftAmount.y)
     }
 
     var length: CGFloat {
-        return sqrt(x * x + y * y)
+        sqrt(x * x + y * y)
     }
 }
