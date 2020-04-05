@@ -6,7 +6,7 @@ public final class AVDocumentScanner: NSObject {
     public var desiredJitter: CGFloat = 100 {
         didSet { progress.completedUnitCount = Int64(desiredJitter) }
     }
-    public var featuresRequired: Int = 7
+    public var featuresRequired = 7
     public var hasTorch: Bool = false
     public let progress = Progress()
 
@@ -52,7 +52,7 @@ public final class AVDocumentScanner: NSObject {
     private weak var delegate: DocumentScannerDelegate?
     private var isStopped = false
     private let imageCapturer: ImageCapturer
-    private var lastFeatures: [RectangleFeature] = []
+    private var rectangleFeatures: [RectangleFeature] = []
     private let captureSession = AVCaptureSession()
     private let imageQueue = DispatchQueue(label: "imageQueue")
 
@@ -113,12 +113,11 @@ extension AVDocumentScanner: AVCaptureVideoDataOutputSampleBufferDelegate {
     func smooth(feature: RectangleFeature?, in image: CIImage) -> RectangleFeature? {
         guard let feature = feature else { return nil }
 
-        let (smoothed, newFeatures) = feature.smoothed(with: lastFeatures)
-        lastFeatures = newFeatures
-        progress.totalUnitCount = Int64(newFeatures.jitter)
+        let smoothed = feature.smoothed(with: &rectangleFeatures)
+        progress.totalUnitCount = Int64(rectangleFeatures.jitter)
 
-        if newFeatures.count > featuresRequired,
-            newFeatures.jitter < desiredJitter,
+        if rectangleFeatures.count > featuresRequired,
+            rectangleFeatures.jitter < desiredJitter,
             isStopped == false,
             let delegate = delegate {
 
@@ -137,22 +136,21 @@ extension AVDocumentScanner: DocumentScanner {
     public func captureImage(in bounds: RectangleFeature?, completion: @escaping (UIImage) -> Void) {
         imageCapturer.captureImage(in: bounds, completion: completion)
     }
+
     public func start() {
         imageQueue.async {
-            guard !self.captureSession.isRunning else {
-                return
-            }
+            guard !self.captureSession.isRunning else { return }
             self.captureSession.startRunning()
             self.isStopped = false
         }
     }
+
     public func pause() {
         isStopped = true
     }
+
     public func stop() {
-        guard captureSession.isRunning else {
-            return
-        }
+        guard captureSession.isRunning else { return }
         captureSession.stopRunning()
     }
 }
@@ -177,11 +175,10 @@ extension AVDocumentScanner: TorchPickerViewDelegate {
         lastTorchLevel = level
         do {
             try device?.lockForConfiguration()
-            switch level {
-            case 0:
+            if level == 0 {
                 device?.torchMode = .off
                 lastTorchLevel = 0
-            default:
+            } else {
                 try device?.setTorchModeOn(level: level)
             }
             device?.unlockForConfiguration()
