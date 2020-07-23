@@ -1,0 +1,39 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+
+  release:
+
+    runs-on: macOS-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Cache Gem Dependencies
+      uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gem-
+
+    - name: Install Gem Dependencies
+      run: |
+        bundle config path vendor/bundle
+        bundle install
+
+    - name: Build Carthage artifacts
+      run: carthage build --archive
+ 
+    - name: Release
+      uses: softprops/action-gh-release@master
+      with:
+        files: YesWeScan.framework.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
