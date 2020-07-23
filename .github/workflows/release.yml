@@ -9,8 +9,6 @@ on:
       'carthage-artifacts'
 
 jobs:
-  build:
-
   release:
 
     runs-on: macOS-latest
