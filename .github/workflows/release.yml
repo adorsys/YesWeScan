@@ -1,9 +1,12 @@
 name: Release
 
 on:
+  # push:
+  #   tags:
+  #     - '*'
   push:
-    tags:
-      - '*'
+    branches:
+      'carthage-artifacts'
 
 jobs:
   build:
