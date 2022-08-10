@@ -101,7 +101,7 @@ extension AVDocumentScanner: AVCaptureVideoDataOutputSampleBufferDelegate {
             .max()
             .map {
                 $0.normalized(source: image.extent.size,
-                              target: UIScreen.main.bounds.size)
+                              target: previewLayer.bounds.size)
             }
             .flatMap { smooth(feature: $0, in: image) }
 
